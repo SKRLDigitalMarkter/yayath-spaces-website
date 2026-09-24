@@ -932,7 +932,13 @@ const pageSEO = {
 
 function updateMetaSEO(pageName) {
   const seo = pageSEO[pageName] || pageSEO.home;
-  document.title = seo.title;
+  
+  if (pageName === 'blog-single' && window.currentBlogTitle) {
+    document.title = window.currentBlogTitle + " | Yayath Spaces";
+  } else {
+    document.title = seo.title;
+  }
+  
   let metaDesc = document.querySelector('meta[name="description"]');
   if (!metaDesc) {
     metaDesc = document.createElement('meta');
@@ -1395,8 +1401,8 @@ function openBlog(id) {
   document.getElementById('single-blog-hero-bg').setAttribute('aria-label', blog.image_alt || blog.title);
   document.getElementById('single-blog-hero-bg').setAttribute('role', 'img');
 
+  window.currentBlogTitle = blog.title;
   showPage('blog-single');
-  document.title = blog.title + " | Yayath Spaces";
   window.scrollTo(0, 0);
 }
 
