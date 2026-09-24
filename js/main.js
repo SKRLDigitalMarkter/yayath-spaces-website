@@ -124,16 +124,18 @@ var pushLeadToCRM = window.pushLeadToCRM = async function(data) {
     }).catch(() => {});
   } catch(e) {}
 
-  // 5. Send to Email via FormSubmit
+  // 5. Send to Email via Web3Forms
   try {
-    fetch('https://formsubmit.co/ajax/yayathspaces@gmail.com', {
+    fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        _subject: "New Lead from Yayath Spaces Website!",
+        access_key: "cca3b3c1-cfd2-44f6-b035-f70d3d95825d",
+        subject: "New Lead from Yayath Spaces Website!",
+        from_name: "Yayath Spaces CRM",
         Name: leadPayload.name,
         Phone: leadPayload.phone,
         Email: leadPayload.email,
