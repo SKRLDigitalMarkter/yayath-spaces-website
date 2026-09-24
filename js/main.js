@@ -931,9 +931,10 @@ const pageSEO = {
 };
 
 function updateMetaSEO(pageName) {
+  const isBlogSingle = pageName.startsWith('blog/');
   const seo = pageSEO[pageName] || pageSEO.home;
   
-  if (pageName === 'blog-single' && window.currentBlogTitle) {
+  if (isBlogSingle && window.currentBlogTitle) {
     document.title = window.currentBlogTitle + " | Yayath Spaces";
   } else {
     document.title = seo.title;
@@ -971,7 +972,12 @@ var showPage = window.showPage = function(name, updateUrl = true) {
     page.style.display = 'none';
   });
 
-  const target = document.getElementById('page-' + name);
+  let displayPageName = name;
+  if (name.startsWith('blog/')) {
+    displayPageName = 'blog-single';
+  }
+
+  const target = document.getElementById('page-' + displayPageName);
   if (target) {
     target.classList.add('active');
     target.style.display = 'block';
@@ -1007,6 +1013,11 @@ var showPage = window.showPage = function(name, updateUrl = true) {
 function handleUrlRouting() {
   const hash = window.location.hash.replace('#', '').trim();
   if (hash) {
+    // If it's a blog route, do not showPage yet if blogs are not loaded.
+    // It will be handled in loadBlogs() when they finish fetching.
+    if (hash.startsWith('blog/') && allBlogs.length === 0) {
+      return; 
+    }
     showPage(hash, false);
   } else {
     showPage('home', false);
@@ -1319,8 +1330,14 @@ async function loadBlogs() {
       authorName: b.authorname,
       authorRole: b.authorrole,
       authorImg: b.authorimg && b.authorimg.includes('<img') ? b.authorimg : (b.authorimg && b.authorimg.startsWith('http') ? `<img src="${b.authorimg}" alt="Author" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">` : '<img src="assets/images/logo/favicon.png" alt="Yayath Spaces Team" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">')
-    }));
     renderBlogs();
+
+    // Check if there is a blog route to open after loading
+    const hash = window.location.hash.replace('#', '').trim();
+    if (hash.startsWith('blog/')) {
+      const blogId = hash.substring(5);
+      if (typeof openBlog === 'function') openBlog(blogId, false);
+    }
   } catch (err) {
     console.error('Error loading blogs from Supabase:', err);
   }
@@ -1384,7 +1401,7 @@ function renderBlogs() {
   });
 }
 
-function openBlog(id) {
+window.openBlog = function(id, updateUrl = true) {
   const blog = allBlogs.find(b => b.id === id);
   if (!blog) return;
 
@@ -1402,7 +1419,7 @@ function openBlog(id) {
   document.getElementById('single-blog-hero-bg').setAttribute('role', 'img');
 
   window.currentBlogTitle = blog.title;
-  showPage('blog-single');
+  showPage('blog/' + id, updateUrl);
   window.scrollTo(0, 0);
 }
 
