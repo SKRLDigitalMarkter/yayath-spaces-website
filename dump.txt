@@ -1,0 +1,7 @@
+Standard Day Pass</h3>
+
+          <p style="color:#64748b;font-size:0.88rem;line-height:1.6;margin-bottom:16px;">Shared hot desk access for one full business day. Ideal for remote workers and visitors.</p>
+
+          <div style="font-size:2rem;font-weight:800;color:#262161;margin-bottom:4px;">₹499-799</div>
+
+          <div style="color:#94a3b8;font-size:0.85rem;margin-bottom:20px;">/person/day + GST

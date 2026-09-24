@@ -1,0 +1,37 @@
+[
+  {
+    "timestamp": "2026-09-14T13:30:00+05:30",
+    "status": "success",
+    "message": "System initialized. Autoblogging schedule active.",
+    "blogTitle": "System Bootstrap",
+    "keywordUsed": "N/A"
+  },
+  {
+    "timestamp": "2026-09-14T13:42:00+05:30",
+    "status": "success",
+    "message": "Published 3 SEO blogs with niche keywords.",
+    "blogTitle": "Why Coworking Spaces in Gurugram Are the Future + 2 more",
+    "keywordUsed": "Coworking space in Gurugram"
+  },
+  {
+    "timestamp": "2026-09-14T13:55:00+05:30",
+    "status": "success",
+    "message": "Published high-quality reference-format blog with AI-generated hero image. Dashboard fully upgraded.",
+    "blogTitle": "7 Practical Criteria to Choose the Best Coworking Space in Gurugram",
+    "keywordUsed": "Best coworking space in Gurugram"
+  },
+  {
+    "timestamp": "2026-09-14T10:35:03.463Z",
+    "status": "error",
+    "blogTitle": "Autoblog Failed",
+    "message": "Gemini API key not configured in Settings.",
+    "keywordUsed": "Private office space in Gurugram"
+  },
+  {
+    "timestamp": "2026-09-14T10:35:10.028Z",
+    "status": "error",
+    "blogTitle": "Autoblog Failed",
+    "message": "Gemini API key not configured in Settings.",
+    "keywordUsed": "Yayath Spaces"
+  }
+]

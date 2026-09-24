@@ -1,0 +1,13 @@
+{
+  "geminiApiKey": "AQ.Ab8RN6IwjwgXdOWUvCJLCJjnGqS3EQybmmT-hsqA6GLCDjEDvw",
+  "authorName": "Yayath Spaces Team",
+  "authorRole": "Workspace Experts",
+  "cronSchedule": "0 9 * * *",
+  "blogLength": "medium",
+  "blogFormat": "criteria",
+  "imageMode": "ai",
+  "autoPublish": true,
+  "ctaText": "Book a free tour at Yayath Spaces today. Call us: +91 95603 80807 | www.yayathspaces.com",
+  "brandTagline": "Yayath Spaces — Premium Coworking & Managed Office Spaces in Gurugram",
+  "adminPin": "1234"
+}

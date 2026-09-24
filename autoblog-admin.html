@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autoblog Admin Dashboard | Yayath Spaces</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f172a;--card:#1e293b;--border:#334155;--text:#f8fafc;--muted:#94a3b8;--gold:#f5a623;--ok:#10b981;--err:#ef4444;--blue:#3b82f6;}
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif;}
+    body{background:var(--bg);color:var(--text);min-height:100vh;}
+
+    /* Overlay */
+    #overlay{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center;}
+    .lock-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:48px 40px;text-align:center;max-width:380px;width:90%;}
+    .lock-box i{font-size:3rem;color:var(--gold);}
+    .lock-box h2{margin:14px 0 6px;font-size:1.5rem;}
+    .lock-box p{color:var(--muted);font-size:.9rem;}
+    .lock-box input{width:100%;margin:20px 0 0;padding:13px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1.2rem;text-align:center;letter-spacing:6px;}
+    .lock-box button{width:100%;margin-top:12px;padding:13px;background:var(--gold);color:#000;border:none;border-radius:8px;font-weight:700;font-size:1rem;cursor:pointer;}
+    .err-msg{color:var(--err);font-size:.85rem;margin-top:10px;display:none;}
+
+    /* Sidebar */
+    .sidebar{position:fixed;top:0;left:0;width:230px;height:100vh;background:var(--card);border-right:1px solid var(--border);padding:24px 16px;display:flex;flex-direction:column;gap:4px;overflow-y:auto;z-index:100;}
+    .logo{display:flex;align-items:center;gap:10px;padding:10px;margin-bottom:16px;font-weight:800;font-size:1.1rem;color:var(--gold);}
+    .nav-group{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;padding:12px 12px 6px;margin-top:8px;}
+    .sidebar a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;color:var(--muted);text-decoration:none;font-size:.9rem;cursor:pointer;transition:.2s;}
+    .sidebar a:hover,.sidebar a.active{background:rgba(245,166,35,.1);color:var(--gold);}
+    main{margin-left:230px;padding:32px;}
+
+    /* Top bar */
+    .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;flex-wrap:wrap;gap:12px;}
+    .topbar h1{font-size:1.5rem;}
+    .badge-ok{background:rgba(16,185,129,.15);color:var(--ok);padding:7px 14px;border-radius:20px;font-size:.85rem;font-weight:600;display:flex;align-items:center;gap:6px;}
+    .pulse{width:8px;height:8px;border-radius:50%;background:var(--ok);animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+    /* Stats */
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;}
+    .stat span{color:var(--muted);font-size:.82rem;}
+    .stat h3{font-size:1.8rem;font-weight:800;margin:4px 0;}
+    .stat small{font-size:.8rem;color:var(--ok);}
+
+    /* Card */
+    .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:20px;}
+    .card-title{font-size:1rem;color:var(--muted);display:flex;align-items:center;gap:8px;margin-bottom:18px;font-weight:600;}
+
+    /* Table */
+    table{width:100%;border-collapse:collapse;}
+    th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--border);font-size:.88rem;}
+    th{color:var(--muted);font-weight:600;text-transform:uppercase;font-size:.75rem;letter-spacing:.5px;}
+    tr:hover{background:rgba(255,255,255,.02);}
+    .pill{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.78rem;font-weight:600;}
+    .pill-ok{background:rgba(16,185,129,.15);color:var(--ok);}
+    .pill-err{background:rgba(239,68,68,.15);color:var(--err);}
+    .pill-gold{background:rgba(245,166,35,.1);color:var(--gold);}
+    .pill-blue{background:rgba(59,130,246,.15);color:var(--blue);}
+
+    /* Form */
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .fg{display:flex;flex-direction:column;gap:6px;}
+    .fg.full{grid-column:1/-1;}
+    label{font-size:.82rem;color:var(--muted);font-weight:500;}
+    input,textarea,select{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-size:.9rem;font-family:inherit;width:100%;transition:.2s;}
+    input:focus,textarea:focus,select:focus{outline:none;border-color:var(--gold);}
+    textarea{resize:vertical;min-height:80px;}
+    .btn{padding:10px 18px;border-radius:8px;border:none;font-weight:700;cursor:pointer;font-size:.88rem;transition:.2s;display:inline-flex;align-items:center;gap:6px;}
+    .btn-gold{background:var(--gold);color:#000;}
+    .btn-gold:hover{opacity:.9;}
+    .btn-blue{background:var(--blue);color:#fff;}
+    .btn-red{background:var(--err);color:#fff;}
+    .btn-outline{background:transparent;color:var(--muted);border:1px solid var(--border);}
+    .btn-outline:hover{color:var(--text);border-color:var(--muted);}
+
+    /* Keywords */
+    .kw-wrap{display:flex;flex-wrap:wrap;gap:10px;}
+    .kw-tag{background:rgba(245,166,35,.1);color:var(--gold);border:1px solid rgba(245,166,35,.3);padding:5px 14px;border-radius:20px;font-size:.85rem;display:flex;align-items:center;gap:6px;}
+    .kw-tag button{background:none;border:none;color:var(--gold);cursor:pointer;font-size:1rem;line-height:1;}
+
+    /* Blog grid */
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;}
+    .blog-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:.2s;}
+    .blog-card:hover{border-color:var(--gold);}
+    .blog-card img{width:100%;height:130px;object-fit:cover;}
+    .blog-card-body{padding:12px;}
+    .blog-card-body h4{font-size:.9rem;line-height:1.4;margin:6px 0;}
+    .blog-card-body span{font-size:.78rem;color:var(--muted);}
+    .blog-card-actions{display:flex;gap:6px;margin-top:10px;}
+
+    /* Modal */
+    .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:500;display:none;align-items:center;justify-content:center;padding:20px;}
+    .modal-bg.open{display:flex;}
+    .modal{background:var(--card);border:1px solid var(--border);border-radius:16px;width:100%;max-width:760px;max-height:90vh;overflow-y:auto;}
+    .modal-header{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--card);z-index:1;}
+    .modal-header h3{font-size:1.1rem;}
+    .modal-body{padding:24px;}
+    .modal-footer{padding:16px 24px;border-top:1px solid var(--border);display:flex;gap:10px;justify-content:flex-end;}
+
+    /* Image picker */
+    .img-picker{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;}
+    .img-opt{border:2px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;transition:.2s;}
+    .img-opt:hover,.img-opt.selected{border-color:var(--gold);}
+    .img-opt img{width:100%;height:80px;object-fit:cover;}
+    .img-opt span{display:block;padding:4px 8px;font-size:.75rem;color:var(--muted);background:var(--bg);}
+
+    /* Toast */
+    .toast{position:fixed;bottom:24px;right:24px;background:var(--ok);color:#fff;padding:12px 20px;border-radius:8px;font-weight:600;display:none;z-index:9998;animation:slideUp .3s ease;}
+    @keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+    /* Timing */
+    .timing-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:12px 0;border-bottom:1px solid var(--border);}
+    .timing-row:last-child{border-bottom:none;}
+
+    /* API key */
+    .api-row{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border);}
+    .api-row:last-child{border-bottom:none;}
+    .api-key-val{font-family:monospace;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:8px 12px;flex:1;color:var(--muted);font-size:.85rem;}
+
+    .pane{display:none;}
+    .pane.active{display:block;}
+
+    @media(max-width:900px){.sidebar{display:none;}main{margin-left:0;padding:16px;}.stats{grid-template-columns:1fr 1fr;}.form-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+<!-- PIN Overlay -->
+<div id="overlay">
+  <div class="lock-box">
+    <i class="ti ti-robot"></i>
+    <h2>Admin Dashboard</h2>
+    <p>Enter your 4-digit PIN to access the autoblogging control panel.</p>
+    <input type="password" id="pinInput" placeholder="• • • •" maxlength="4">
+    <button onclick="checkPin()"><i class="ti ti-login"></i> Access Dashboard</button>
+    <p class="err-msg" id="errMsg"><i class="ti ti-alert-circle"></i> Incorrect PIN.</p>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <div class="logo"><i class="ti ti-robot"></i> Autoblog AI</div>
+  <span class="nav-group">Main</span>
+  <a class="active" onclick="showPane('dashboard', this)"><i class="ti ti-layout-dashboard"></i> Dashboard</a>
+  <a onclick="showPane('blogs', this)"><i class="ti ti-article"></i> Published Blogs</a>
+  <a onclick="showPane('add', this)"><i class="ti ti-plus"></i> Add New Blog</a>
+  <span class="nav-group">Configuration</span>
+  <a onclick="showPane('keywords', this)"><i class="ti ti-tags"></i> Keywords</a>
+  <a onclick="showPane('timing', this)"><i class="ti ti-clock"></i> Schedule & Timing</a>
+  <a onclick="showPane('images', this)"><i class="ti ti-photo"></i> Image Library</a>
+  <a onclick="showPane('api', this)"><i class="ti ti-api"></i> API Settings</a>
+  <span class="nav-group">System</span>
+  <a onclick="showPane('logs', this)"><i class="ti ti-list-check"></i> Automation Logs</a>
+  <a onclick="showPane('settings', this)"><i class="ti ti-settings"></i> Settings</a>
+</div>
+
+<main>
+  <div class="topbar">
+    <h1 id="pageTitle">📊 Dashboard</h1>
+    <div class="badge-ok"><div class="pulse"></div> AUTOMATION ACTIVE</div>
+  </div>
+
+  <!-- Stats Row -->
+  <div class="stats">
+    <div class="stat"><span>Total Blogs</span><h3 id="statTotal">–</h3><small>↑ Growing Daily</small></div>
+    <div class="stat"><span>Last Published</span><h3 id="statLast" style="font-size:1rem;margin-top:6px;">–</h3><small>Auto published</small></div>
+    <div class="stat"><span>Active Keywords</span><h3 id="statKw">–</h3><small>Niche targeted</small></div>
+    <div class="stat"><span>Next Scheduled Run</span><h3 style="font-size:.95rem;margin-top:8px;" id="statNext">Daily @ 9 AM</h3><small id="statNextDate">Tomorrow</small></div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="pane active" id="pane-dashboard">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-tags"></i> Target Keywords</div>
+      <div class="kw-wrap" id="kwDash">Loading…</div>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-article"></i> Recent Blogs</div>
+      <div class="blog-grid" id="blogDash"></div>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-list-check"></i> Latest Automation Runs</div>
+      <table><thead><tr><th>Date</th><th>Status</th><th>Blog Title</th></tr></thead>
+      <tbody id="logsDash"></tbody></table>
+    </div>
+  </div>
+
+  <!-- PUBLISHED BLOGS -->
+  <div class="pane" id="pane-blogs">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-article"></i> All Published Blogs</div>
+      <div class="blog-grid" id="allBlogsGrid"></div>
+    </div>
+  </div>
+
+  <!-- ADD BLOG -->
+  <div class="pane" id="pane-add">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-plus"></i> Add New Blog Post</div>
+      <p style="color:var(--muted);font-size:.88rem;margin-bottom:20px;">Fill in the details. Click "Copy as Chat Instruction" and paste it in the Antigravity chat to instantly publish.</p>
+      <div class="form-grid">
+        <div class="fg full"><label>Blog Title *</label><input type="text" id="newTitle" placeholder="e.g. 5 Reasons Why Managed Offices Are Better for Startups in Gurugram"></div>
+        <div class="fg"><label>Category</label>
+          <select id="newCat"><option>Workspace Trends</option><option>Business Guides</option><option>Workspace Guide</option><option>Managed Offices</option><option>Coworking Tips</option><option>Industry Insights</option></select>
+        </div>
+        <div class="fg"><label>Read Time</label><input type="text" id="newReadTime" placeholder="e.g. 6 min read"></div>
+        <div class="fg full"><label>Short Excerpt *</label><textarea id="newExcerpt" rows="2" placeholder="2-3 sentence summary for the blog card."></textarea></div>
+        <div class="fg full"><label>Target Keywords (comma separated)</label><input type="text" id="newKw" value="Coworking space in Gurugram, Best coworking space in Gurugram, Managed office space in Gurugram, Private office space in Gurugram"></div>
+        <div class="fg full"><label>Special Instructions for AI</label><textarea id="newInstr" rows="3" placeholder="e.g. Write in a practical, listicle format with 7-10 numbered criteria. Include cost comparisons, real Gurugram locations, and a CTA at the end."></textarea></div>
+        <div class="fg full"><label>Select Featured Image</label>
+          <div class="img-picker" id="addImgPicker">Loading images…</div>
+          <input type="hidden" id="newImg">
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
+        <button class="btn btn-gold" onclick="copyAddInstruction()"><i class="ti ti-copy"></i> Copy as Chat Instruction</button>
+        <button class="btn btn-outline" onclick="generateBlogJSON()"><i class="ti ti-code"></i> Generate JSON Preview</button>
+      </div>
+      <div id="addJsonOut" style="display:none;margin-top:16px;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><label>JSON Preview:</label><button class="btn btn-outline" style="padding:5px 10px;font-size:.8rem;" onclick="copyAddJson()">Copy JSON</button></div>
+        <pre id="addJsonPre" style="font-size:.78rem;overflow-x:auto;color:var(--muted);white-space:pre-wrap;max-height:300px;overflow-y:auto;"></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEYWORDS -->
+  <div class="pane" id="pane-keywords">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-tags"></i> Active Keywords</div>
+      <div class="kw-wrap" id="kwManage" style="margin-bottom:20px;">Loading…</div>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-plus"></i> Add Keywords</div>
+      <div class="fg" style="max-width:500px;">
+        <label>New Keywords (one per line)</label>
+        <textarea id="kwAddField" rows="5" placeholder="Virtual office in Gurugram&#10;Day pass coworking Gurugram&#10;Flexible office space Gurugram"></textarea>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:14px;">
+        <button class="btn btn-gold" onclick="copyKwInstruction()"><i class="ti ti-copy"></i> Copy Add Instruction</button>
+      </div>
+      <p style="color:var(--muted);font-size:.82rem;margin-top:10px;">This copies a message for the Antigravity chat. Paste it there to instantly add keywords to the system.</p>
+    </div>
+  </div>
+
+  <!-- TIMING / SCHEDULE -->
+  <div class="pane" id="pane-timing">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-clock"></i> Schedule Configuration</div>
+      <div class="timing-row">
+        <div style="flex:1;">
+          <strong>Publish Frequency</strong>
+          <p style="color:var(--muted);font-size:.85rem;">How often the AI publishes a new blog</p>
+        </div>
+        <select id="timingFreq" style="width:180px;">
+          <option value="daily">Daily</option>
+          <option value="twice">Twice Daily</option>
+          <option value="weekly">Weekly</option>
+        </select>
+      </div>
+      <div class="timing-row">
+        <div style="flex:1;">
+          <strong>Publish Time</strong>
+          <p style="color:var(--muted);font-size:.85rem;">What time each day the automation runs</p>
+        </div>
+        <input type="time" id="timingHour" value="09:00" style="width:140px;">
+      </div>
+      <div class="timing-row">
+        <div style="flex:1;">
+          <strong>Blog Length</strong>
+          <p style="color:var(--muted);font-size:.85rem;">Approximate target word count per blog</p>
+        </div>
+        <select id="timingLength" style="width:180px;">
+          <option value="short">Short (~600 words)</option>
+          <option value="medium" selected>Medium (~1200 words)</option>
+          <option value="long">Long (~2000+ words)</option>
+        </select>
+      </div>
+      <div class="timing-row">
+        <div style="flex:1;">
+          <strong>Blog Format</strong>
+          <p style="color:var(--muted);font-size:.85rem;">Content structure template</p>
+        </div>
+        <select id="timingFormat" style="width:180px;">
+          <option value="criteria">Numbered Criteria List</option>
+          <option value="guide">Comprehensive Guide</option>
+          <option value="comparison">Comparison Article</option>
+          <option value="tips">Tips & Tricks</option>
+        </select>
+      </div>
+      <div class="timing-row">
+        <div style="flex:1;">
+          <strong>Auto Image Generation</strong>
+          <p style="color:var(--muted);font-size:.85rem;">Use AI to create images for each post</p>
+        </div>
+        <select id="timingImg" style="width:180px;">
+          <option value="ai">AI Generate (Recommended)</option>
+          <option value="stock">Use Existing Assets</option>
+        </select>
+      </div>
+      <div style="margin-top:20px;display:flex;gap:10px;">
+        <button class="btn btn-gold" onclick="copyTimingInstruction()"><i class="ti ti-copy"></i> Save via Chat Instruction</button>
+        <button class="btn btn-outline"><i class="ti ti-refresh"></i> Trigger Manual Run Now</button>
+      </div>
+      <p style="color:var(--muted);font-size:.82rem;margin-top:10px;">Click "Save via Chat Instruction" and paste in the Antigravity chat to apply changes.</p>
+    </div>
+  </div>
+
+  <!-- IMAGE LIBRARY -->
+  <div class="pane" id="pane-images">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-photo"></i> Blog Image Library</div>
+      <p style="color:var(--muted);font-size:.88rem;margin-bottom:16px;">These are the AI-generated images available for your blogs. To generate a new image, describe it in the Antigravity chat and I will create and add it here.</p>
+      <div class="img-picker" id="imgLibrary">Loading…</div>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-sparkles"></i> Request New AI Image</div>
+      <div class="fg">
+        <label>Image Description for AI</label>
+        <textarea id="imgReqDesc" rows="3" placeholder="e.g. A startup team having a productive meeting in a premium Gurugram coworking space, modern glass walls, natural light, photorealistic"></textarea>
+      </div>
+      <button class="btn btn-gold" style="margin-top:12px;" onclick="copyImgRequest()"><i class="ti ti-copy"></i> Copy Image Request Instruction</button>
+      <p style="color:var(--muted);font-size:.82rem;margin-top:10px;">Paste this in the Antigravity chat and I will generate the image and add it to the library.</p>
+    </div>
+  </div>
+
+  <!-- API SETTINGS -->
+  <div class="pane" id="pane-api">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-api"></i> Connected APIs & Services</div>
+      <div class="api-row">
+        <div style="flex:1;"><strong>Vercel Deployment</strong><p style="color:var(--muted);font-size:.85rem;">Auto-deploy blogs to yayathspaces.com</p></div>
+        <span class="pill pill-ok">✓ Connected</span>
+      </div>
+      <div class="api-row">
+        <div style="flex:1;"><strong>AI Image Generation</strong><p style="color:var(--muted);font-size:.85rem;">Antigravity built-in AI image engine</p></div>
+        <span class="pill pill-ok">✓ Active</span>
+      </div>
+      <div class="api-row">
+        <div style="flex:1;"><strong>AI Content Generation</strong><p style="color:var(--muted);font-size:.85rem;">Antigravity Claude/Gemini AI engine</p></div>
+        <span class="pill pill-ok">✓ Active</span>
+      </div>
+      <div class="api-row">
+        <div style="flex:1;"><strong>Google Analytics</strong><p style="color:var(--muted);font-size:.85rem;">Track blog traffic and SEO performance</p></div>
+        <span class="pill pill-err">✗ Not Connected</span>
+        <button class="btn btn-outline" style="margin-left:10px;" onclick="copyGaInstruction()"><i class="ti ti-copy"></i> Setup</button>
+      </div>
+      <div class="api-row">
+        <div style="flex:1;"><strong>Google Search Console</strong><p style="color:var(--muted);font-size:.85rem;">Monitor indexing and keyword rankings</p></div>
+        <span class="pill pill-err">✗ Not Connected</span>
+        <button class="btn btn-outline" style="margin-left:10px;" onclick="copyGscInstruction()"><i class="ti ti-copy"></i> Setup</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-key"></i> API Keys Configuration</div>
+      <p style="color:var(--muted);font-size:.88rem;margin-bottom:16px;">To add or update any API key, paste the instruction in the Antigravity chat. Keys are stored securely in the system environment.</p>
+      <div class="api-row">
+        <div style="flex:1;"><strong>Vercel Token</strong><p style="color:var(--muted);font-size:.82rem;">Used for auto-deployment</p></div>
+        <div class="api-key-val">••••••••••••••••••••• (Active)</div>
+        <button class="btn btn-outline" style="margin-left:10px;" onclick="copyApiKeyInstruction('Vercel Token')"><i class="ti ti-edit"></i></button>
+      </div>
+      <div class="api-row">
+        <div style="flex:1;"><strong>Google Analytics ID</strong><p style="color:var(--muted);font-size:.82rem;">e.g. G-XXXXXXXXXX</p></div>
+        <input type="text" id="gaId" placeholder="G-XXXXXXXXXX" style="width:200px;">
+        <button class="btn btn-gold" style="margin-left:10px;" onclick="copyGaId()"><i class="ti ti-copy"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGS -->
+  <div class="pane" id="pane-logs">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-list-check"></i> Automation Run Logs</div>
+      <table>
+        <thead><tr><th>Date & Time</th><th>Status</th><th>Blog Published</th><th>Keyword Used</th></tr></thead>
+        <tbody id="logsBody">Loading…</tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SETTINGS -->
+  <div class="pane" id="pane-settings">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-settings"></i> General Settings</div>
+      <div class="form-grid">
+        <div class="fg"><label>Site Name</label><input value="Yayath Spaces"></div>
+        <div class="fg"><label>Default Author</label><input value="Yayath Spaces Team"></div>
+        <div class="fg"><label>Author Role</label><input value="Workspace Experts"></div>
+        <div class="fg"><label>Dashboard PIN</label><input type="password" id="newPin" placeholder="Enter new PIN"></div>
+        <div class="fg full"><label>SEO Brand Tagline (included in all AI blogs)</label><input value="Yayath Spaces — Premium Coworking & Managed Office Spaces in Gurugram"></div>
+        <div class="fg full"><label>Default CTA (Call to Action text in each blog)</label><textarea rows="2">Book a free tour at Yayath Spaces today. Call us: +91 95603 80807 | www.yayathspaces.com</textarea></div>
+      </div>
+      <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn btn-gold" onclick="copySettingsInstruction()"><i class="ti ti-copy"></i> Apply via Chat</button>
+        <button class="btn btn-blue" onclick="copyPinChange()"><i class="ti ti-lock"></i> Change PIN via Chat</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Edit Blog Modal -->
+<div class="modal-bg" id="editModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3><i class="ti ti-edit"></i> Edit Blog Post</h3>
+      <button class="btn btn-outline" style="padding:6px 12px;" onclick="closeModal()"><i class="ti ti-x"></i></button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="editId">
+      <div class="form-grid">
+        <div class="fg full"><label>Title</label><input id="editTitle"></div>
+        <div class="fg"><label>Category</label><select id="editCat"><option>Workspace Trends</option><option>Business Guides</option><option>Workspace Guide</option><option>Managed Offices</option><option>Coworking Tips</option><option>Industry Insights</option></select></div>
+        <div class="fg"><label>Date</label><input id="editDate" type="date"></div>
+        <div class="fg"><label>Read Time</label><input id="editReadTime" placeholder="e.g. 6 min read"></div>
+        <div class="fg"><label>Featured?</label><select id="editFeatured"><option value="false">No</option><option value="true">Yes – Featured Post</option></select></div>
+        <div class="fg full"><label>Excerpt</label><textarea id="editExcerpt" rows="2"></textarea></div>
+        <div class="fg full"><label>Image Path</label><input id="editImg" placeholder="assets/images/blogs/..."></div>
+        <div class="fg full"><label>Select Image from Library</label><div class="img-picker" id="editImgPicker" style="max-height:220px;overflow-y:auto;"></div></div>
+        <div class="fg full"><label>Full Content (HTML)</label><textarea id="editContent" rows="10"></textarea></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-gold" onclick="copyEditInstruction()"><i class="ti ti-copy"></i> Copy Edit Instruction</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  const PIN = localStorage.getItem('adminPin') || '1234';
+  const AVAILABLE_IMAGES = [
+    {path:'assets/images/blogs/blog_7_criteria.jpg', label:'7 Criteria'},
+    {path:'assets/images/blogs/blog_coworking_hero.jpg', label:'Coworking Hero'},
+    {path:'assets/images/blogs/blog_managed_office.jpg', label:'Managed Office'},
+    {path:'assets/images/blogs/blog_gurugram_skyline.jpg', label:'Gurugram Skyline'},
+    {path:'assets/images/spaces/loc_mgf_metropolis.jpg', label:'MGF Metropolis'},
+    {path:'assets/images/spaces/loc_m3m_ifc.jpg', label:'M3M IFC'},
+    {path:'assets/images/spaces/loc_welldone_techpark.jpg', label:'Welldone Techpark'},
+  ];
+  let blogs=[], logs=[], keywords=[], currentEditId=null;
+
+  function checkPin(){
+    if(document.getElementById('pinInput').value===PIN){
+      document.getElementById('overlay').style.display='none';
+      loadAll();
+    } else {
+      document.getElementById('errMsg').style.display='block';
+    }
+  }
+  document.getElementById('pinInput').addEventListener('keypress',e=>{if(e.key==='Enter')checkPin();});
+
+  function showPane(id, el){
+    document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
+    document.querySelectorAll('.sidebar a').forEach(a=>a.classList.remove('active'));
+    document.getElementById('pane-'+id).classList.add('active');
+    if(el) el.classList.add('active');
+    const titles={dashboard:'📊 Dashboard',blogs:'📝 Published Blogs',add:'✍️ Add New Blog',keywords:'🎯 Keywords',timing:'⏰ Schedule & Timing',images:'🖼️ Image Library',api:'🔌 API Settings',logs:'📋 Automation Logs',settings:'⚙️ Settings'};
+    document.getElementById('pageTitle').textContent=titles[id]||'Dashboard';
+  }
+
+  async function loadAll(){
+    await Promise.all([loadBlogs(),loadLogs(),loadKeywords()]);
+    renderStats();renderDashboard();renderImagePicker('addImgPicker');renderImagePicker('editImgPicker');renderImageLibrary();
+  }
+
+  async function loadBlogs(){
+    try{const r=await fetch('data/blogs.json?t='+Date.now());blogs=r.ok?await r.json():[];}catch{blogs=[];}
+    renderBlogsGrid('allBlogsGrid',true);
+  }
+
+  async function loadLogs(){
+    try{const r=await fetch('data/automation_logs.json?t='+Date.now());logs=r.ok?await r.json():[];}catch{logs=[];}
+    renderLogs();
+  }
+
+  async function loadKeywords(){
+    try{const r=await fetch('data/blog_keywords.txt?t='+Date.now());const t=r.ok?await r.text():'';keywords=t.split('\n').map(k=>k.trim()).filter(k=>k&&!k.startsWith('#'));}catch{keywords=[];}
+    renderKeywords('kwDash');renderKeywords('kwManage');
+    document.getElementById('statKw').textContent=keywords.length;
+  }
+
+  function renderStats(){
+    document.getElementById('statTotal').textContent=blogs.length;
+    if(blogs.length>0) document.getElementById('statLast').textContent=blogs[0].date||'–';
+    const tomorrow=new Date();tomorrow.setDate(tomorrow.getDate()+1);
+    document.getElementById('statNextDate').textContent=tomorrow.toLocaleDateString('en-IN',{weekday:'short',month:'short',day:'numeric'});
+  }
+
+  function renderDashboard(){
+    // Dashboard blog grid
+    const dg=document.getElementById('blogDash');
+    dg.innerHTML=blogs.slice(0,4).map(b=>blogCardHTML(b,false)).join('')||'<p style="color:var(--muted)">No blogs yet.</p>';
+    // Dashboard logs
+    const dl=document.getElementById('logsDash');
+    dl.innerHTML=[...logs].reverse().slice(0,3).map(l=>`<tr>
+      <td style="color:var(--muted);font-size:.82rem;">${new Date(l.timestamp).toLocaleString('en-IN')}</td>
+      <td><span class="pill ${l.status==='success'?'pill-ok':'pill-err'}">${l.status==='success'?'✓':'✗'} ${l.status.toUpperCase()}</span></td>
+      <td><strong>${l.blogTitle}</strong></td></tr>`).join('')||'<tr><td colspan="3" style="color:var(--muted);text-align:center;">No runs yet.</td></tr>';
+  }
+
+  function blogCardHTML(b, showActions){
+    return `<div class="blog-card" ${showActions?'':'onclick="openEdit(\''+b.id+'\')"'}>
+      <img src="${b.image||'assets/images/blogs/blog_coworking_hero.jpg'}" alt="${b.title}" onerror="this.style.height='0'">
+      <div class="blog-card-body">
+        <span class="pill pill-gold">${b.category}</span>
+        ${b.isFeatured?'<span class="pill pill-blue" style="margin-left:4px;">⭐ Featured</span>':''}
+        <h4>${b.title}</h4>
+        <span>${b.date||''} ${b.readTime?'· '+b.readTime:''}</span>
+        ${showActions?`<div class="blog-card-actions">
+          <button class="btn btn-outline" style="padding:5px 10px;font-size:.78rem;" onclick="openEdit('${b.id}')"><i class="ti ti-edit"></i> Edit</button>
+          <button class="btn btn-red" style="padding:5px 10px;font-size:.78rem;" onclick="copyDeleteInstruction('${b.id}')"><i class="ti ti-trash"></i></button>
+        </div>`:''}
+      </div></div>`;
+  }
+
+  function renderBlogsGrid(containerId, showActions){
+    const el=document.getElementById(containerId);
+    if(!el)return;
+    el.innerHTML=blogs.length?blogs.map(b=>blogCardHTML(b,showActions)).join(''):'<p style="color:var(--muted)">No blogs found.</p>';
+  }
+
+  function renderLogs(){
+    document.getElementById('logsBody').innerHTML=[...logs].reverse().map(l=>`<tr>
+      <td style="color:var(--muted);font-size:.82rem;">${new Date(l.timestamp).toLocaleString('en-IN')}</td>
+      <td><span class="pill ${l.status==='success'?'pill-ok':'pill-err'}">${l.status==='success'?'✓ SUCCESS':'✗ ERROR'}</span></td>
+      <td><strong>${l.blogTitle}</strong><br><span style="font-size:.8rem;color:var(--muted);">${l.message}</span></td>
+      <td><span class="pill pill-gold">${l.keywordUsed}</span></td></tr>`).join('')||'<tr><td colspan="4" style="color:var(--muted);text-align:center;">No logs yet.</td></tr>';
+  }
+
+  function renderKeywords(id){
+    const el=document.getElementById(id);if(!el)return;
+    el.innerHTML=keywords.length?keywords.map(k=>`<span class="kw-tag">${k}</span>`).join(''):'<span style="color:var(--muted)">No keywords.</span>';
+  }
+
+  function renderImagePicker(id, selectedPath=''){
+    const el=document.getElementById(id);if(!el)return;
+    el.innerHTML=AVAILABLE_IMAGES.map(img=>`<div class="img-opt ${img.path===selectedPath?'selected':''}" onclick="selectImg('${id}','${img.path}',this)">
+      <img src="${img.path}" alt="${img.label}" onerror="this.style.height='30px'">
+      <span>${img.label}</span></div>`).join('');
+  }
+
+  function selectImg(pickerId, path, el){
+    const picker=document.getElementById(pickerId);
+    picker.querySelectorAll('.img-opt').forEach(o=>o.classList.remove('selected'));
+    el.classList.add('selected');
+    if(pickerId==='addImgPicker') document.getElementById('newImg').value=path;
+    if(pickerId==='editImgPicker') document.getElementById('editImg').value=path;
+  }
+
+  function renderImageLibrary(){
+    const el=document.getElementById('imgLibrary');
+    el.innerHTML=AVAILABLE_IMAGES.map(img=>`<div class="img-opt">
+      <img src="${img.path}" alt="${img.label}" onerror="this.style.height='30px'">
+      <span>${img.label}</span></div>`).join('');
+  }
+
+  // Edit Blog
+  function openEdit(id){
+    const b=blogs.find(x=>x.id===id);if(!b)return;
+    currentEditId=id;
+    document.getElementById('editId').value=b.id;
+    document.getElementById('editTitle').value=b.title||'';
+    document.getElementById('editCat').value=b.category||'Workspace Trends';
+    document.getElementById('editDate').value=b.date?new Date(b.date).toISOString().split('T')[0]:'';
+    document.getElementById('editReadTime').value=b.readTime||'';
+    document.getElementById('editFeatured').value=b.isFeatured?'true':'false';
+    document.getElementById('editExcerpt').value=b.excerpt||'';
+    document.getElementById('editImg').value=b.image||'';
+    document.getElementById('editContent').value=b.content||'';
+    renderImagePicker('editImgPicker', b.image||'');
+    document.getElementById('editModal').classList.add('open');
+  }
+
+  function closeModal(){document.getElementById('editModal').classList.remove('open');}
+
+  function copyEditInstruction(){
+    const updated={
+      id:document.getElementById('editId').value,
+      title:document.getElementById('editTitle').value,
+      category:document.getElementById('editCat').value,
+      date:document.getElementById('editDate').value,
+      readTime:document.getElementById('editReadTime').value,
+      isFeatured:document.getElementById('editFeatured').value==='true',
+      excerpt:document.getElementById('editExcerpt').value,
+      image:document.getElementById('editImg').value,
+      content:document.getElementById('editContent').value,
+    };
+    const msg=`Please update the blog with id "${updated.id}" in data/blogs.json with the following changes, then deploy to Vercel:\n\n${JSON.stringify(updated,null,2)}`;
+    navigator.clipboard.writeText(msg);
+    showToast('Edit instruction copied! Paste in Antigravity chat.');
+    closeModal();
+  }
+
+  function copyDeleteInstruction(id){
+    const msg=`Please remove the blog with id "${id}" from data/blogs.json, then deploy to Vercel.`;
+    navigator.clipboard.writeText(msg);
+    showToast('Delete instruction copied! Paste in Antigravity chat.');
+  }
+
+  // Add Blog
+  function copyAddInstruction(){
+    const t=document.getElementById('newTitle').value.trim();
+    if(!t){showToast('Please enter a title.',true);return;}
+    const msg=`Please write and publish a new high-quality, SEO-optimized blog post for Yayath Spaces website.\n\nTitle: "${t}"\nCategory: ${document.getElementById('newCat').value}\nRead Time: ${document.getElementById('newReadTime').value||'7 min read'}\nExcerpt: ${document.getElementById('newExcerpt').value}\nKeywords to naturally include: ${document.getElementById('newKw').value}\nFeatured Image: ${document.getElementById('newImg').value||'Generate a new AI image relevant to the topic'}\n\nContent Instructions:\n${document.getElementById('newInstr').value||'Write a comprehensive, practical guide in numbered-criteria format (like the reference blog). Include at least 7 sections, real Gurugram locations and context, SEO keywords naturally placed in headings and body, and end with a strong CTA for Yayath Spaces. Minimum 1200 words.'}\n\nAfter writing, add it to data/blogs.json and run: npx vercel --prod --yes`;
+    navigator.clipboard.writeText(msg);
+    showToast('Instruction copied! Paste in Antigravity chat to publish.');
+  }
+
+  function generateBlogJSON(){
+    const t=document.getElementById('newTitle').value.trim();
+    if(!t){showToast('Enter a title first.',true);return;}
+    const slug=t.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+    const obj={id:slug,isFeatured:false,title:t,excerpt:document.getElementById('newExcerpt').value,category:document.getElementById('newCat').value,date:new Date().toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}),readTime:document.getElementById('newReadTime').value||'7 min read',image:document.getElementById('newImg').value||'assets/images/blogs/blog_coworking_hero.jpg',authorName:'Yayath Spaces Team',authorRole:'Workspace Experts',authorImg:"<i class='ti ti-user'></i>",content:'[AI-generated content will go here]'};
+    document.getElementById('addJsonPre').textContent=JSON.stringify(obj,null,2);
+    document.getElementById('addJsonOut').style.display='block';
+  }
+
+  function copyAddJson(){navigator.clipboard.writeText(document.getElementById('addJsonPre').textContent);showToast('JSON copied!');}
+
+  // Keywords
+  function copyKwInstruction(){
+    const kw=document.getElementById('kwAddField').value.trim();
+    if(!kw){showToast('Enter keywords first.',true);return;}
+    const msg=`Please add these new keywords to data/blog_keywords.txt (append on new lines):\n${kw}\n\nThen deploy to Vercel.`;
+    navigator.clipboard.writeText(msg);
+    showToast('Keyword instruction copied! Paste in chat.');
+  }
+
+  // Timing
+  function copyTimingInstruction(){
+    const msg=`Please update the autoblogging automation schedule with these settings:\n- Frequency: ${document.getElementById('timingFreq').value}\n- Time: ${document.getElementById('timingHour').value}\n- Blog Length: ${document.getElementById('timingLength').value}\n- Format: ${document.getElementById('timingFormat').value}\n- Image Mode: ${document.getElementById('timingImg').value}`;
+    navigator.clipboard.writeText(msg);
+    showToast('Timing instruction copied! Paste in chat.');
+  }
+
+  // Image library
+  function copyImgRequest(){
+    const desc=document.getElementById('imgReqDesc').value.trim();
+    if(!desc){showToast('Enter a description first.',true);return;}
+    const msg=`Please generate a new AI blog image with this description: "${desc}"\n\nSave it to assets/images/blogs/ and deploy to Vercel.`;
+    navigator.clipboard.writeText(msg);
+    showToast('Image request copied! Paste in Antigravity chat.');
+  }
+
+  // API
+  function copyGaInstruction(){
+    const msg=`Please help me connect Google Analytics to my Yayath Spaces website (www.yayathspaces.com). Guide me through creating a GA4 property and adding the tracking code to index.html.`;
+    navigator.clipboard.writeText(msg);showToast('Copied! Paste in chat.');
+  }
+  function copyGscInstruction(){
+    const msg=`Please help me connect Google Search Console to www.yayathspaces.com for keyword and SEO monitoring.`;
+    navigator.clipboard.writeText(msg);showToast('Copied! Paste in chat.');
+  }
+  function copyApiKeyInstruction(keyName){
+    const msg=`Please update the ${keyName} in my project. The new value is: [PASTE YOUR KEY HERE]`;
+    navigator.clipboard.writeText(msg);showToast(`${keyName} update instruction copied!`);
+  }
+  function copyGaId(){
+    const id=document.getElementById('gaId').value.trim();
+    if(!id){showToast('Enter GA ID first.',true);return;}
+    const msg=`Please add Google Analytics tracking code with ID "${id}" to my Yayath Spaces website index.html file and deploy to Vercel.`;
+    navigator.clipboard.writeText(msg);showToast('GA setup instruction copied!');
+  }
+
+  // Settings
+  function copySettingsInstruction(){
+    const msg=`Please update the autoblog system settings:\n- Default Author: ${document.querySelector('#pane-settings input:nth-of-type(2)').value}\n- Author Role: ${document.querySelector('#pane-settings input:nth-of-type(3)').value}`;
+    navigator.clipboard.writeText(msg);showToast('Settings instruction copied!');
+  }
+  function copyPinChange(){
+    const np=document.getElementById('newPin').value;
+    if(!np){showToast('Enter new PIN first.',true);return;}
+    localStorage.setItem('adminPin',np);
+    showToast('PIN changed locally! Refresh to use new PIN.');
+  }
+
+  function showToast(msg,isErr=false){
+    const t=document.getElementById('toast');
+    t.textContent=msg;t.style.background=isErr?'var(--err)':'var(--ok)';t.style.display='block';
+    setTimeout(()=>t.style.display='none',3500);
+  }
+</script>
+</body>
+</html>
