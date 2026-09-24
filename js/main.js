@@ -1312,7 +1312,7 @@ async function loadBlogs() {
       content: b.content,
       authorName: b.authorname,
       authorRole: b.authorrole,
-      authorImg: b.authorimg
+      authorImg: '<img src="favicon.png" alt="Yayath Spaces Team" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">'
     }));
     renderBlogs();
   } catch (err) {
@@ -1396,6 +1396,7 @@ function openBlog(id) {
   document.getElementById('single-blog-hero-bg').setAttribute('role', 'img');
 
   showPage('blog-single');
+  document.title = blog.title + " | Yayath Spaces";
   window.scrollTo(0, 0);
 }
 
