@@ -1330,6 +1330,7 @@ async function loadBlogs() {
       authorName: b.authorname,
       authorRole: b.authorrole,
       authorImg: b.authorimg && b.authorimg.includes('<img') ? b.authorimg : (b.authorimg && b.authorimg.startsWith('http') ? `<img src="${b.authorimg}" alt="Author" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">` : '<img src="assets/images/logo/favicon.png" alt="Yayath Spaces Team" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">')
+    }));
     renderBlogs();
 
     // Check if there is a blog route to open after loading
