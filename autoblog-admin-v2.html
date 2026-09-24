@@ -416,6 +416,14 @@ tr:hover td{background:rgba(255,255,255,.015);}
       <div class="form-grid">
         <div class="fg"><label>Default Author Name</label><input id="setAuthor" placeholder="Yayath Spaces Team"></div>
         <div class="fg"><label>Author Role</label><input id="setRole" placeholder="Workspace Experts"></div>
+        <div class="fg full">
+          <label>Author Image URL</label>
+          <div style="display:flex;gap:10px;">
+            <input id="setAuthorImg" placeholder="Leave blank for default Yayath logo" style="flex:1;">
+            <input type="file" id="setAuthorImgUpload" accept="image/*" style="display:none;" onchange="uploadAuthorImage(this)">
+            <button class="btn btn-outline btn-sm" onclick="document.getElementById('setAuthorImgUpload').click()" id="uploadAuthorBtnTxt"><i class="ti ti-upload"></i> Upload</button>
+          </div>
+        </div>
         <div class="fg full"><label>Brand Tagline (used in AI content)</label><input id="setTagline" placeholder="Yayath Spaces — Premium Coworking..."></div>
         <div class="fg full"><label>Default CTA (Call to Action, included in every blog)</label><textarea id="setCta" rows="2" placeholder="Book a free tour at Yayath Spaces..."></textarea></div>
         <div class="fg"><label>Change Admin PIN</label><input type="password" id="setPin" placeholder="Enter new 4-digit PIN" maxlength="4"></div>
@@ -557,6 +565,7 @@ function applySettingsToUI(){
   if(document.getElementById('apiGeminiKey')) document.getElementById('apiGeminiKey').value=settings.geminiapikey||'';
   if(document.getElementById('setAuthor')) document.getElementById('setAuthor').value=settings.authorname||'';
   if(document.getElementById('setRole')) document.getElementById('setRole').value=settings.authorrole||'';
+  if(document.getElementById('setAuthorImg')) document.getElementById('setAuthorImg').value=settings.authorimg||'';
   if(document.getElementById('setTagline')) document.getElementById('setTagline').value=settings.brandtagline||'';
   if(document.getElementById('setCta')) document.getElementById('setCta').value=settings.ctatext||'';
 }
@@ -656,7 +665,7 @@ async function saveBlog(){
     content,
     authorname:settings.authorname||'Yayath Spaces Team',
     authorrole:settings.authorrole||'Workspace Experts',
-    authorimg:"<i class='ti ti-user'></i>"
+    authorimg:settings.authorimg||''
   };
 
   const { error } = await supabase.from('blogs').upsert(newBlog);
@@ -715,6 +724,38 @@ async function uploadImage(inputElem) {
     btn.innerHTML = '<i class="ti ti-upload"></i> Upload';
     btn.disabled = false;
     inputElem.value = ''; // reset file input
+  }
+}
+
+async function uploadAuthorImage(inputElem) {
+  const file = inputElem.files[0];
+  if (!file) return;
+
+  const btn = document.getElementById('uploadAuthorBtnTxt');
+  btn.innerHTML = '<i class="ti ti-loader" style="animation: spin 1s linear infinite;"></i> Uploading...';
+  btn.disabled = true;
+
+  try {
+    const ext = file.name.split('.').pop();
+    const fileName = `author-${Date.now()}.${ext}`;
+    
+    const { data, error } = await supabase.storage.from('blog_images').upload(fileName, file, {
+      cacheControl: '3600',
+      upsert: false
+    });
+
+    if (error) throw error;
+
+    const { data: pubData } = supabase.storage.from('blog_images').getPublicUrl(fileName);
+    document.getElementById('setAuthorImg').value = pubData.publicUrl;
+    toast('Author image uploaded successfully!', 'ok');
+  } catch (err) {
+    console.error('Upload Error:', err);
+    toast('Upload failed: ' + err.message, 'error');
+  } finally {
+    btn.innerHTML = '<i class="ti ti-upload"></i> Upload';
+    btn.disabled = false;
+    inputElem.value = '';
   }
 }
 
@@ -878,6 +919,7 @@ async function saveSettings(){
     id: 'global',
     authorname:document.getElementById('setAuthor').value,
     authorrole:document.getElementById('setRole').value,
+    authorimg:document.getElementById('setAuthorImg').value,
     brandtagline:document.getElementById('setTagline').value,
     ctatext:document.getElementById('setCta').value,
   };
@@ -984,7 +1026,7 @@ async function runClientAutoblog(){
       content: aiData.content + `<br><p><strong>${settings.ctatext||''}</strong></p>`,
       authorname: settings.authorname || 'Yayath Spaces AI',
       authorrole: settings.authorrole || 'Workspace Expert',
-      authorimg: "<i class='ti ti-robot'></i>"
+      authorimg: settings.authorimg || ''
     };
 
     const { error } = await supabase.from('blogs').upsert(newBlog);
