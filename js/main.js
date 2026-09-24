@@ -123,6 +123,30 @@ var pushLeadToCRM = window.pushLeadToCRM = async function(data) {
       mode: 'cors'
     }).catch(() => {});
   } catch(e) {}
+
+  // 5. Send to Email via FormSubmit
+  try {
+    fetch('https://formsubmit.co/ajax/yayathspaces@gmail.com', {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        _subject: "New Lead from Yayath Spaces Website!",
+        Name: leadPayload.name,
+        Phone: leadPayload.phone,
+        Email: leadPayload.email,
+        Requirement: leadPayload.solution,
+        Location: leadPayload.location,
+        Company: leadPayload.company,
+        Budget: leadPayload.budget,
+        Source: leadPayload.source,
+        Notes: leadPayload.notes
+      }),
+      mode: 'cors'
+    }).catch(() => {});
+  } catch(e) {}
 };
 
 // Form 1: Location Detail Page Form
