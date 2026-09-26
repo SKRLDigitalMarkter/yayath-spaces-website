@@ -17,7 +17,10 @@ images = [
     'idqkM7VDur_1789641511227.png',
     'idrqtYw5zm_1789641798631.png',
     'idt1r-A1le_logos.png',
-    'idyG5iAl6K_1789641822461.png'
+    'idyG5iAl6K_1789641822461.png',
+    'new_reliance.png',
+    'new_sbi.png',
+    'new_spring_house.png'
 ]
 
 # 1. Homepage marquee update (uses client-chip)
