@@ -30,11 +30,9 @@ export default async function handler(req, res) {
       // 2. Fetch content of each HTML file and parse SEO tags
       for (const file of htmlFiles) {
         // Skip some partials if any, we'll just fetch all root level HTML files for now
-        // To be fast, let's just fetch root level html files
-        if (file.path.includes('/')) continue;
-
-        const excludeList = ['autoblog-admin.html', 'autoblog-admin-v2.html', 'crm.html', 'original_index.html'];
-        if (excludeList.includes(file.path)) continue;
+        // Filter out admin, node_modules, and dashboard files
+        const excludePatterns = ['autoblog', 'crm.html', 'original_index.html', 'seo-dashboard', 'node_modules'];
+        if (excludePatterns.some(pattern => file.path.includes(pattern))) continue;
 
         const fileRes = await axios.get(`${API_BASE}/contents/${file.path}`, { headers });
         const content = Buffer.from(fileRes.data.content, 'base64').toString('utf-8');
