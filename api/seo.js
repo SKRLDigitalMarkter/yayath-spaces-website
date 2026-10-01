@@ -33,6 +33,9 @@ export default async function handler(req, res) {
         // To be fast, let's just fetch root level html files
         if (file.path.includes('/')) continue;
 
+        const excludeList = ['autoblog-admin.html', 'autoblog-admin-v2.html', 'crm.html', 'original_index.html'];
+        if (excludeList.includes(file.path)) continue;
+
         const fileRes = await axios.get(`${API_BASE}/contents/${file.path}`, { headers });
         const content = Buffer.from(fileRes.data.content, 'base64').toString('utf-8');
         
