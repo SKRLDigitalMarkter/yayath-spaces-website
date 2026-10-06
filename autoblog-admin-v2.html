@@ -1146,13 +1146,6 @@ async function setMaintenance(active) {
     toast(active ? 'Maintenance Mode ON' : 'Maintenance Mode OFF', active ? 'err' : 'ok');
   }
   loadMaintenanceStatus();
-} = await supabase.from('settings').upsert({ id: 'global', maintenance: active });
-  if(!error) {
-    toast(active ? 'Maintenance Mode is now ON!' : 'Maintenance Mode turned OFF!', active ? 'err' : 'ok');
-    loadMaintenanceStatus();
-  } else {
-    toast('Failed to update maintenance status.', 'err');
-  }
 }
 
 function deployMessage() {
