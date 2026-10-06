@@ -1004,9 +1004,9 @@
 
     </div>
 
-    <button class="sk-carousel-arrow left" onclick="changeSlide(-1)"><i class="ti ti-chevron-left"></i></button>
+    <button class="sk-carousel-arrow left" onclick="changeSlide(-1)" aria-label="Previous Slide"><i class="ti ti-chevron-left" aria-hidden="true"></i><span style="display:none;">Previous</span></button>
 
-    <button class="sk-carousel-arrow right" onclick="changeSlide(1)"><i class="ti ti-chevron-right"></i></button>
+    <button class="sk-carousel-arrow right" onclick="changeSlide(1)" aria-label="Next Slide"><i class="ti ti-chevron-right" aria-hidden="true"></i><span style="display:none;">Next</span></button>
 
     <div class="sk-carousel-dots" id="sliderDots"></div>
 
@@ -2812,7 +2812,7 @@
 
     </section>
 
-  <div class="lightbox" id="lightbox" onclick="closeLightbox()"><button class="lightbox-close" onclick="closeLightbox()"><i class="ti ti-x"></i></button><button class="lightbox-prev" onclick="event.stopPropagation();lightboxNav(-1)"><i class="ti ti-chevron-left"></i></button><div class="lightbox-img-wrap"><div class="lightbox-img" id="lightboxImg"></div></div><button class="lightbox-next" onclick="event.stopPropagation();lightboxNav(1)"><i class="ti ti-chevron-right"></i></button></div>
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()"><button class="lightbox-close" onclick="closeLightbox()" aria-label="Close Lightbox"><i class="ti ti-x" aria-hidden="true"></i><span style="display:none;">Close</span></button><button class="lightbox-prev" onclick="event.stopPropagation();lightboxNav(-1)" aria-label="Previous Image"><i class="ti ti-chevron-left" aria-hidden="true"></i><span style="display:none;">Previous</span></button><div class="lightbox-img-wrap"><div class="lightbox-img" id="lightboxImg"></div></div><button class="lightbox-next" onclick="event.stopPropagation();lightboxNav(1)" aria-label="Next Image"><i class="ti ti-chevron-right" aria-hidden="true"></i><span style="display:none;">Next</span></button></div>
 
 </div>
 
@@ -4539,7 +4539,7 @@
 <!-- Review Modal -->
 <div id="reviewModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);z-index:9999;align-items:center;justify-content:center;">
   <div style="background:#fff;border-radius:24px;padding:40px;width:90%;max-width:500px;position:relative;box-shadow:0 25px 50px rgba(0,0,0,0.25);">
-    <button onclick="document.getElementById('reviewModal').style.display='none'" style="position:absolute;top:20px;right:20px;background:none;border:none;font-size:1.5rem;color:#94a3b8;cursor:pointer;"><i class="ti ti-x"></i></button>
+    <button aria-label="Action Button" onclick="document.getElementById('reviewModal').style.display='none'" style="position:absolute;top:20px;right:20px;background:none;border:none;font-size:1.5rem;color:#94a3b8;cursor:pointer;"><i class="ti ti-x"></i></button>
     <h3 style="font-size:1.6rem;font-weight:800;color:#0f172a;margin-bottom:8px;text-align:center;">Write a Review</h3>
     <p style="text-align:center;color:#64748b;margin-bottom:24px;">Share your experience at this location with others.</p>
     
@@ -4564,7 +4564,7 @@
 
 
 <a href="https://wa.me/918448919797?text=Hi%20Yayath%20Spaces!" class="whatsapp-float" target="_blank" aria-label="WhatsApp Us"><i class="ti ti-brand-whatsapp"></i><span class="wa-tooltip">Chat on WhatsApp</span></a>
-<button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="ti ti-arrow-up"></i></button>
+<button class="scroll-top" id="scrollTop" onclick="scrollToTop()" aria-label="Scroll to Top"><i class="ti ti-arrow-up" aria-hidden="true"></i><span style="display:none;">Top</span></button>
 
 <!-- Lead Generation Modal -->
 
@@ -4580,7 +4580,7 @@
 <!-- LOCATION DETAIL MODAL -->
 <div class="modal-overlay" id="locationModal" onclick="closeLocationModal(event)">
   <div class="modal-box" style="max-width:800px; padding:0; overflow:hidden;">
-    <button class="modal-close" onclick="closeLocationModal()" style="color:white; z-index:10; background:rgba(0,0,0,0.5); width:36px; height:36px; border-radius:50%; top:15px; right:15px; display:flex; align-items:center; justify-content:center;"><i class="ti ti-x"></i></button>
+    <button class="modal-close" onclick="closeLocationModal()" aria-label="Close Location Modal" style="color:white; z-index:10; background:rgba(0,0,0,0.5); width:36px; height:36px; border-radius:50%; top:15px; right:15px; display:flex; align-items:center; justify-content:center;"><i class="ti ti-x"></i></button>
     <div id="loc-modal-img" style="height:350px; background-size:cover; background-position:center; position:relative;">
         <div style="position:absolute; bottom:0; left:0; width:100%; height:50%; background:linear-gradient(transparent, rgba(0,0,0,0.8));"></div>
         <div style="position:absolute; bottom:30px; left:40px;">
@@ -4605,7 +4605,7 @@
 
 <div class="modal-overlay" id="leadModal" onclick="closeLeadModal(event)">
   <div class="modal-card-clean" onclick="event.stopPropagation()">
-    <button class="modal-close-clean" onclick="closeLeadModal()"><i class="ti ti-x"></i></button>
+    <button class="modal-close-clean" onclick="closeLeadModal()" aria-label="Close Modal"><i class="ti ti-x" aria-hidden="true"></i><span style="display:none;">Close</span></button>
     <div class="modal-card-header">
       <div class="modal-badge"><i class="ti ti-calendar-event"></i> Guided Walkthrough</div>
       <h3>Book a Tour</h3>
@@ -4674,7 +4674,7 @@
 <!-- ========================================================================== -->
 <div class="modal-overlay" id="enquireModal" onclick="closeEnquireModal(event)">
   <div class="modal-card-clean" onclick="event.stopPropagation()">
-    <button class="modal-close-clean" onclick="closeEnquireModal()"><i class="ti ti-x"></i></button>
+    <button class="modal-close-clean" onclick="closeEnquireModal()" aria-label="Close Modal"><i class="ti ti-x" aria-hidden="true"></i><span style="display:none;">Close</span></button>
     <div class="modal-card-header">
       <div class="modal-badge"><i class="ti ti-file-certificate"></i> Custom Enterprise Quote</div>
       <h3>Enquire Now</h3>
@@ -4743,7 +4743,7 @@
 <!-- ========================================================================== -->
 <div class="modal-overlay" id="scheduleModal" onclick="closeScheduleModal(event)">
   <div class="modal-card-clean" onclick="event.stopPropagation()">
-    <button class="modal-close-clean" onclick="closeScheduleModal()"><i class="ti ti-x"></i></button>
+    <button aria-label="Action Button" class="modal-close-clean" onclick="closeScheduleModal()"><i class="ti ti-x"></i></button>
     <div class="modal-card-header">
       <div class="modal-badge"><i class="ti ti-calendar-time"></i> Choose Date &amp; Time</div>
       <h3>Schedule a Site Visit</h3>
@@ -4810,7 +4810,7 @@
 <!-- ========================================================================== -->
 <div class="modal-overlay" id="expertModal" onclick="closeExpertModal(event)">
   <div class="modal-card-clean" onclick="event.stopPropagation()">
-    <button class="modal-close-clean" onclick="closeExpertModal()"><i class="ti ti-x"></i></button>
+    <button aria-label="Action Button" class="modal-close-clean" onclick="closeExpertModal()"><i class="ti ti-x"></i></button>
     <div class="modal-card-header">
       <div class="modal-badge"><i class="ti ti-headset"></i> Senior Leasing Desk</div>
       <h3>Speak with Workspace Expert</h3>
@@ -4882,7 +4882,7 @@
 <!-- ========================================================================== -->
 <div class="modal-overlay" id="reviewModal" onclick="closeReviewModal(event)">
   <div class="modal-card-clean" onclick="event.stopPropagation()">
-    <button class="modal-close-clean" onclick="closeReviewModal()"><i class="ti ti-x"></i></button>
+    <button aria-label="Action Button" class="modal-close-clean" onclick="closeReviewModal()"><i class="ti ti-x"></i></button>
     <div class="modal-card-header">
       <div class="modal-badge"><i class="ti ti-star"></i> Share Your Experience</div>
       <h3>Write a Review</h3>
@@ -6911,7 +6911,7 @@ function closeReviewModal(e) {
 
   <div class="modal-box" style="max-width:800px; padding:0; overflow:hidden;">
 
-    <button class="modal-close" onclick="closeLocationModal()" style="color:white; z-index:10; background:rgba(0,0,0,0.5); width:36px; height:36px; border-radius:50%; top:15px; right:15px; display:flex; align-items:center; justify-content:center;"><i class="ti ti-x"></i></button>
+    <button class="modal-close" onclick="closeLocationModal()" aria-label="Close Location Modal" style="color:white; z-index:10; background:rgba(0,0,0,0.5); width:36px; height:36px; border-radius:50%; top:15px; right:15px; display:flex; align-items:center; justify-content:center;"><i class="ti ti-x"></i></button>
 
     <div id="loc-modal-img" style="height:350px; background-size:cover; background-position:center; position:relative;">
 
@@ -6961,7 +6961,7 @@ function closeReviewModal(e) {
 
   <div class="modal-card-clean" onclick="event.stopPropagation()">
 
-    <button class="modal-close-clean" onclick="closeLeadModal()"><i class="ti ti-x"></i></button>
+    <button class="modal-close-clean" onclick="closeLeadModal()" aria-label="Close Modal"><i class="ti ti-x" aria-hidden="true"></i><span style="display:none;">Close</span></button>
 
     <div class="modal-card-header">
 
@@ -7099,7 +7099,7 @@ function closeReviewModal(e) {
 
   <div class="modal-card-clean" onclick="event.stopPropagation()">
 
-    <button class="modal-close-clean" onclick="closeEnquireModal()"><i class="ti ti-x"></i></button>
+    <button class="modal-close-clean" onclick="closeEnquireModal()" aria-label="Close Modal"><i class="ti ti-x" aria-hidden="true"></i><span style="display:none;">Close</span></button>
 
     <div class="modal-card-header">
 
@@ -7237,7 +7237,7 @@ function closeReviewModal(e) {
 
   <div class="modal-card-clean" onclick="event.stopPropagation()">
 
-    <button class="modal-close-clean" onclick="closeScheduleModal()"><i class="ti ti-x"></i></button>
+    <button aria-label="Action Button" class="modal-close-clean" onclick="closeScheduleModal()"><i class="ti ti-x"></i></button>
 
     <div class="modal-card-header">
 
@@ -7371,7 +7371,7 @@ function closeReviewModal(e) {
 
   <div class="modal-card-clean" onclick="event.stopPropagation()">
 
-    <button class="modal-close-clean" onclick="closeExpertModal()"><i class="ti ti-x"></i></button>
+    <button aria-label="Action Button" class="modal-close-clean" onclick="closeExpertModal()"><i class="ti ti-x"></i></button>
 
     <div class="modal-card-header">
 
@@ -7515,7 +7515,7 @@ function closeReviewModal(e) {
 
   <div class="modal-card-clean" onclick="event.stopPropagation()">
 
-    <button class="modal-close-clean" onclick="closeReviewModal()"><i class="ti ti-x"></i></button>
+    <button aria-label="Action Button" class="modal-close-clean" onclick="closeReviewModal()"><i class="ti ti-x"></i></button>
 
     <div class="modal-card-header">
 
@@ -7855,7 +7855,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <a href="https://wa.me/918448919797?text=Hi%20Yayath%20Spaces!" class="whatsapp-float" target="_blank" aria-label="WhatsApp Us"><i class="ti ti-brand-whatsapp"></i><span class="wa-tooltip">Chat on WhatsApp</span></a>
 
-<button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="ti ti-arrow-up"></i></button>
+<button class="scroll-top" id="scrollTop" onclick="scrollToTop()" aria-label="Scroll to Top"><i class="ti ti-arrow-up" aria-hidden="true"></i><span style="display:none;">Top</span></button>
 
 
 
@@ -7887,7 +7887,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <div class="modal-box" style="max-width:800px; padding:0; overflow:hidden;">
 
-    <button class="modal-close" onclick="closeLocationModal()" style="color:white; z-index:10; background:rgba(0,0,0,0.5); width:36px; height:36px; border-radius:50%; top:15px; right:15px; display:flex; align-items:center; justify-content:center;"><i class="ti ti-x"></i></button>
+    <button class="modal-close" onclick="closeLocationModal()" aria-label="Close Location Modal" style="color:white; z-index:10; background:rgba(0,0,0,0.5); width:36px; height:36px; border-radius:50%; top:15px; right:15px; display:flex; align-items:center; justify-content:center;"><i class="ti ti-x"></i></button>
 
     <div id="loc-modal-img" style="height:350px; background-size:cover; background-position:center; position:relative;">
 
@@ -7937,7 +7937,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <div class="modal-card-clean" onclick="event.stopPropagation()">
 
-    <button class="modal-close-clean" onclick="closeLeadModal()"><i class="ti ti-x"></i></button>
+    <button class="modal-close-clean" onclick="closeLeadModal()" aria-label="Close Modal"><i class="ti ti-x" aria-hidden="true"></i><span style="display:none;">Close</span></button>
 
     <div class="modal-card-header">
 
@@ -8075,7 +8075,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <div class="modal-card-clean" onclick="event.stopPropagation()">
 
-    <button class="modal-close-clean" onclick="closeEnquireModal()"><i class="ti ti-x"></i></button>
+    <button class="modal-close-clean" onclick="closeEnquireModal()" aria-label="Close Modal"><i class="ti ti-x" aria-hidden="true"></i><span style="display:none;">Close</span></button>
 
     <div class="modal-card-header">
 
@@ -8213,7 +8213,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <div class="modal-card-clean" onclick="event.stopPropagation()">
 
-    <button class="modal-close-clean" onclick="closeScheduleModal()"><i class="ti ti-x"></i></button>
+    <button aria-label="Action Button" class="modal-close-clean" onclick="closeScheduleModal()"><i class="ti ti-x"></i></button>
 
     <div class="modal-card-header">
 
@@ -8347,7 +8347,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <div class="modal-card-clean" onclick="event.stopPropagation()">
 
-    <button class="modal-close-clean" onclick="closeExpertModal()"><i class="ti ti-x"></i></button>
+    <button aria-label="Action Button" class="modal-close-clean" onclick="closeExpertModal()"><i class="ti ti-x"></i></button>
 
     <div class="modal-card-header">
 
@@ -8491,7 +8491,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <div class="modal-card-clean" onclick="event.stopPropagation()">
 
-    <button class="modal-close-clean" onclick="closeReviewModal()"><i class="ti ti-x"></i></button>
+    <button aria-label="Action Button" class="modal-close-clean" onclick="closeReviewModal()"><i class="ti ti-x"></i></button>
 
     <div class="modal-card-header">
 
@@ -8717,7 +8717,7 @@ document.addEventListener('click', function(e) {
 
 <div id="imageLightbox" style="display:none; position:fixed; inset:0; background:rgba(10,10,30,0.95); z-index:99999; align-items:center; justify-content:center; cursor:pointer;" onclick="closeCardLightbox()">
 
-    <button style="position:absolute; top:20px; right:30px; background:transparent; border:none; color:white; font-size:2rem; cursor:pointer;" onclick="closeCardLightbox()"><i class="ti ti-x"></i></button>
+    <button style="position:absolute; top:20px; right:30px; background:transparent; border:none; color:white; font-size:2rem; cursor:pointer;" onclick="closeCardLightbox()" aria-label="Close Lightbox"><i class="ti ti-x" aria-hidden="true"></i><span style="display:none;">Close</span></button>
 
     <img id="lightboxImage" src="" style="max-width:90vw; max-height:90vh; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,0.5); object-fit:contain;" onclick="event.stopPropagation()" loading="lazy">
 
