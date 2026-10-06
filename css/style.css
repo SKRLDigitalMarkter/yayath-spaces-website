@@ -55,25 +55,26 @@ button { cursor: pointer; font-family: var(--font); border: none; }
 .preloader-fill { height: 100%; background: var(--gold); border-radius: 99px; animation: preload 2s ease forwards; }
 @keyframes preload { from { width: 0% } to { width: 100% } }
 
-/* Î“Ã¶Ã‡Î“Ã¶Ã‡ TOP BAR Î“Ã¶Ã‡Î“Ã¶Ã‡ */
+/* TOP BAR */
 .top-bar {
-  background: var(--purple-dark);
-  color: rgba(255,255,255,0.8);
-  font-size: 0.78rem;
+  background: #ffffff;
+  color: #475569;
+  font-size: 0.82rem;
   padding: 0 0;
+  border-bottom: 1px solid #e2e8f0;
   z-index: 100; position: relative;
 }
 .top-bar-inner {
-  max-width: 1320px; margin: 0 auto; padding: 8px 32px;
+  max-width: 1320px; margin: 0 auto; padding: 10px 32px;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
 .top-left { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
 .top-left span { display: flex; align-items: center; gap: 6px; }
-.top-left i { color: var(--gold); font-size: 0.9rem; }
-.top-left a { color: inherit; transition: color 0.2s; }
+.top-left i { color: var(--gold); font-size: 0.95rem; }
+.top-left a { color: #334155; font-weight: 500; transition: color 0.2s; }
 .top-left a:hover { color: var(--gold); }
 .top-right { display: flex; align-items: center; gap: 12px; }
-.top-right a { color: rgba(255,255,255,0.7); font-size: 1rem; transition: color 0.2s; }
+.top-right a { color: #64748b; font-size: 1rem; transition: color 0.2s; }
 .top-right a:hover { color: var(--gold); }
 
 /* Î“Ã¶Ã‡Î“Ã¶Ã‡ NAVBAR Î“Ã¶Ã‡Î“Ã¶Ã‡ */
