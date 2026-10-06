@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQ6Y3DV0X6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LQ6Y3DV0X6');
+</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Autoblog Admin Dashboard | Yayath Spaces</title>
@@ -502,11 +514,11 @@
 
   function blogCardHTML(b, showActions){
     return `<div class="blog-card" ${showActions?'':'onclick="openEdit(\''+b.id+'\')"'}>
-      <img src="${b.image||'assets/images/blogs/blog_coworking_hero.jpg'}" alt="${b.title}" onerror="this.style.height='0'">
+      <img src="${b.image||'assets/images/blogs/blog_coworking_hero.jpg'}" alt="${b.title}" onerror="this.style.height='0'" loading="lazy">
       <div class="blog-card-body">
         <span class="pill pill-gold">${b.category}</span>
         ${b.isFeatured?'<span class="pill pill-blue" style="margin-left:4px;">⭐ Featured</span>':''}
-        <h4>${b.title}</h4>
+        <h3>${b.title}</h3>
         <span>${b.date||''} ${b.readTime?'· '+b.readTime:''}</span>
         ${showActions?`<div class="blog-card-actions">
           <button class="btn btn-outline" style="padding:5px 10px;font-size:.78rem;" onclick="openEdit('${b.id}')"><i class="ti ti-edit"></i> Edit</button>
@@ -537,7 +549,7 @@
   function renderImagePicker(id, selectedPath=''){
     const el=document.getElementById(id);if(!el)return;
     el.innerHTML=AVAILABLE_IMAGES.map(img=>`<div class="img-opt ${img.path===selectedPath?'selected':''}" onclick="selectImg('${id}','${img.path}',this)">
-      <img src="${img.path}" alt="${img.label}" onerror="this.style.height='30px'">
+      <img src="${img.path}" alt="${img.label}" onerror="this.style.height='30px'" loading="lazy">
       <span>${img.label}</span></div>`).join('');
   }
 
@@ -552,7 +564,7 @@
   function renderImageLibrary(){
     const el=document.getElementById('imgLibrary');
     el.innerHTML=AVAILABLE_IMAGES.map(img=>`<div class="img-opt">
-      <img src="${img.path}" alt="${img.label}" onerror="this.style.height='30px'">
+      <img src="${img.path}" alt="${img.label}" onerror="this.style.height='30px'" loading="lazy">
       <span>${img.label}</span></div>`).join('');
   }
 
@@ -682,5 +694,16 @@
     setTimeout(()=>t.style.display='none',3500);
   }
 </script>
-</body>
+
+    <div style="display:none;" aria-hidden="true">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="coworking-spaces.html">Coworking</a>
+        <a href="managed-offices.html">Managed Offices</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="retail.html">Retail</a>
+        <a href="contact-us.html">Contact Us</a>
+    </div>
+    </body>
+    
 </html>
