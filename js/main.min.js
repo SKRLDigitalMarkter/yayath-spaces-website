@@ -2025,3 +2025,45 @@ window.submitColdStorageForm = function(e) {
   }, 800);
   return false;
 };
+
+// Maintenance Popup Logic
+function showMaintenancePopup() {
+  if (!document.querySelector('.maintenance-overlay')) {
+    const overlay = document.createElement('div');
+    overlay.className = 'maintenance-overlay show';
+    overlay.innerHTML = `
+      <div class="maintenance-box">
+        <h3>Website Under Maintenance</h3>
+        <p>We are currently updating our website to enhance your experience. Some features might be temporarily undergoing work.</p>
+        <button class="close-btn" onclick="this.closest('.maintenance-overlay').classList.remove('show')">Understood</button>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+  }
+}
+
+async function checkMaintenanceMode() {
+  try {
+    if (localStorage.getItem('site_maintenance') === 'true') {
+      showMaintenancePopup();
+      return;
+    }
+    if (window.supabase) {
+      const SUPABASE_URL = 'https://fwyrrabbnrqgkhvazxnq.supabase.co';
+      const SUPABASE_KEY = 'sb_publishable_F6sv1y2f38PXGcVdkSVdGw_EXoadkIh';
+      const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+      const { data } = await sb.from('settings').select('maintenance').eq('id', 'global').single();
+      if (data && data.maintenance === true) {
+        showMaintenancePopup();
+      }
+    }
+  } catch (e) {
+    console.error('Maintenance check error:', e);
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', checkMaintenanceMode);
+} else {
+  checkMaintenanceMode();
+}

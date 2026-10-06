@@ -1104,17 +1104,49 @@ function editFmtH3(){ document.getElementById('editContent').focus(); document.e
 
 
 async function loadMaintenanceStatus() {
-  const { data } = await supabase.from('settings').select('maintenance').eq('id', 'global').single();
-  const isMaint = data && data.maintenance === true;
-  const statusText = document.getElementById('maint-status-text');
-  if(statusText) {
-    statusText.textContent = isMaint ? 'Active (Website is showing maintenance popup)' : 'Inactive (Website is live normally)';
-    statusText.style.color = isMaint ? 'var(--red)' : 'var(--ok)';
+  let isMaint = false;
+  try {
+    const { data } = await supabase.from('settings').select('maintenance').eq('id', 'global').single();
+    if (data && typeof data.maintenance !== 'undefined') {
+      isMaint = data.maintenance === true;
+    } else {
+      isMaint = localStorage.getItem('site_maintenance') === 'true';
+    }
+  } catch(e) {
+    isMaint = localStorage.getItem('site_maintenance') === 'true';
+  }
+
+  const icon = document.getElementById('maint-icon');
+  const label = document.getElementById('maint-label');
+  const desc = document.getElementById('maint-desc');
+  
+  if (icon) icon.textContent = isMaint ? '🔴' : '🟢';
+  if (label) {
+    label.textContent = isMaint ? 'Maintenance Mode is ON' : 'Website is Live (Maintenance OFF)';
+    label.style.color = isMaint ? 'var(--red)' : 'var(--ok)';
+  }
+  if (desc) {
+    desc.textContent = isMaint 
+      ? 'A maintenance popup is currently showing for all website visitors.' 
+      : 'The website is running normally for all visitors.';
   }
 }
 
 async function setMaintenance(active) {
-  const { error } = await supabase.from('settings').upsert({ id: 'global', maintenance: active });
+  try {
+    localStorage.setItem('site_maintenance', active ? 'true' : 'false');
+    const { error } = await supabase.from('settings').upsert({ id: 'global', maintenance: active });
+    if (!error) {
+      toast(active ? 'Maintenance Mode turned ON!' : 'Maintenance Mode turned OFF!', active ? 'err' : 'ok');
+    } else {
+      toast(active ? 'Maintenance Mode ON' : 'Maintenance Mode OFF', active ? 'err' : 'ok');
+    }
+  } catch(e) {
+    localStorage.setItem('site_maintenance', active ? 'true' : 'false');
+    toast(active ? 'Maintenance Mode ON' : 'Maintenance Mode OFF', active ? 'err' : 'ok');
+  }
+  loadMaintenanceStatus();
+} = await supabase.from('settings').upsert({ id: 'global', maintenance: active });
   if(!error) {
     toast(active ? 'Maintenance Mode is now ON!' : 'Maintenance Mode turned OFF!', active ? 'err' : 'ok');
     loadMaintenanceStatus();
