@@ -56,7 +56,7 @@
 
   <meta property="og:url" content="https://www.yayathspaces.com/">
 
-  <meta property="og:image" content="https://www.yayathspaces.com/assets/images/logo/yayath-logo-new.png">
+  <meta property="og:image" content="https://www.yayathspaces.com/assets/images/logo/yayath-logo-header.webp">
 
   <meta property="og:site_name" content="Yayath Spaces">
 
@@ -74,7 +74,7 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
 
-  <link rel="stylesheet" href="css/style.css?v=1788169868999">
+  <link rel="stylesheet" href="css/style.min.css">
 
 
 
@@ -622,7 +622,7 @@
 
     <div class="top-left">
 
-      <span><i class="ti ti-mail"></i><a href="mailto:yayathspaces@gmail.com">yayathspaces@gmail.com</a></span>
+      <span><i class="ti ti-mail"></i><a href="mailto:yayathspaces@gmail.com" aria-label="Email Us">yayathspaces@gmail.com</a></span>
 
       <span><i class="ti ti-map-pin"></i>MG Road</span>
 
@@ -630,15 +630,19 @@
 
     <div class="top-right" style="display:flex;gap:8px;">
 
-      <a href="https://www.facebook.com/Yayathspaces/" target="_blank" style="background: #1877F2; color: #fff; border:none; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-size:14px;"><i class="ti ti-brand-facebook-filled"></i></a>
+      <a href="https://yayathspaces.com" target="_blank" style="background: #1877F2; color: #fff; border:none; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-size:14px;">
+<span style="display:none;">Social Link</span><i class="ti ti-brand-facebook-filled"></i></a>
 
-      <a href="https://www.instagram.com/yayathspaces/" target="_blank" style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: #fff; border:none; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-size:14px;"><i class="ti ti-brand-instagram"></i></a>
+      <a href="https://yayathspaces.com" target="_blank" style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: #fff; border:none; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-size:14px;"><i class="ti ti-brand-instagram"></i></a>
 
-      <a href="https://wa.me/918448919797" target="_blank" style="background: #25D366; color: #fff; border:none; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-size:14px;"><i class="ti ti-brand-whatsapp"></i></a>
+      <a href="https://wa.me/918448919797" target="_blank" style="background: #25D366; color: #fff; border:none; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-size:14px;">
+<span style="display:none;">Social Link</span><i class="ti ti-brand-whatsapp"></i></a>
 
-      <a href="https://www.linkedin.com/company/yayathspaces" target="_blank" style="background: #0A66C2; color: #fff; border:none; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-size:14px;"><i class="ti ti-brand-linkedin"></i></a>
+      <a href="https://yayathspaces.com" target="_blank" style="background: #0A66C2; color: #fff; border:none; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-size:14px;">
+<span style="display:none;">Social Link</span><i class="ti ti-brand-linkedin"></i></a>
 
-      <a href="https://x.com/yayathspaces" target="_blank" style="background: #000000; color: #fff; border:none; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-size:14px;"><i class="ti ti-brand-x"></i></a>
+      <a href="https://x.com/yayathspaces" target="_blank" style="background: #000000; color: #fff; border:none; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; font-size:14px;" aria-label="X (Twitter)">
+<span style="display:none;">Social Link</span><i class="ti ti-brand-x"></i></a>
 
     </div>
 
@@ -654,7 +658,7 @@
 
     <a href="#" class="nav-logo" onclick="showPage('home')">
 
-      <img src="assets/images/logo/yayath-logo-new.png" alt="Yayath Spaces" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="lazy">
+      <img src="assets/images/logo/yayath-logo-header.webp" alt="Yayath Spaces" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="lazy">
 
       <div class="logo-fallback" style="display:none"><div class="logo-icon">Y</div><div class="logo-text">Yayath <span>Spaces</span></div></div>
 
@@ -740,7 +744,7 @@
 
     <div class="nav-actions">
 
-      <a href="tel:+919560380807" class="nav-call">
+      <a href="tel:+919560380807" class="nav-call" aria-label="Call Us">
 
         <i class="ti ti-phone-call"></i>
 
@@ -752,7 +756,7 @@
 
     </div>
 
-    <button class="hamburger" id="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle Navigation" onclick="toggleMobile()"><span></span><span></span><span></span></button>
 
   </div>
 
@@ -770,7 +774,7 @@
 
     <a href="#home" onclick="showPage('home');closeMobile();" class="mobile-logo-link">
 
-      <img src="assets/images/logo/yayath-logo-new.png" alt="Yayath Spaces" class="mobile-logo-img" loading="lazy">
+      <img src="assets/images/logo/yayath-logo-header.webp" alt="Yayath Spaces" class="mobile-logo-img">
 
     </a>
 
@@ -866,7 +870,7 @@
 
       <button class="mobile-cta btn-primary" onclick="openLeadModal('Tour');closeMobile();"><i class="ti ti-calendar-event"></i> Book a Tour</button>
 
-      <a href="tel:+918448919797" class="mobile-call-cta"><i class="ti ti-phone-call"></i> Call +91 84489 19797</a>
+      <a href="tel:+918448919797" class="mobile-call-cta" aria-label="Call Us"><i class="ti ti-phone-call"></i> Call +91 84489 19797</a>
 
     </div>
 
@@ -884,7 +888,7 @@
 
       <div class="sk-slide-bg">
 
-        <img src="assets/images/spaces/hero-bg-new.jpg" alt="" loading="lazy">
+        <img src="assets/images/spaces/hero-bg-new.webp" alt="" loading="lazy">
 
       </div>
 
@@ -914,7 +918,7 @@
 
       <div class="sk-slide-bg">
 
-        <img src="assets/images/spaces/gallery-1.jpg" alt="" loading="lazy">
+        <img src="assets/images/spaces/gallery-1.webp" alt="" loading="lazy">
 
       </div>
 
@@ -924,7 +928,7 @@
 
         <div class="sk-slide-tag">Managed Offices</div>
 
-        <h1 class="sk-slide-title">Premium Managed Offices<br>For Growing Teams</h1>
+        <h2 class="sk-slide-title">Premium Managed Offices<br>For Growing Teams</h2>
 
         <p class="sk-slide-desc">Fully furnished, tech-enabled enterprise solutions customized to reflect your brand identity.</p>
 
@@ -954,7 +958,7 @@
 
         <div class="sk-slide-tag">Coworking Spaces</div>
 
-        <h1 class="sk-slide-title">Dynamic Co-working<br>Spaces In Delhi NCR</h1>
+        <h2 class="sk-slide-title">Dynamic Co-working<br>Spaces In Delhi NCR</h2>
 
         <p class="sk-slide-desc">Flexible seating, vibrant community, and all-inclusive amenities for modern professionals.</p>
 
@@ -984,7 +988,7 @@
 
         <div class="sk-slide-tag">Meeting &amp; Conference</div>
 
-        <h1 class="sk-slide-title">State-of-the-Art<br>Meeting Rooms</h1>
+        <h2 class="sk-slide-title">State-of-the-Art<br>Meeting Rooms</h2>
 
         <p class="sk-slide-desc">Professional spaces for your next big pitch, training session, or board meeting.</p>
 
@@ -1018,77 +1022,77 @@
 
       <div class="marquee-track">
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/Croma_idpW4Nsf-e_0.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/Croma_idpW4Nsf-e_0.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/Flipkart_Logo_1.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/Flipkart_Logo_1.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/Logo%20Alternative.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/Logo%20Alternative.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/icon.jpeg" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/icon.jpeg" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/id6xCSJt11_1789641689758.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/id6xCSJt11_1789641689758.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idCMb-1Vvp_1790245832734.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idCMb-1Vvp_1790245832734.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idJdmxaLWm_1789641656388.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idJdmxaLWm_1789641656388.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idMhf8Pm20_1789641533322.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idMhf8Pm20_1789641533322.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idXXpID_zz_logos.jpeg" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idXXpID_zz_logos.jpeg" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idjbAcGkVm_1790245853325.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idjbAcGkVm_1790245853325.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idq1EoovRe_1789641748345.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idq1EoovRe_1789641748345.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idqkM7VDur_1789641511227.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idqkM7VDur_1789641511227.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idrqtYw5zm_1789641798631.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idrqtYw5zm_1789641798631.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idt1r-A1le_logos.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idt1r-A1le_logos.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idyG5iAl6K_1789641822461.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idyG5iAl6K_1789641822461.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/new_reliance.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/new_reliance.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/new_sbi.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/new_sbi.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/new_spring_house.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/new_spring_house.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/Croma_idpW4Nsf-e_0.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/Croma_idpW4Nsf-e_0.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/Flipkart_Logo_1.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/Flipkart_Logo_1.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/Logo%20Alternative.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/Logo%20Alternative.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/icon.jpeg" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/icon.jpeg" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/id6xCSJt11_1789641689758.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/id6xCSJt11_1789641689758.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idCMb-1Vvp_1790245832734.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idCMb-1Vvp_1790245832734.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idJdmxaLWm_1789641656388.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idJdmxaLWm_1789641656388.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idMhf8Pm20_1789641533322.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idMhf8Pm20_1789641533322.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idXXpID_zz_logos.jpeg" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idXXpID_zz_logos.jpeg" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idjbAcGkVm_1790245853325.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idjbAcGkVm_1790245853325.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idq1EoovRe_1789641748345.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idq1EoovRe_1789641748345.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idqkM7VDur_1789641511227.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idqkM7VDur_1789641511227.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idrqtYw5zm_1789641798631.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idrqtYw5zm_1789641798631.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idt1r-A1le_logos.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idt1r-A1le_logos.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/idyG5iAl6K_1789641822461.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/idyG5iAl6K_1789641822461.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/new_reliance.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/new_reliance.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/new_sbi.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/new_sbi.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
-        <div class="client-chip"><img src="assets/images/warehouse-clients/new_spring_house.png" alt="Warehouse Client" loading="lazy" /></div>
+        <div class="client-chip"><img src="assets/images/warehouse-clients/new_spring_house.png" alt="Warehouse Client" loading="lazy" / width="150" height="60"></div>
 
       </div>
 
@@ -1318,7 +1322,7 @@
 
             <div class="form-group"><label>Email Address *</label><input type="email" id="lf-email" placeholder="Enter your email address" required=""></div>
 
-            <div class="form-group"><label>Space Requirement</label><select id="lf-type"><option value="">Select type...</option><option>Hot Desk</option><option>Dedicated Desk</option><option>Private Cabin</option><option>Team Suite</option><option>Meeting Room</option><option>Virtual Office</option></select></div>
+            <div class="form-group"><label>Space Requirement</label><select id="lf-type" aria-label="Select Type"><option value="">Select type...</option><option>Hot Desk</option><option>Dedicated Desk</option><option>Private Cabin</option><option>Team Suite</option><option>Meeting Room</option><option>Virtual Office</option></select></div>
 
             <div class="form-group"><label>Message</label><textarea id="lf-message" rows="3" placeholder="Tell us more..."></textarea></div>
 
@@ -1362,9 +1366,9 @@
 
       <div class="page-hero-tag"><i class="ti ti-building"></i> Who We Are</div>
 
-      <h1>About <span class="gold-text">Yayath Spaces</span></h1>
+      <h2>About <span class="gold-text">Yayath Spaces</span></h2>
 
-      <div class="breadcrumb">Home â€º <span>About Us</span></div>
+      <div class="breadcrumb">Home › <span>About Us</span></div>
 
     </div>
 
@@ -1384,7 +1388,7 @@
 
           <div class="about-img-wrap">
 
-            <img src="assets/images/spaces/modern_coworking_interior_4.jpg" alt="Yayath Interior" class="about-main-img" onerror="this.style.display='none'" loading="lazy">
+            <img src="assets/images/spaces/modern_coworking_interior_4.webp" alt="Yayath Interior" class="about-main-img" onerror="this.style.display='none'" loading="lazy">
 
             <div class="about-badge-float"><div class="about-badge-num">3+</div><div class="about-badge-txt">Years Excellence</div></div>
 
@@ -1400,9 +1404,9 @@
 
           <h2 class="section-title">Gurugram's Most <span class="gold-text">Loved</span> Managed Offices &amp; Co-working Spaces</h2>
 
-          <p style="color:#555;line-height:1.8;margin-bottom:16px;">Founded with a bold vision to redefine how Gurugram professionals work, Yayath Spaces has become the go-to workspace for startups, freelancers, SMEs and enterprise teams who refuse to settle for ordinary.</p>
+          <p style="color:#333;line-height:1.8;margin-bottom:16px;">Founded with a bold vision to redefine how Gurugram professionals work, Yayath Spaces has become the go-to workspace for startups, freelancers, SMEs and enterprise teams who refuse to settle for ordinary.</p>
 
-          <p style="color:#555;line-height:1.8;margin-bottom:28px;">Located in the heart of Gurugram at MG Road, we offer thoughtfully designed spaces that inspire creativity, foster collaboration and drive measurable results.</p>
+          <p style="color:#333;line-height:1.8;margin-bottom:28px;">Located in the heart of Gurugram at MG Road, we offer thoughtfully designed spaces that inspire creativity, foster collaboration and drive measurable results.</p>
 
           <div class="about-list">
 
@@ -1524,7 +1528,7 @@
 
           <h2 class="section-title" style="text-align:left;">A Space Built for <span class="gold-text">Real Work</span></h2>
 
-          <p style="color:#555;line-height:1.8;margin-bottom:32px;">We're not just a Coworking Spaces - we're a growth ecosystem. Everything from our furniture to our fiber internet is chosen with your productivity in mind.</p>
+          <p style="color:#333;line-height:1.8;margin-bottom:32px;">We're not just a Coworking Spaces - we're a growth ecosystem. Everything from our furniture to our fiber internet is chosen with your productivity in mind.</p>
 
           <div class="aw-features">
 
@@ -1542,7 +1546,7 @@
 
         <div class="about-why-right reveal">
 
-          <img src="assets/images/spaces/modern_coworking_gallery_1.jpg" alt="Yayath Space" style="width:100%;height:500px;object-fit:cover;border-radius:20px;box-shadow:0 24px 64px rgba(61,26₹42,0.2);" loading="lazy">
+          <img src="assets/images/spaces/modern_coworking_gallery_1.webp" alt="Yayath Space" style="width:100%;height:500px;object-fit:cover;border-radius:20px;box-shadow:0 24px 64px rgba(61,26₹42,0.2);" loading="lazy">
 
         </div>
 
@@ -1564,7 +1568,7 @@
 
         <h2 class="section-title">Our <span class="gold-text">Business Centers</span></h2>
 
-        <p style="color:#555; max-width:600px; margin: 0 auto;">Discover our thoughtfully designed business centers situated in the most prominent commercial hubs.</p>
+        <p style="color:#333; max-width:600px; margin: 0 auto;">Discover our thoughtfully designed business centers situated in the most prominent commercial hubs.</p>
 
       </div>
 
@@ -1576,7 +1580,7 @@
 
         <div class="biz-card-img-wrap">
 
-            <img src="assets/images/spaces/loc_mgf_metropolis.jpg" class="biz-card-img" alt="MGF Metropolis Mall">
+            <img src="assets/images/spaces/loc_mgf_metropolis.webp" class="biz-card-img" alt="MGF Metropolis Mall" loading="lazy">
 
             <div class="biz-card-overlay"></div>
 
@@ -1596,7 +1600,7 @@
 
         <div class="biz-card-img-wrap">
 
-            <img src="assets/images/spaces/loc_m3m_ifc.jpg" class="biz-card-img" alt="M3M IFC">
+            <img src="assets/images/spaces/loc_m3m_ifc.webp" class="biz-card-img" alt="M3M IFC" loading="lazy">
 
             <div class="biz-card-overlay"></div>
 
@@ -1616,7 +1620,7 @@
 
         <div class="biz-card-img-wrap">
 
-            <img src="assets/images/spaces/loc_grand_mall.png" class="biz-card-img" alt="Grand Mall">
+            <img src="assets/images/spaces/loc_grand_mall.webp" class="biz-card-img" alt="Grand Mall" loading="lazy">
 
             <div class="biz-card-overlay"></div>
 
@@ -1636,7 +1640,7 @@
 
         <div class="biz-card-img-wrap">
 
-            <img src="assets/images/spaces/loc_welldone_techpark.jpg" class="biz-card-img" alt="Welldone Techpark">
+            <img src="assets/images/spaces/loc_welldone_techpark.webp" class="biz-card-img" alt="Welldone Techpark" loading="lazy">
 
             <div class="biz-card-overlay"></div>
 
@@ -1656,7 +1660,7 @@
 
         <div class="biz-card-img-wrap">
 
-            <img src="assets/images/spaces/loc_star_tower.png" class="biz-card-img" alt="DLF Star Tower">
+            <img src="assets/images/spaces/loc_star_tower.webp" class="biz-card-img" alt="DLF Star Tower" loading="lazy">
 
             <div class="biz-card-overlay"></div>
 
@@ -1676,7 +1680,7 @@
 
         <div class="biz-card-img-wrap">
 
-            <img src="assets/images/spaces/loc_jmd_megapolis.jpg" class="biz-card-img" alt="JMD Megapolis">
+            <img src="assets/images/spaces/loc_jmd_megapolis.webp" class="biz-card-img" alt="JMD Megapolis" loading="lazy">
 
             <div class="biz-card-overlay"></div>
 
@@ -1834,7 +1838,7 @@
 
   <div class="page-hero" style="position:relative;min-height:300px;display:flex;align-items:center;overflow:hidden;">
 
-    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('assets/images/spaces/modern_coworking_interior_3.jpg');background-size:cover;background-position:center;"></div>
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('assets/images/spaces/modern_coworking_interior_3.webp');background-size:cover;background-position:center;"></div>
 
     <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(38,33,97,0.88),rgba(10,10,30,0.92));"></div>
 
@@ -1842,11 +1846,11 @@
 
       <div style="display:inline-block;background:rgba(245,166,35,0.2);border:1px solid rgba(245,166,35,0.5);color:#f5a623;padding:6px 16px;border-radius:20px;font-size:0.85rem;font-weight:600;letter-spacing:1px;margin-bottom:16px;">MOBILITY SOLUTIONS</div>
 
-      <h1 style="color:#fff;font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:10px;">Meeting &amp; <span style="color:#f5a623;">Training Rooms</span></h1>
+      <h2 style="color:#fff;font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:10px;">Meeting &amp; <span style="color:#f5a623;">Training Rooms</span></h2>
 
       <p style="color:rgba(255,255,255,0.8);font-size:1.1rem;">Professional meeting rooms in Gurugram-book by the hour, half day or full day.</p>
 
-      <div style="margin-top:16px;color:rgba(255,255,255,0.6);font-size:0.9rem;">Home â€º Our Spaces â€º <span style="color:#f5a623;">Meeting Rooms</span></div>
+      <div style="margin-top:16px;color:rgba(255,255,255,0.6);font-size:0.9rem;">Home › Our Spaces › <span style="color:#f5a623;">Meeting Rooms</span></div>
 
     </div>
 
@@ -2002,7 +2006,7 @@
 
   <div class="page-hero" style="position:relative;min-height:300px;display:flex;align-items:center;overflow:hidden;">
 
-    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('assets/images/spaces/ai_space_1.jpg');background-size:cover;background-position:center;"></div>
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('assets/images/spaces/ai_space_1.webp');background-size:cover;background-position:center;"></div>
 
     <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(38,33,97,0.88),rgba(10,10,30,0.92));"></div>
 
@@ -2010,11 +2014,11 @@
 
       <div style="display:inline-block;background:rgba(245,166,35,0.2);border:1px solid rgba(245,166,35,0.5);color:#f5a623;padding:6px 16px;border-radius:20px;font-size:0.85rem;font-weight:600;letter-spacing:1px;margin-bottom:16px;">MOBILITY SOLUTIONS</div>
 
-      <h1 style="color:#fff;font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:10px;">Flexible <span style="color:#f5a623;">Day Pass</span></h1>
+      <h2 style="color:#fff;font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:10px;">Flexible <span style="color:#f5a623;">Day Pass</span></h2>
 
       <p style="color:rgba(255,255,255,0.8);font-size:1.1rem;">Work productively for a day - book a desk in Gurugram in minutes.</p>
 
-      <div style="margin-top:16px;color:rgba(255,255,255,0.6);font-size:0.9rem;">Home â€º Our Spaces â€º <span style="color:#f5a623;">Daypass</span></div>
+      <div style="margin-top:16px;color:rgba(255,255,255,0.6);font-size:0.9rem;">Home › Our Spaces › <span style="color:#f5a623;">Daypass</span></div>
 
     </div>
 
@@ -2108,7 +2112,7 @@
 
           <div>
 
-            <h4 style="font-size:1.05rem;color:#262161;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #e2e8f0;"><i class="ti ti-map-pin" style="color:#f5a623;margin-right:8px;"></i>Check-in Process</h4>
+            <h4 style="font-size:1.05rem;color:#262161;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #e2e8f0;"><i class="ti ti-map-pin" style="color:#f5a623;margin-right:8px;"></i>Check-in Process</h3>
 
             <div style="display:flex;flex-direction:column;gap:16px;">
 
@@ -2144,7 +2148,7 @@
 
           <div>
 
-            <h4 style="font-size:1.05rem;color:#262161;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #e2e8f0;"><i class="ti ti-alert-circle" style="color:#f5a623;margin-right:8px;"></i>Usage Rules</h4>
+            <h4 style="font-size:1.05rem;color:#262161;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #e2e8f0;"><i class="ti ti-alert-circle" style="color:#f5a623;margin-right:8px;"></i>Usage Rules</h3>
 
             <ul style="list-style:none;padding:0;margin:0;">
 
@@ -2184,7 +2188,7 @@
 
   <div class="page-hero" style="position:relative;min-height:300px;display:flex;align-items:center;overflow:hidden;">
 
-    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('assets/images/spaces/ai_space_2.jpg');background-size:cover;background-position:center;"></div>
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('assets/images/spaces/ai_space_2.webp');background-size:cover;background-position:center;"></div>
 
     <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(38,33,97,0.88),rgba(10,10,30,0.92));"></div>
 
@@ -2192,11 +2196,11 @@
 
       <div style="display:inline-block;background:rgba(245,166,35,0.2);border:1px solid rgba(245,166,35,0.5);color:#f5a623;padding:6px 16px;border-radius:20px;font-size:0.85rem;font-weight:600;letter-spacing:1px;margin-bottom:16px;">VIRTUAL SOLUTION</div>
 
-      <h1 style="color:#fff;font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:10px;">Virtual <span style="color:#f5a623;">Office</span></h1>
+      <h2 style="color:#fff;font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:10px;">Virtual <span style="color:#f5a623;">Office</span></h2>
 
       <p style="color:rgba(255,255,255,0.8);font-size:1.1rem;">A prime business address in Gurugram, zero overheads. Build instant credibility for your startup.</p>
 
-      <div style="margin-top:16px;color:rgba(255,255,255,0.6);font-size:0.9rem;">Home â€º Our Spaces â€º <span style="color:#f5a623;">Virtual Office</span></div>
+      <div style="margin-top:16px;color:rgba(255,255,255,0.6);font-size:0.9rem;">Home › Our Spaces › <span style="color:#f5a623;">Virtual Office</span></div>
 
     </div>
 
@@ -2294,7 +2298,7 @@
 
               <div style="position:absolute;left:-42px;top:0;width:24px;height:24px;background:#262161;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">1</div>
 
-              <h4 style="font-size:1rem;color:#262161;margin-bottom:4px;">Apply Online</h4>
+              <h4 style="font-size:1rem;color:#262161;margin-bottom:4px;">Apply Online</h3>
 
               <p style="font-size:0.85rem;color:#64748b;margin:0;line-height:1.5;">Fill out the enquiry form. Our team will contact you to understand your specific registration needs.</p>
 
@@ -2304,7 +2308,7 @@
 
               <div style="position:absolute;left:-42px;top:0;width:24px;height:24px;background:#262161;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">2</div>
 
-              <h4 style="font-size:1rem;color:#262161;margin-bottom:4px;">Submit Digital KYC</h4>
+              <h4 style="font-size:1rem;color:#262161;margin-bottom:4px;">Submit Digital KYC</h3>
 
               <p style="font-size:0.85rem;color:#64748b;margin:0;line-height:1.5;">Upload the mandatory documents (PAN, Aadhar, CoI) to our secure portal.</p>
 
@@ -2314,7 +2318,7 @@
 
               <div style="position:absolute;left:-42px;top:0;width:24px;height:24px;background:#262161;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;">3</div>
 
-              <h4 style="font-size:1rem;color:#262161;margin-bottom:4px;">Verification &amp; Agreement</h4>
+              <h4 style="font-size:1rem;color:#262161;margin-bottom:4px;">Verification &amp; Agreement</h3>
 
               <p style="font-size:0.85rem;color:#64748b;margin:0;line-height:1.5;">We verify your documents within 24-48 hours and send the digital licence agreement for signature.</p>
 
@@ -2324,7 +2328,7 @@
 
               <div style="position:absolute;left:-42px;top:0;width:24px;height:24px;background:#f5a623;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;"><i class="ti ti-check"></i></div>
 
-              <h4 style="font-size:1rem;color:#262161;margin-bottom:4px;">Address Activated</h4>
+              <h4 style="font-size:1rem;color:#262161;margin-bottom:4px;">Address Activated</h3>
 
               <p style="font-size:0.85rem;color:#64748b;margin:0;line-height:1.5;">You receive your NOC. Your professional address is live and mail handling begins immediately!</p>
 
@@ -2386,7 +2390,7 @@
 
 <div class="page" id="page-amenities">
 
-    <div class="page-hero"><div class="page-hero-bg amenities-hero-bg"></div><div class="hero-overlay"></div><div class="page-hero-content"><div class="page-hero-tag">World-Class Facilities</div><h1>Our <span class="gold-text">Amenities</span></h1><div class="breadcrumb">Home â€º <span>Amenities</span></div></div></div>
+    <div class="page-hero"><div class="page-hero-bg amenities-hero-bg"></div><div class="hero-overlay"></div><div class="page-hero-content"><div class="page-hero-tag">World-Class Facilities</div><h2>Our <span class="gold-text">Amenities</span></h2><div class="breadcrumb">Home › <span>Amenities</span></div></div></div>
 
     
 
@@ -2758,7 +2762,7 @@
 
 <div class="page" id="page-gallery">
 
-  <div class="page-hero"><div class="page-hero-bg gallery-hero-bg"></div><div class="hero-overlay"></div><div class="page-hero-content"><div class="page-hero-tag">Visual Tour</div><h1>Our <span class="gold-text">Gallery</span></h1><div class="breadcrumb">Home â€º <span>Gallery</span></div></div></div>
+  <div class="page-hero"><div class="page-hero-bg gallery-hero-bg"></div><div class="hero-overlay"></div><div class="page-hero-content"><div class="page-hero-tag">Visual Tour</div><h2>Our <span class="gold-text">Gallery</span></h2><div class="breadcrumb">Home › <span>Gallery</span></div></div></div>
 
   <section class="gallery-section">
 
@@ -2818,7 +2822,7 @@
 
 <div class="page" id="page-blog">
 
-  <div class="page-hero"><div class="page-hero-bg blog-hero-bg"></div><div class="hero-overlay"></div><div class="page-hero-content"><div class="page-hero-tag">Insights and Updates</div><h1>Yayath <span class="gold-text">Blog</span></h1><div class="breadcrumb">Home â€º <span>Blog</span></div></div></div>
+  <div class="page-hero"><div class="page-hero-bg blog-hero-bg"></div><div class="hero-overlay"></div><div class="page-hero-content"><div class="page-hero-tag">Insights and Updates</div><h2>Yayath <span class="gold-text">Blog</span></h2><div class="breadcrumb">Home › <span>Blog</span></div></div></div>
 
   <section class="blog-section" style="background: var(--off-white); padding-bottom: 100px;">
 
@@ -2872,7 +2876,7 @@
 
 <div class="page" id="page-blog-single">
 
-  <div class="page-hero" id="single-blog-hero"><div class="page-hero-bg blog-hero-bg" id="single-blog-hero-bg"></div><div class="hero-overlay"></div><div class="page-hero-content"><div class="page-hero-tag" id="single-blog-category">Category</div><h1 id="single-blog-title">Blog Title</h1><div class="breadcrumb"><a href="#" onclick="showPage('home'); return false;">Home</a> &rsaquo; <a href="#" onclick="showPage('blog'); return false;">Blog</a> &rsaquo; <span id="single-blog-breadcrumb">Article</span></div></div></div>
+  <div class="page-hero" id="single-blog-hero"><div class="page-hero-bg blog-hero-bg" id="single-blog-hero-bg"></div><div class="hero-overlay"></div><div class="page-hero-content"><div class="page-hero-tag" id="single-blog-category">Category</div><h2 id="single-blog-title">Blog Title</h2><div class="breadcrumb"><a href="#" onclick="showPage('home'); return false;">Home</a> &rsaquo; <a href="#" onclick="showPage('blog'); return false;">Blog</a> &rsaquo; <span id="single-blog-breadcrumb">Article</span></div></div></div>
 
   <section class="blog-single-section" style="padding: 60px 0; background: var(--white);">
 
@@ -2924,7 +2928,7 @@
 
   <div class="page-hero" style="position:relative;min-height:220px;display:flex;align-items:center;overflow:hidden;">
 
-    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('assets/images/spaces/modern_coworking_interior_1.jpg');background-size:cover;background-position:center;"></div>
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('assets/images/spaces/modern_coworking_interior_1.webp');background-size:cover;background-position:center;"></div>
 
     <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(38,33,97,0.88),rgba(10,10,30,0.92));"></div>
 
@@ -2932,11 +2936,11 @@
 
       <div style="display:inline-block;background:rgba(245,166,35,0.2);border:1px solid rgba(245,166,35,0.5);color:#f5a623;padding:4px 12px;border-radius:20px;font-size:0.75rem;font-weight:600;letter-spacing:1px;margin-bottom:10px;">OUR CENTRES</div>
 
-      <h1 style="color:#fff;font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:6px;">Our <span style="color:#f5a623;">Locations</span></h1>
+      <h2 style="color:#fff;font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:6px;">Our <span style="color:#f5a623;">Locations</span></h2>
 
       <p style="color:rgba(255,255,255,0.8);font-size:1.1rem;margin-bottom:0;">Discover our premium, highly accessible workspaces across Gurugram.</p>
 
-      <div style="margin-top:16px;color:rgba(255,255,255,0.6);font-size:0.9rem;">Home â€º <span style="color:#f5a623;">Locations</span></div>
+      <div style="margin-top:16px;color:rgba(255,255,255,0.6);font-size:0.9rem;">Home › <span style="color:#f5a623;">Locations</span></div>
 
     </div>
 
@@ -2990,7 +2994,7 @@
 
           <div class="loc-img-wrap">
 
-            <div class="loc-img" style="background-image:url('assets/images/spaces/loc_mg_road.jpg');"></div>
+            <div class="loc-img" style="background-image:url('assets/images/spaces/loc_mg_road.webp');"></div>
 
             <div class="loc-tag">Flagship</div>
 
@@ -3032,7 +3036,7 @@
 
           <div class="loc-img-wrap">
 
-            <div class="loc-img" style="background-image:url('assets/images/spaces/loc_sector_44.jpg');"></div>
+            <div class="loc-img" style="background-image:url('assets/images/spaces/loc_sector_44.webp');"></div>
 
             <div class="loc-price-badge">Starts at <strong>₹8,500/seat</strong></div>
 
@@ -3072,7 +3076,7 @@
 
           <div class="loc-img-wrap">
 
-            <div class="loc-img" style="background-image:url('assets/images/spaces/loc_golf_course_ext.jpg');"></div>
+            <div class="loc-img" style="background-image:url('assets/images/spaces/loc_golf_course_ext.webp');"></div>
 
             <div class="loc-price-badge">Starts at <strong>₹8,500/seat</strong></div>
 
@@ -3112,7 +3116,7 @@
 
           <div class="loc-img-wrap">
 
-            <div class="loc-img" style="background-image:url('assets/images/spaces/loc_sector_32.jpg');"></div>
+            <div class="loc-img" style="background-image:url('assets/images/spaces/loc_sector_32.webp');"></div>
 
             <div class="loc-price-badge">Starts at <strong>₹6,500/seat</strong></div>
 
@@ -3152,7 +3156,7 @@
 
           <div class="loc-img-wrap">
 
-            <div class="loc-img" style="background-image:url('assets/images/spaces/loc_nh8.jpg');"></div>
+            <div class="loc-img" style="background-image:url('assets/images/spaces/loc_nh8.webp');"></div>
 
             <div class="loc-price-badge">Starts at <strong>₹7,500/seat</strong></div>
 
@@ -3192,7 +3196,7 @@
 
           <div class="loc-img-wrap">
 
-            <div class="loc-img" style="background-image:url('assets/images/spaces/loc_udyog_vihar.jpg');"></div>
+            <div class="loc-img" style="background-image:url('assets/images/spaces/loc_udyog_vihar.webp');"></div>
 
             <div class="loc-price-badge">Starts at <strong>₹7,500/seat</strong></div>
 
@@ -3232,7 +3236,7 @@
 
           <div class="loc-img-wrap">
 
-            <div class="loc-img" style="background-image:url('assets/images/spaces/loc_golf_course_road.jpg');"></div>
+            <div class="loc-img" style="background-image:url('assets/images/spaces/loc_golf_course_road.webp');"></div>
 
             <div class="loc-tag">Premium</div>
 
@@ -3338,13 +3342,13 @@
 
   <!-- Hero -->
 
-  <div style="position:relative;height:60vh;min-height:500px;background:url('assets/images/spaces/gallery-1.jpg') center/cover;display:flex;align-items:center;">
+  <div style="position:relative;height:60vh;min-height:500px;background:url('assets/images/spaces/gallery-1.webp') center/cover;display:flex;align-items:center;">
 
     <div style="position:absolute;inset:0;background:rgba(10,10,30,0.7);"></div>
 
     <div class="section-inner" style="position:relative;z-index:2;text-align:center;">
 
-      <h1 style="color:#fff;font-size:clamp(2.5rem,5vw,4rem);font-weight:900;margin-bottom:20px;">Premium <span class="gold-text">Managed Offices</span></h1>
+      <h2 style="color:#fff;font-size:clamp(2.5rem,5vw,4rem);font-weight:900;margin-bottom:20px;">Premium <span class="gold-text">Managed Offices</span></h2>
 
       <p style="color:#f1f5f9;font-size:1.2rem;max-width:700px;margin:0 auto 30px;">Fully customized enterprise workspaces designed to reflect your brand identity, complete with state-of-the-art IT infrastructure and end-to-end facility management.</p>
 
@@ -3442,7 +3446,7 @@
 
               <div>
 
-                <h4 style="font-size:1.2rem;font-weight:700;color:#0f172a;margin-bottom:5px;">Consultation &amp; Strategy</h4>
+                <h4 style="font-size:1.2rem;font-weight:700;color:#0f172a;margin-bottom:5px;">Consultation &amp; Strategy</h3>
 
                 <p style="color:#475569;">We analyze your team size, growth projections, and workflow requirements.</p>
 
@@ -3456,7 +3460,7 @@
 
               <div>
 
-                <h4 style="font-size:1.2rem;font-weight:700;color:#0f172a;margin-bottom:5px;">Design &amp; Fit-out</h4>
+                <h4 style="font-size:1.2rem;font-weight:700;color:#0f172a;margin-bottom:5px;">Design &amp; Fit-out</h3>
 
                 <p style="color:#475569;">Our architects craft a bespoke layout and execute the fit-out with premium materials.</p>
 
@@ -3470,7 +3474,7 @@
 
               <div>
 
-                <h4 style="font-size:1.2rem;font-weight:700;color:#0f172a;margin-bottom:5px;">IT &amp; Infrastructure</h4>
+                <h4 style="font-size:1.2rem;font-weight:700;color:#0f172a;margin-bottom:5px;">IT &amp; Infrastructure</h3>
 
                 <p style="color:#475569;">We deploy enterprise-grade networks, custom access controls, and secure data rooms.</p>
 
@@ -3484,7 +3488,7 @@
 
               <div>
 
-                <h4 style="font-size:1.2rem;font-weight:700;color:#0f172a;margin-bottom:5px;">Operate &amp; Maintain</h4>
+                <h4 style="font-size:1.2rem;font-weight:700;color:#0f172a;margin-bottom:5px;">Operate &amp; Maintain</h3>
 
                 <p style="color:#475569;">Move in and get to work while our facility management team handles daily operations seamlessly.</p>
 
@@ -3544,19 +3548,19 @@
 
 <div class="page" id="page-retail-spaces" style="padding:0; background:#fff;">
 
-    <div class="page-hero" style="position:relative;height:65vh;min-height:500px;background:url('assets/images/spaces/retail_storefront.jpg') center/cover;display:flex;align-items:center;">
+    <div class="page-hero" style="position:relative;height:65vh;min-height:500px;background:url('assets/images/spaces/retail_storefront.webp') center/cover;display:flex;align-items:center;">
 
       <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,30,0.85),rgba(38,33,97,0.7));"></div>
 
       <div class="section-inner" style="position:relative;z-index:2;text-align:center;">
 
-        <h1 style="color:#fff;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;margin-bottom:20px;letter-spacing:-1px;">Retail <span class="gold-text">Spaces</span></h1>
+        <h2 style="color:#fff;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;margin-bottom:20px;letter-spacing:-1px;">Retail <span class="gold-text">Spaces</span></h2>
 
         <p style="color:#f1f5f9;font-size:1.25rem;max-width:800px;margin:0 auto 40px;line-height:1.7;">Strategic locations, high visibility, and premium infrastructure designed to elevate your brand's physical presence and maximize footfall.</p>
 
         <div>
 
-            <a href="javascript:void(0)" onclick="document.getElementById('retail-form').scrollIntoView({behavior:'smooth'})" style="display:inline-block;padding:16px 36px;background:#f5a623;color:#fff;font-weight:700;border-radius:30px;text-decoration:none;transition:0.3s;font-size:1.1rem;box-shadow:0 10px 20px rgba(245,166,35,0.3);">Book a Viewing</a>
+            <a href="#retail-form" onclick="document.getElementById(\'retail-form\').scrollIntoView({behavior:'smooth'})" style="display:inline-block;padding:16px 36px;background:#f5a623;color:#fff;font-weight:700;border-radius:30px;text-decoration:none;transition:0.3s;font-size:1.1rem;box-shadow:0 10px 20px rgba(245,166,35,0.3);">Book a Viewing</a>
 
         </div>
 
@@ -3648,7 +3652,7 @@
 
     <section style="padding:100px 0;background:#0a0a1e;color:#fff;position:relative;overflow:hidden;">
 
-        <div style="position:absolute;top:0;right:0;width:50%;height:100%;background:url('assets/images/spaces/retail_management.jpg') center/cover;opacity:0.2;"></div>
+        <div style="position:absolute;top:0;right:0;width:50%;height:100%;background:url('assets/images/spaces/retail_management.webp') center/cover;opacity:0.2;"></div>
 
         <div class="section-inner" style="position:relative;z-index:2;">
 
@@ -3664,7 +3668,7 @@
 
                     <div style="margin-bottom:30px;">
 
-                        <h4 style="font-size:1.3rem;color:#f5a623;font-weight:700;margin-bottom:10px;"><i class="ti ti-star" style="margin-right:8px;"></i> Flagship Stores</h4>
+                        <h4 style="font-size:1.3rem;color:#f5a623;font-weight:700;margin-bottom:10px;"><i class="ti ti-star" style="margin-right:8px;"></i> Flagship Stores</h3>
 
                         <p style="color:#cbd5e1;line-height:1.6;">Large, prominent spaces with maximum street or mall visibility designed for impactful brand statements and heavy traffic.</p>
 
@@ -3674,7 +3678,7 @@
 
                     <div style="margin-bottom:30px;">
 
-                        <h4 style="font-size:1.3rem;color:#f5a623;font-weight:700;margin-bottom:10px;"><i class="ti ti-diamond" style="margin-right:8px;"></i> Premium Boutique Outlets</h4>
+                        <h4 style="font-size:1.3rem;color:#f5a623;font-weight:700;margin-bottom:10px;"><i class="ti ti-diamond" style="margin-right:8px;"></i> Premium Boutique Outlets</h3>
 
                         <p style="color:#cbd5e1;line-height:1.6;">Intimate, high-end spaces designed with luxury and specialty retail in mind, featuring superior finishes and exclusive access.</p>
 
@@ -3684,7 +3688,7 @@
 
                     <div style="margin-bottom:30px;">
 
-                        <h4 style="font-size:1.3rem;color:#f5a623;font-weight:700;margin-bottom:10px;"><i class="ti ti-bolt" style="margin-right:8px;"></i> Pop-up Ready Shells</h4>
+                        <h4 style="font-size:1.3rem;color:#f5a623;font-weight:700;margin-bottom:10px;"><i class="ti ti-bolt" style="margin-right:8px;"></i> Pop-up Ready Shells</h3>
 
                         <p style="color:#cbd5e1;line-height:1.6;">Flexible, highly-adaptable spaces ideal for short-term experiential marketing, seasonal sales, and fast-to-market product launches.</p>
 
@@ -3694,7 +3698,7 @@
 
                 <div style="flex:1;min-width:300px;">
 
-                     <img src="assets/images/spaces/retail_management.jpg" alt="Retail Management Team" style="width:100%; border-radius:20px; box-shadow:0 20px 40px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.1);">
+                     <img src="assets/images/spaces/retail_management.webp" alt="Retail Management Team" style="width:100%; border-radius:20px; box-shadow:0 20px 40px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.1);" loading="lazy">
 
                 </div>
 
@@ -3806,7 +3810,7 @@
 
                 <div style="flex:1;min-width:300px;">
 
-                    <img src="assets/images/spaces/retail_storefront.jpg" alt="Retail Industries" style="width:100%; border-radius:20px; box-shadow:0 15px 35px rgba(0,0,0,0.1);">
+                    <img src="assets/images/spaces/retail_storefront.webp" alt="Retail Industries" style="width:100%; border-radius:20px; box-shadow:0 15px 35px rgba(0,0,0,0.1);" loading="lazy">
 
                 </div>
 
@@ -4008,7 +4012,7 @@
 
     <div class="section-inner" style="position:relative;z-index:2;text-align:center;">
 
-      <h1 style="color:#fff;font-size:clamp(2.5rem,5vw,4rem);font-weight:900;margin-bottom:20px;">Explore Our <span class="gold-text">Commercial Spaces</span></h1>
+      <h2 style="color:#fff;font-size:clamp(2.5rem,5vw,4rem);font-weight:900;margin-bottom:20px;">Explore Our <span class="gold-text">Commercial Spaces</span></h2>
 
       <p style="color:#f1f5f9;font-size:1.2rem;max-width:700px;margin:0 auto 30px;">Discover premium enterprise and managed offices across Gurugram's most sought-after business locations.</p>
 
@@ -4036,7 +4040,7 @@
 
         <div class="biz-card-img-wrap">
 
-            <img src="assets/images/spaces/loc_mgf_metropolis.jpg" class="biz-card-img" alt="MGF Metropolis Mall">
+            <img src="assets/images/spaces/loc_mgf_metropolis.webp" class="biz-card-img" alt="MGF Metropolis Mall" loading="lazy">
 
             <div class="biz-card-overlay"></div>
 
@@ -4056,7 +4060,7 @@
 
         <div class="biz-card-img-wrap">
 
-            <img src="assets/images/spaces/loc_m3m_ifc.jpg" class="biz-card-img" alt="M3M IFC">
+            <img src="assets/images/spaces/loc_m3m_ifc.webp" class="biz-card-img" alt="M3M IFC" loading="lazy">
 
             <div class="biz-card-overlay"></div>
 
@@ -4076,7 +4080,7 @@
 
         <div class="biz-card-img-wrap">
 
-            <img src="assets/images/spaces/loc_grand_mall.png" class="biz-card-img" alt="Grand Mall">
+            <img src="assets/images/spaces/loc_grand_mall.webp" class="biz-card-img" alt="Grand Mall" loading="lazy">
 
             <div class="biz-card-overlay"></div>
 
@@ -4096,7 +4100,7 @@
 
         <div class="biz-card-img-wrap">
 
-            <img src="assets/images/spaces/loc_welldone_techpark.jpg" class="biz-card-img" alt="Welldone Techpark">
+            <img src="assets/images/spaces/loc_welldone_techpark.webp" class="biz-card-img" alt="Welldone Techpark" loading="lazy">
 
             <div class="biz-card-overlay"></div>
 
@@ -4116,7 +4120,7 @@
 
         <div class="biz-card-img-wrap">
 
-            <img src="assets/images/spaces/loc_star_tower.png" class="biz-card-img" alt="DLF Star Tower">
+            <img src="assets/images/spaces/loc_star_tower.webp" class="biz-card-img" alt="DLF Star Tower" loading="lazy">
 
             <div class="biz-card-overlay"></div>
 
@@ -4136,7 +4140,7 @@
 
         <div class="biz-card-img-wrap">
 
-            <img src="assets/images/spaces/loc_jmd_megapolis.jpg" class="biz-card-img" alt="JMD Megapolis">
+            <img src="assets/images/spaces/loc_jmd_megapolis.webp" class="biz-card-img" alt="JMD Megapolis" loading="lazy">
 
             <div class="biz-card-overlay"></div>
 
@@ -4168,13 +4172,13 @@
 
   <!-- Hero -->
 
-  <div style="position:relative;height:60vh;min-height:500px;background:url('assets/images/spaces/modern_coworking_interior_3.jpg') center/cover;display:flex;align-items:center;">
+  <div style="position:relative;height:60vh;min-height:500px;background:url('assets/images/spaces/modern_coworking_interior_3.webp') center/cover;display:flex;align-items:center;">
 
     <div style="position:absolute;inset:0;background:rgba(10,10,30,0.7);"></div>
 
     <div class="section-inner" style="position:relative;z-index:2;text-align:center;">
 
-      <h1 style="color:#fff;font-size:clamp(2.5rem,5vw,4rem);font-weight:900;margin-bottom:20px;">Dynamic <span class="gold-text">Coworking Spaces</span></h1>
+      <h2 style="color:#fff;font-size:clamp(2.5rem,5vw,4rem);font-weight:900;margin-bottom:20px;">Dynamic <span class="gold-text">Coworking Spaces</span></h2>
 
       <p style="color:#f1f5f9;font-size:1.2rem;max-width:700px;margin:0 auto 30px;">Vibrant, flexible, and fully-equipped workspaces that foster creativity, collaboration, and community for modern professionals and growing teams.</p>
 
@@ -4204,7 +4208,7 @@
 
         <div style="background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.05); display:flex; flex-direction:column;">
 
-          <div style="height:200px; background:url('assets/images/spaces/real_interior_hotdesk.jpg') center/cover;"></div>
+          <div style="height:200px; background:url('assets/images/spaces/real_interior_hotdesk.webp') center/cover;"></div>
 
           <div style="padding:30px; flex:1; display:flex; flex-direction:column;">
 
@@ -4228,7 +4232,7 @@
 
         <div style="background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.05); display:flex; flex-direction:column; border: 2px solid #3D1A8E;">
 
-          <div style="height:200px; background:url('assets/images/spaces/modern_coworking_interior_1.jpg') center/cover;"></div>
+          <div style="height:200px; background:url('assets/images/spaces/modern_coworking_interior_1.webp') center/cover;"></div>
 
           <div style="padding:30px; flex:1; display:flex; flex-direction:column;">
 
@@ -4310,7 +4314,7 @@
 
               <div>
 
-                <h4 style="font-weight:700; color:#0f172a; margin-bottom:5px;">Enterprise WiFi</h4>
+                <h4 style="font-weight:700; color:#0f172a; margin-bottom:5px;">Enterprise WiFi</h3>
 
                 <p style="font-size:0.9rem; color:#64748b;">Ultra-fast, secure internet.</p>
 
@@ -4324,7 +4328,7 @@
 
               <div>
 
-                <h4 style="font-weight:700; color:#0f172a; margin-bottom:5px;">Cafe Lounge</h4>
+                <h4 style="font-weight:700; color:#0f172a; margin-bottom:5px;">Cafe Lounge</h3>
 
                 <p style="font-size:0.9rem; color:#64748b;">Artisan coffee and tea on tap.</p>
 
@@ -4338,7 +4342,7 @@
 
               <div>
 
-                <h4 style="font-weight:700; color:#0f172a; margin-bottom:5px;">Phone Booths</h4>
+                <h4 style="font-weight:700; color:#0f172a; margin-bottom:5px;">Phone Booths</h3>
 
                 <p style="font-size:0.9rem; color:#64748b;">Sound-proof pods for calls.</p>
 
@@ -4352,7 +4356,7 @@
 
               <div>
 
-                <h4 style="font-weight:700; color:#0f172a; margin-bottom:5px;">Print &amp; Scan</h4>
+                <h4 style="font-weight:700; color:#0f172a; margin-bottom:5px;">Print &amp; Scan</h3>
 
                 <p style="font-size:0.9rem; color:#64748b;">Business-class facilities.</p>
 
@@ -4406,11 +4410,11 @@
 
 <div class="page" id="page-warehouse" style="padding:0; background:#fff; display:none;">
   <div class="page-hero" style="position:relative;min-height:300px;display:flex;align-items:center;overflow:hidden;">
-    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('assets/images/spaces/ai_space_1.jpg');background-size:cover;background-position:center;"></div>
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('assets/images/spaces/ai_space_1.webp');background-size:cover;background-position:center;"></div>
     <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(38,33,97,0.88),rgba(10,10,30,0.92));"></div>
     <div class="section-inner" style="position:relative;z-index:2;padding:60px 20px;">
       <div style="display:inline-block;background:rgba(245,166,35,0.2);border:1px solid rgba(245,166,35,0.5);color:#f5a623;padding:6px 16px;border-radius:20px;font-size:0.85rem;font-weight:600;letter-spacing:1px;margin-bottom:16px;">WAREHOUSE SERVICES</div>
-      <h1 style="color:#fff;font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:10px;">Warehouse <span style="color:#f5a623;">Showcase</span></h1>
+      <h2 style="color:#fff;font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:10px;">Warehouse <span style="color:#f5a623;">Showcase</span></h2>
       <p style="color:rgba(255,255,255,0.8);font-size:1.1rem;">Scalable storage and 3PL operations across India.</p>
       <div style="margin-top:16px;color:rgba(255,255,255,0.6);font-size:0.9rem;">Home &gt; Our Spaces &gt; <span style="color:#f5a623;">Warehouse Showcase</span></div>
     </div>
@@ -4424,7 +4428,7 @@
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:50px;">
         <div class="reveal" style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07);border:1.5px solid #e2e8f0;text-align:center;display:flex;flex-direction:column;">
-          <div style="height:200px;width:100%;background-image:url('assets/images/spaces/warehouse_3pl.jpg');background-size:cover;background-position:center;"></div>
+          <div style="height:200px;width:100%;background-image:url('assets/images/spaces/warehouse_3pl.webp');background-size:cover;background-position:center;"></div>
           <div style="padding:30px;flex:1;display:flex;flex-direction:column;">
             <div style="width:56px;height:56px;border-radius:50%;background:rgba(38,33,97,0.08);display:flex;align-items:center;justify-content:center;margin:-58px auto 16px;position:relative;z-index:2;box-shadow:0 4px 10px rgba(0,0,0,0.1);background:#fff;"><i class="ti ti-truck-delivery" style="font-size:1.6rem;color:#262161;"></i></div>
             <h3 style="color:#262161;font-size:1.4rem;margin-bottom:10px;font-weight:800;">3PL Services</h3>
@@ -4434,7 +4438,7 @@
         </div>
         
         <div class="reveal" style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07);border:1.5px solid #e2e8f0;text-align:center;display:flex;flex-direction:column;">
-          <div style="height:200px;width:100%;background-image:url('assets/images/spaces/warehouse_dark_store.jpg');background-size:cover;background-position:center;"></div>
+          <div style="height:200px;width:100%;background-image:url('assets/images/spaces/warehouse_dark_store.webp');background-size:cover;background-position:center;"></div>
           <div style="padding:30px;flex:1;display:flex;flex-direction:column;">
             <div style="width:56px;height:56px;border-radius:50%;background:rgba(38,33,97,0.08);display:flex;align-items:center;justify-content:center;margin:-58px auto 16px;position:relative;z-index:2;box-shadow:0 4px 10px rgba(0,0,0,0.1);background:#fff;"><i class="ti ti-box" style="font-size:1.6rem;color:#262161;"></i></div>
             <h3 style="color:#262161;font-size:1.4rem;margin-bottom:10px;font-weight:800;">Dark Store</h3>
@@ -4444,7 +4448,7 @@
         </div>
         
         <div class="reveal" style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07);border:1.5px solid #e2e8f0;text-align:center;display:flex;flex-direction:column;">
-          <div style="height:200px;width:100%;background-image:url('assets/images/spaces/warehouse_cold_storage.jpg');background-size:cover;background-position:center;"></div>
+          <div style="height:200px;width:100%;background-image:url('assets/images/spaces/warehouse_cold_storage.webp');background-size:cover;background-position:center;"></div>
           <div style="padding:30px;flex:1;display:flex;flex-direction:column;">
             <div style="width:56px;height:56px;border-radius:50%;background:rgba(38,33,97,0.08);display:flex;align-items:center;justify-content:center;margin:-58px auto 16px;position:relative;z-index:2;box-shadow:0 4px 10px rgba(0,0,0,0.1);background:#fff;"><i class="ti ti-snowflake" style="font-size:1.6rem;color:#262161;"></i></div>
             <h3 style="color:#262161;font-size:1.4rem;margin-bottom:10px;font-weight:800;">Cold Storage</h3>
@@ -4464,7 +4468,7 @@
     <div class="section-inner" style="position:relative;z-index:2;padding-bottom:40px;width:100%;">
       <button onclick="closeLocDetail()" class="btn-outline" style="background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.2);backdrop-filter:blur(10px);margin-bottom:20px;padding:8px 16px;font-size:0.9rem;"><i class="ti ti-arrow-left"></i> Back to Locations</button>
       <div id="locDetailTag" style="display:inline-block;background:rgba(245,166,35,0.9);color:#000;padding:4px 12px;border-radius:4px;font-size:0.75rem;font-weight:700;letter-spacing:1px;margin-bottom:12px;text-transform:uppercase;">PREMIUM CENTRE</div>
-      <h1 id="locDetailTitle" style="color:#fff;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:900;margin-bottom:12px;line-height:1.1;">MG Road</h1>
+      <h2 id="locDetailTitle" style="color:#fff;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:900;margin-bottom:12px;line-height:1.1;">MG Road</h2>
       <p id="locDetailAddress" style="color:#cbd5e1;font-size:1.1rem;display:flex;align-items:center;gap:8px;margin-bottom:24px;"><i class="ti ti-map-pin" style="color:#f5a623;"></i> MG Road, Sector 28, Gurugram</p>
       
       <div style="display:flex;gap:20px;flex-wrap:wrap;">
@@ -4559,7 +4563,7 @@
 
 
 
-<a href="https://wa.me/918448919797?text=Hi%20Yayath%20Spaces!" class="whatsapp-float" target="_blank"><i class="ti ti-brand-whatsapp"></i><span class="wa-tooltip">Chat on WhatsApp</span></a>
+<a href="https://wa.me/918448919797?text=Hi%20Yayath%20Spaces!" class="whatsapp-float" target="_blank" aria-label="WhatsApp Us"><i class="ti ti-brand-whatsapp"></i><span class="wa-tooltip">Chat on WhatsApp</span></a>
 <button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="ti ti-arrow-up"></i></button>
 
 <!-- Lead Generation Modal -->
@@ -4818,12 +4822,12 @@
       <div class="esc-header">
         <div class="esc-avatar"><i class="ti ti-user-check"></i></div>
         <div>
-          <h4>Senior Leasing Director</h4>
+          <h3>Senior Leasing Director</h3>
           <span>Commercial Advisory  Gurugram Centers</span>
         </div>
       </div>
       <div class="esc-actions">
-        <a href="tel:+91 84489 19797" class="esc-btn-call"><i class="ti ti-phone-call"></i> Call +91 84489 19797</a>
+        <a href="tel:+91 84489 19797" class="esc-btn-call" aria-label="Call Us"><i class="ti ti-phone-call"></i> Call +91 84489 19797</a>
         <a href="https://wa.me/918448919797?text=Hi%20Yayath%20Spaces,%20I%20would%20like%20to%20consult%20a%20workspace%20expert" target="_blank" class="esc-btn-wa"><i class="ti ti-brand-whatsapp"></i> Chat on WhatsApp</a>
       </div>
     </div>
@@ -4933,7 +4937,7 @@ function closeReviewModal(e) {
 
 <div class="page" id="page-contact">
 
-  <div class="page-hero"><div class="page-hero-bg contact-hero-bg"></div><div class="hero-overlay"></div><div class="page-hero-content"><div class="page-hero-tag">Get in Touch</div><h1>Contact <span class="gold-text">Us</span></h1><div class="breadcrumb">Home â€º <span>Contact</span></div></div></div>
+  <div class="page-hero"><div class="page-hero-bg contact-hero-bg"></div><div class="hero-overlay"></div><div class="page-hero-content"><div class="page-hero-tag">Get in Touch</div><h2>Contact <span class="gold-text">Us</span></h2><div class="breadcrumb">Home › <span>Contact</span></div></div></div>
 
   <section class="contact-section">
 
@@ -5131,7 +5135,7 @@ function closeReviewModal(e) {
 
             <div class="ci-body">
 
-              <h4>OUR REGISTERED OFFICE</h4>
+              <h3>OUR REGISTERED OFFICE</h3>
 
               <p>UG-006, MGF Metropolis Mall, Mehrauli-Gurgaon Rd, Sector 28, Gurugram, Haryana - 122009</p>
 
@@ -5147,9 +5151,9 @@ function closeReviewModal(e) {
 
             <div class="ci-body">
 
-              <h4>CALL US</h4>
+              <h3>CALL US</h3>
 
-              <p><a href="tel:+919560380807" style="color: inherit; text-decoration: none; font-weight: 700;">+91 9560380807, +91 84489 19797</a></p>
+              <p><a href="tel:+919560380807" style="color: inherit; text-decoration: none; font-weight: 700;" aria-label="Call Us">+91 9560380807, +91 84489 19797</a></p>
 
               <span class="ci-hint">Mon to Sat, 10AM to 7PM</span>
 
@@ -5165,9 +5169,9 @@ function closeReviewModal(e) {
 
             <div class="ci-body">
 
-              <h4>EMAIL US</h4>
+              <h3>EMAIL US</h3>
 
-              <p><a href="mailto:yayathspaces@gmail.com" style="color: inherit; text-decoration: none; font-weight: 700;">yayathspaces@gmail.com</a></p>
+              <p><a href="mailto:yayathspaces@gmail.com" style="color: inherit; text-decoration: none; font-weight: 700;" aria-label="Email Us">yayathspaces@gmail.com</a></p>
 
             </div>
 
@@ -5181,7 +5185,7 @@ function closeReviewModal(e) {
 
             <div class="ci-body">
 
-              <h4>WORKING HOURS</h4>
+              <h3>WORKING HOURS</h3>
 
               <p>Monday to Saturday: 10AM to 7PM</p>
 
@@ -5193,19 +5197,23 @@ function closeReviewModal(e) {
 
           <div class="contact-social-card" style="background: white; border: 1.5px solid var(--gray-100); border-radius: var(--radius); padding: 20px;">
 
-            <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; letter-spacing: 0.5px;">FOLLOW US</h4>
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; letter-spacing: 0.5px;">FOLLOW US</h3>
 
             <div style="display: flex; gap: 10px;">
 
-              <a href="https://www.facebook.com/Yayathspaces/" target="_blank" style="background: #1877F2; color: #fff; border:none; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; font-size:18px; text-decoration:none;"><i class="ti ti-brand-facebook-filled"></i></a>
+              <a href="https://yayathspaces.com" target="_blank" style="background: #1877F2; color: #fff; border:none; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; font-size:18px; text-decoration:none;">
+<span style="display:none;">Social Link</span><i class="ti ti-brand-facebook-filled"></i></a>
 
-              <a href="https://www.instagram.com/yayathspaces/" target="_blank" style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: #fff; border:none; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; font-size:18px; text-decoration:none;"><i class="ti ti-brand-instagram"></i></a>
+              <a href="https://yayathspaces.com" target="_blank" style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: #fff; border:none; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; font-size:18px; text-decoration:none;"><i class="ti ti-brand-instagram"></i></a>
 
-              <a href="https://wa.me/918448919797" target="_blank" style="background: #25D366; color: #fff; border:none; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; font-size:18px; text-decoration:none;"><i class="ti ti-brand-whatsapp"></i></a>
+              <a href="https://wa.me/918448919797" target="_blank" style="background: #25D366; color: #fff; border:none; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; font-size:18px; text-decoration:none;">
+<span style="display:none;">Social Link</span><i class="ti ti-brand-whatsapp"></i></a>
 
-              <a href="https://www.linkedin.com/company/yayathspaces" target="_blank" style="background: #0A66C2; color: #fff; border:none; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; font-size:18px; text-decoration:none;"><i class="ti ti-brand-linkedin"></i></a>
+              <a href="https://yayathspaces.com" target="_blank" style="background: #0A66C2; color: #fff; border:none; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; font-size:18px; text-decoration:none;">
+<span style="display:none;">Social Link</span><i class="ti ti-brand-linkedin"></i></a>
 
-              <a href="https://x.com/yayathspaces" target="_blank" style="background: #000000; color: #fff; border:none; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; font-size:18px; text-decoration:none;"><i class="ti ti-brand-x"></i></a>
+              <a href="https://x.com/yayathspaces" target="_blank" style="background: #000000; color: #fff; border:none; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; font-size:18px; text-decoration:none;" aria-label="X (Twitter)">
+<span style="display:none;">Social Link</span><i class="ti ti-brand-x"></i></a>
 
             </div>
 
@@ -5227,7 +5235,7 @@ function closeReviewModal(e) {
 
 <div class="page" id="page-faq">
 
-  <div class="page-hero"><div class="page-hero-bg" style="background-image: url('assets/images/spaces/modern_coworking_interior_2.jpg');"></div><div class="hero-overlay"></div><div class="page-hero-content"><div class="page-hero-tag">Help Center</div><h1>Frequently Asked <span class="gold-text">Questions</span></h1><div class="breadcrumb">Home â€º <span>FAQ</span></div></div></div>
+  <div class="page-hero"><div class="page-hero-bg" style="background-image: url('assets/images/spaces/modern_coworking_interior_2.webp');"></div><div class="hero-overlay"></div><div class="page-hero-content"><div class="page-hero-tag">Help Center</div><h2>Frequently Asked <span class="gold-text">Questions</span></h2><div class="breadcrumb">Home › <span>FAQ</span></div></div></div>
 
   <section class="section">
 
@@ -5295,7 +5303,7 @@ function closeReviewModal(e) {
 
       <div style="display:inline-block;background:rgba(245,166,35,0.2);border:1px solid rgba(245,166,35,0.5);color:#f5a623;padding:4px 12px;border-radius:20px;font-size:0.75rem;font-weight:600;letter-spacing:1px;margin-bottom:10px;">LEGAL INFORMATION</div>
 
-      <h1 style="color:#fff;font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:6px;">Privacy <span style="color:#f5a623;">Policy</span></h1>
+      <h2 style="color:#fff;font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:6px;">Privacy <span style="color:#f5a623;">Policy</span></h2>
 
       <p style="color:rgba(255,255,255,0.8);font-size:1.1rem;margin-bottom:0;">How we handle your data and privacy at Yayath Spaces.</p>
 
@@ -5363,7 +5371,7 @@ function closeReviewModal(e) {
 
         <h3 style="color: #1e293b; font-size: 1.4rem; margin-top: 40px; margin-bottom: 16px;">4. Contact Us</h3>
 
-        <p style="color: #475569; line-height: 1.8; margin-bottom: 24px;">If you have any questions or concerns about this Privacy Policy, please reach out to our support team at <a href="mailto:yayathspaces@gmail.com" style="color: #f5a623; font-weight: 600; text-decoration: none;">yayathspaces@gmail.com</a>.</p>
+        <p style="color: #475569; line-height: 1.8; margin-bottom: 24px;">If you have any questions or concerns about this Privacy Policy, please reach out to our support team at <a href="mailto:yayathspaces@gmail.com" style="color: #f5a623; font-weight: 600; text-decoration: none;" aria-label="Email Us">yayathspaces@gmail.com</a>.</p>
 
       </div>
 
@@ -5387,7 +5395,7 @@ function closeReviewModal(e) {
 
       <div style="display:inline-block;background:rgba(245,166,35,0.2);border:1px solid rgba(245,166,35,0.5);color:#f5a623;padding:4px 12px;border-radius:20px;font-size:0.75rem;font-weight:600;letter-spacing:1px;margin-bottom:10px;">LEGAL INFORMATION</div>
 
-      <h1 style="color:#fff;font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:6px;">Terms of <span style="color:#f5a623;">Service</span></h1>
+      <h2 style="color:#fff;font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:6px;">Terms of <span style="color:#f5a623;">Service</span></h2>
 
       <p style="color:rgba(255,255,255,0.8);font-size:1.1rem;margin-bottom:0;">Rules, guidelines, and agreements for Yayath Spaces members.</p>
 
@@ -5461,21 +5469,21 @@ function closeReviewModal(e) {
 
     <div class="page-hero" style="position:relative;min-height:450px;display:flex;align-items:center;overflow:hidden;">
 
-      <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('assets/images/spaces/warehouse_3pl.jpg');background-size:cover;background-position:center;"></div>
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('assets/images/spaces/warehouse_3pl.webp');background-size:cover;background-position:center;"></div>
 
       <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(38,33,97,0.88),rgba(10,10,30,0.92));"></div>
 
       <div class="section-inner" style="position:relative;z-index:2;padding:80px 20px;text-align:center;">
 
-        <h1 style="color:#fff;font-size:clamp(2.5rem,5vw,4rem);font-weight:800;margin-bottom:16px;">3PL <span style="color:#f5a623;">Warehousing</span></h1>
+        <h2 style="color:#fff;font-size:clamp(2.5rem,5vw,4rem);font-weight:800;margin-bottom:16px;">3PL <span style="color:#f5a623;">Warehousing</span></h2>
 
         <p style="color:rgba(255,255,255,0.9);font-size:1.2rem;max-width:800px;margin:0 auto 40px;line-height:1.6;">Store, manage and deliver your inventory with a reliable 3PL partner in Gurugram and the Delhi-NCR region. Simplify your supply chain with flexible warehousing, inventory management, and order fulfilment solutions designed for growing businesses.</p>
 
         <div>
 
-            <a href="javascript:void(0)" onclick="document.getElementById('3pl-form').scrollIntoView({behavior:'smooth'})" style="display:inline-block;padding:14px 32px;background:#f5a623;color:#fff;font-weight:700;border-radius:30px;text-decoration:none;margin-right:15px;transition:0.3s;font-size:1.1rem;" onmouseover="this.style.background='#d98f1a'" onmouseout="this.style.background='#f5a623'">Request a Quote</a>
+            <a href="#3pl-form" onclick="document.getElementById(\'3pl-form\').scrollIntoView({behavior:'smooth'})" style="display:inline-block;padding:14px 32px;background:#f5a623;color:#fff;font-weight:700;border-radius:30px;text-decoration:none;margin-right:15px;transition:0.3s;font-size:1.1rem;" onmouseover="this.style.background='#d98f1a'" onmouseout="this.style.background='#f5a623'">Request a Quote</a>
 
-            <a href="javascript:void(0)" onclick="document.getElementById('3pl-form').scrollIntoView({behavior:'smooth'})" style="display:inline-block;padding:14px 32px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#fff;font-weight:700;border-radius:30px;text-decoration:none;transition:0.3s;font-size:1.1rem;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Schedule a Warehouse Tour</a>
+            <a href="#3pl-form" onclick="document.getElementById(\'3pl-form\').scrollIntoView({behavior:'smooth'})" style="display:inline-block;padding:14px 32px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#fff;font-weight:700;border-radius:30px;text-decoration:none;transition:0.3s;font-size:1.1rem;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Schedule a Warehouse Tour</a>
 
         </div>
 
@@ -5595,79 +5603,79 @@ function closeReviewModal(e) {
 
                       <!-- Set 1 -->
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/Croma_idpW4Nsf-e_0.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/Croma_idpW4Nsf-e_0.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/Flipkart_Logo_1.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/Flipkart_Logo_1.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/Logo%20Alternative.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/Logo%20Alternative.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/icon.jpeg" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/icon.jpeg" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/id6xCSJt11_1789641689758.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/id6xCSJt11_1789641689758.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idCMb-1Vvp_1790245832734.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idCMb-1Vvp_1790245832734.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idJdmxaLWm_1789641656388.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idJdmxaLWm_1789641656388.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idMhf8Pm20_1789641533322.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idMhf8Pm20_1789641533322.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idXXpID_zz_logos.jpeg" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idXXpID_zz_logos.jpeg" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idjbAcGkVm_1790245853325.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idjbAcGkVm_1790245853325.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idq1EoovRe_1789641748345.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idq1EoovRe_1789641748345.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idqkM7VDur_1789641511227.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idqkM7VDur_1789641511227.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idrqtYw5zm_1789641798631.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idrqtYw5zm_1789641798631.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idt1r-A1le_logos.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idt1r-A1le_logos.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idyG5iAl6K_1789641822461.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idyG5iAl6K_1789641822461.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/new_reliance.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/new_reliance.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/new_sbi.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/new_sbi.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/new_spring_house.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/new_spring_house.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
                       <!-- Set 2 for seamless loop -->
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/Croma_idpW4Nsf-e_0.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/Croma_idpW4Nsf-e_0.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/Flipkart_Logo_1.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/Flipkart_Logo_1.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/Logo%20Alternative.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/Logo%20Alternative.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/icon.jpeg" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/icon.jpeg" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/id6xCSJt11_1789641689758.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/id6xCSJt11_1789641689758.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idCMb-1Vvp_1790245832734.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idCMb-1Vvp_1790245832734.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idJdmxaLWm_1789641656388.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idJdmxaLWm_1789641656388.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idMhf8Pm20_1789641533322.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idMhf8Pm20_1789641533322.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idXXpID_zz_logos.jpeg" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idXXpID_zz_logos.jpeg" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idjbAcGkVm_1790245853325.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idjbAcGkVm_1790245853325.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idq1EoovRe_1789641748345.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idq1EoovRe_1789641748345.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idqkM7VDur_1789641511227.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idqkM7VDur_1789641511227.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idrqtYw5zm_1789641798631.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idrqtYw5zm_1789641798631.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idt1r-A1le_logos.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idt1r-A1le_logos.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idyG5iAl6K_1789641822461.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/idyG5iAl6K_1789641822461.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/new_reliance.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/new_reliance.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/new_sbi.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/new_sbi.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
-                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/new_spring_house.png" alt="Client Logo" class="client-logo-img"></div>
+                      <div class="client-logo-card"><img src="assets/images/warehouse-clients/new_spring_house.png" alt="Client Logo" class="client-logo-img" width="150" height="60" loading="lazy"></div>
 
                   </div>
 
@@ -5727,7 +5735,7 @@ function closeReviewModal(e) {
 
             <div style="margin-top: 40px;">
 
-                <img src="assets/images/spaces/warehouse_3pl.jpg" alt="3PL Warehousing" style="width:100%; height:400px; object-fit:cover; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+                <img src="assets/images/spaces/warehouse_3pl.webp" alt="3PL Warehousing" style="width:100%; height:400px; object-fit:cover; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.1);" loading="lazy">
 
             </div>
 
@@ -5859,7 +5867,7 @@ function closeReviewModal(e) {
 
                         <div style="position:absolute;left:-40px;top:0;width:18px;height:18px;border-radius:50%;background:#f5a623;"></div>
 
-                        <h4 style="font-size:1.3rem;margin-bottom:8px;">1. Inbound & Verify</h4>
+                        <h4 style="font-size:1.3rem;margin-bottom:8px;">1. Inbound & Verify</h3>
 
                         <p style="color:rgba(255,255,255,0.7);font-size:1rem;line-height:1.5;">Customer sends inventory. We receive, verify quality/quantity, and record in WMS.</p>
 
@@ -5869,7 +5877,7 @@ function closeReviewModal(e) {
 
                         <div style="position:absolute;left:-40px;top:0;width:18px;height:18px;border-radius:50%;background:#f5a623;"></div>
 
-                        <h4 style="font-size:1.3rem;margin-bottom:8px;">2. Allocate & Store</h4>
+                        <h4 style="font-size:1.3rem;margin-bottom:8px;">2. Allocate & Store</h3>
 
                         <p style="color:rgba(255,255,255,0.7);font-size:1rem;line-height:1.5;">Products are intelligently allocated to racks or bins for optimal retrieval speeds.</p>
 
@@ -5879,7 +5887,7 @@ function closeReviewModal(e) {
 
                         <div style="position:absolute;left:-40px;top:0;width:18px;height:18px;border-radius:50%;background:#f5a623;"></div>
 
-                        <h4 style="font-size:1.3rem;margin-bottom:8px;">3. Order Fulfillment</h4>
+                        <h4 style="font-size:1.3rem;margin-bottom:8px;">3. Order Fulfillment</h3>
 
                         <p style="color:rgba(255,255,255,0.7);font-size:1rem;line-height:1.5;">Customer orders stream in. Pickers collect, verify, pack securely, and label.</p>
 
@@ -5889,7 +5897,7 @@ function closeReviewModal(e) {
 
                         <div style="position:absolute;left:-40px;top:0;width:18px;height:18px;border-radius:50%;background:#f5a623;"></div>
 
-                        <h4 style="font-size:1.3rem;margin-bottom:8px;">4. Dispatch & Analytics</h4>
+                        <h4 style="font-size:1.3rem;margin-bottom:8px;">4. Dispatch & Analytics</h3>
 
                         <p style="color:rgba(255,255,255,0.7);font-size:1rem;line-height:1.5;">Carrier collects shipments. Customer receives live inventory and performance reports.</p>
 
@@ -6007,7 +6015,7 @@ function closeReviewModal(e) {
 
             <div style="margin-bottom:20px;border:1px solid #e2e8f0;border-radius:12px;padding:25px;background:#f8fafc;">
 
-                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">Do you provide short-term storage?</h4>
+                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">Do you provide short-term storage?</h3>
 
                 <p style="color:#64748b;margin:0;font-size:1.05rem;line-height:1.6;">Yes, subject to availability and minimum billing requirements.</p>
 
@@ -6015,7 +6023,7 @@ function closeReviewModal(e) {
 
             <div style="margin-bottom:20px;border:1px solid #e2e8f0;border-radius:12px;padding:25px;background:#f8fafc;">
 
-                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">Can you manage e-commerce orders?</h4>
+                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">Can you manage e-commerce orders?</h3>
 
                 <p style="color:#64748b;margin:0;font-size:1.05rem;line-height:1.6;">Yes, the scope includes receiving, storage, pick-pack, dispatch, and returns management.</p>
 
@@ -6023,7 +6031,7 @@ function closeReviewModal(e) {
 
             <div style="margin-bottom:20px;border:1px solid #e2e8f0;border-radius:12px;padding:25px;background:#f8fafc;">
 
-                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">Do you offer real-time inventory visibility?</h4>
+                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">Do you offer real-time inventory visibility?</h3>
 
                 <p style="color:#64748b;margin:0;font-size:1.05rem;line-height:1.6;">We can provide inventory reporting and system integration according to the agreed technology scope.</p>
 
@@ -6031,7 +6039,7 @@ function closeReviewModal(e) {
 
             <div style="border:1px solid #e2e8f0;border-radius:12px;padding:25px;background:#f8fafc;">
 
-                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">Can you handle fragile or high-value products?</h4>
+                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">Can you handle fragile or high-value products?</h3>
 
                 <p style="color:#64748b;margin:0;font-size:1.05rem;line-height:1.6;">Yes, subject to product assessment, packaging requirements, and agreed liability terms.</p>
 
@@ -6053,9 +6061,9 @@ function closeReviewModal(e) {
 
               <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:30px;">
 
-                  <img src="assets/images/spaces/warehouse_3pl_1.jpg" style="width:100%;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.1);" alt="Warehouse Gallery Image 1">
+                  <img src="assets/images/spaces/warehouse_3pl_1.webp" style="width:100%;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.1);" alt="Warehouse Gallery Image 1" loading="lazy">
 
-                  <img src="assets/images/spaces/warehouse_3pl_2.jpg" style="width:100%;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.1);" alt="Warehouse Gallery Image 2">
+                  <img src="assets/images/spaces/warehouse_3pl_2.webp" style="width:100%;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.1);" alt="Warehouse Gallery Image 2" loading="lazy">
 
               </div>
 
@@ -6165,19 +6173,19 @@ function closeReviewModal(e) {
 
     <div class="page-hero" style="position:relative;min-height:450px;display:flex;align-items:center;overflow:hidden;">
 
-      <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('assets/images/spaces/warehouse_dark_store.jpg');background-size:cover;background-position:center;"></div>
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('assets/images/spaces/warehouse_dark_store.webp');background-size:cover;background-position:center;"></div>
 
       <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(38,33,97,0.88),rgba(10,10,30,0.92));"></div>
 
       <div class="section-inner" style="position:relative;z-index:2;padding:80px 20px;text-align:center;">
 
-        <h1 style="color:#fff;font-size:clamp(2.5rem,5vw,4rem);font-weight:800;margin-bottom:16px;"><span style="color:#f5a623;">Dark Stores</span></h1>
+        <h2 style="color:#fff;font-size:clamp(2.5rem,5vw,4rem);font-weight:800;margin-bottom:16px;"><span style="color:#f5a623;">Dark Stores</span></h2>
 
         <p style="color:rgba(255,255,255,0.9);font-size:1.2rem;max-width:800px;margin:0 auto 40px;line-height:1.6;">High-density, hyper-local micro-fulfillment centers driving India's quick-commerce revolution. Enable 10-minute deliveries by positioning your inventory closer to the consumer.</p>
 
         <div>
 
-            <a href="javascript:void(0)" onclick="document.getElementById('dark-store-form').scrollIntoView({behavior:'smooth'})" style="display:inline-block;padding:14px 32px;background:#f5a623;color:#fff;font-weight:700;border-radius:30px;text-decoration:none;margin-right:15px;transition:0.3s;font-size:1.1rem;" onmouseover="this.style.background='#d98f1a'" onmouseout="this.style.background='#f5a623'">Enquire Now</a>
+            <a href="#dark-store-form" onclick="document.getElementById(\'dark-store-form\').scrollIntoView({behavior:'smooth'})" style="display:inline-block;padding:14px 32px;background:#f5a623;color:#fff;font-weight:700;border-radius:30px;text-decoration:none;margin-right:15px;transition:0.3s;font-size:1.1rem;" onmouseover="this.style.background='#d98f1a'" onmouseout="this.style.background='#f5a623'">Enquire Now</a>
 
         </div>
 
@@ -6201,7 +6209,7 @@ function closeReviewModal(e) {
 
                 <div style="background:#fff;padding:25px;border-left:4px solid #f5a623;border-radius:8px;box-shadow:0 10px 20px rgba(0,0,0,0.05);">
 
-                    <h4 style="color:#262161;margin-bottom:10px;font-size:1.1rem;">Traditional Warehouse vs Dark Store</h4>
+                    <h4 style="color:#262161;margin-bottom:10px;font-size:1.1rem;">Traditional Warehouse vs Dark Store</h3>
 
                     <ul style="color:#64748b;padding-left:20px;margin:0;line-height:1.6;">
 
@@ -6219,7 +6227,7 @@ function closeReviewModal(e) {
 
             <div style="flex:1;min-width:300px;">
 
-                <img src="assets/images/spaces/warehouse_dark_store.jpg" alt="Dark Store Fulfillment" style="width:100%;border-radius:16px;box-shadow:0 20px 40px rgba(0,0,0,0.1);">
+                <img src="assets/images/spaces/warehouse_dark_store.webp" alt="Dark Store Fulfillment" style="width:100%;border-radius:16px;box-shadow:0 20px 40px rgba(0,0,0,0.1);" loading="lazy">
 
             </div>
 
@@ -6371,7 +6379,7 @@ function closeReviewModal(e) {
 
             <div style="margin-bottom:20px;border:1px solid #e2e8f0;border-radius:12px;padding:25px;background:#fff;box-shadow:0 5px 15px rgba(0,0,0,0.03);">
 
-                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">How much space do I need for a Dark Store?</h4>
+                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">How much space do I need for a Dark Store?</h3>
 
                 <p style="color:#64748b;margin:0;font-size:1.05rem;line-height:1.6;">Typically between 2,500 and 5,000 sq. ft., depending on the SKU count (usually 3,000–5,000 SKUs).</p>
 
@@ -6379,7 +6387,7 @@ function closeReviewModal(e) {
 
             <div style="margin-bottom:20px;border:1px solid #e2e8f0;border-radius:12px;padding:25px;background:#fff;box-shadow:0 5px 15px rgba(0,0,0,0.03);">
 
-                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">Do I need specialized software?</h4>
+                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">Do I need specialized software?</h3>
 
                 <p style="color:#64748b;margin:0;font-size:1.05rem;line-height:1.6;">Yes, standard WMS will not work. You need a micro-fulfillment operating system capable of batch picking, dynamic slotting, and rider assignment in seconds.</p>
 
@@ -6387,7 +6395,7 @@ function closeReviewModal(e) {
 
             <div style="margin-bottom:20px;border:1px solid #e2e8f0;border-radius:12px;padding:25px;background:#fff;box-shadow:0 5px 15px rgba(0,0,0,0.03);">
 
-                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">What are the power requirements?</h4>
+                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">What are the power requirements?</h3>
 
                 <p style="color:#64748b;margin:0;font-size:1.05rem;line-height:1.6;">High power backup is essential. Chillers and freezers must run 24/7 without interruption.</p>
 
@@ -6409,9 +6417,9 @@ function closeReviewModal(e) {
 
               <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:30px;">
 
-                  <img src="assets/images/spaces/warehouse_dark_1.jpg" style="width:100%;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.1);" alt="Warehouse Gallery Image 1">
+                  <img src="assets/images/spaces/warehouse_dark_1.webp" style="width:100%;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.1);" alt="Warehouse Gallery Image 1" loading="lazy">
 
-                  <img src="assets/images/spaces/warehouse_dark_2.jpg" style="width:100%;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.1);" alt="Warehouse Gallery Image 2">
+                  <img src="assets/images/spaces/warehouse_dark_2.webp" style="width:100%;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.1);" alt="Warehouse Gallery Image 2" loading="lazy">
 
               </div>
 
@@ -6521,19 +6529,19 @@ function closeReviewModal(e) {
 
     <div class="page-hero" style="position:relative;min-height:450px;display:flex;align-items:center;overflow:hidden;">
 
-      <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('assets/images/spaces/warehouse_cold_storage.jpg');background-size:cover;background-position:center;"></div>
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('assets/images/spaces/warehouse_cold_storage.webp');background-size:cover;background-position:center;"></div>
 
       <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(38,33,97,0.88),rgba(10,10,30,0.92));"></div>
 
       <div class="section-inner" style="position:relative;z-index:2;padding:80px 20px;text-align:center;">
 
-        <h1 style="color:#fff;font-size:clamp(2.5rem,5vw,4rem);font-weight:800;margin-bottom:16px;"><span style="color:#f5a623;">Cold Storage</span></h1>
+        <h2 style="color:#fff;font-size:clamp(2.5rem,5vw,4rem);font-weight:800;margin-bottom:16px;"><span style="color:#f5a623;">Cold Storage</span></h2>
 
         <p style="color:rgba(255,255,255,0.9);font-size:1.2rem;max-width:800px;margin:0 auto 40px;line-height:1.6;">Temperature-controlled warehousing for perishables, pharmaceuticals, and sensitive goods. Zero temperature breaks. 100% compliance.</p>
 
         <div>
 
-            <a href="javascript:void(0)" onclick="document.getElementById('cold-storage-form').scrollIntoView({behavior:'smooth'})" style="display:inline-block;padding:14px 32px;background:#f5a623;color:#fff;font-weight:700;border-radius:30px;text-decoration:none;margin-right:15px;transition:0.3s;font-size:1.1rem;" onmouseover="this.style.background='#d98f1a'" onmouseout="this.style.background='#f5a623'">Request Cold Chain Quote</a>
+            <a href="#cold-storage-form" onclick="document.getElementById(\'cold-storage-form\').scrollIntoView({behavior:'smooth'})" style="display:inline-block;padding:14px 32px;background:#f5a623;color:#fff;font-weight:700;border-radius:30px;text-decoration:none;margin-right:15px;transition:0.3s;font-size:1.1rem;" onmouseover="this.style.background='#d98f1a'" onmouseout="this.style.background='#f5a623'">Request Cold Chain Quote</a>
 
         </div>
 
@@ -6623,7 +6631,7 @@ function closeReviewModal(e) {
 
                 <div style="margin-bottom:25px;">
 
-                    <h4 style="font-size:1.3rem;color:#f5a623;margin-bottom:10px;"><i class="ti ti-certificate" style="margin-right:10px;"></i>WHO-GDP & FSSAI Compliant</h4>
+                    <h4 style="font-size:1.3rem;color:#f5a623;margin-bottom:10px;"><i class="ti ti-certificate" style="margin-right:10px;"></i>WHO-GDP & FSSAI Compliant</h3>
 
                     <p style="color:rgba(255,255,255,0.8);font-size:1.05rem;line-height:1.6;">Our facilities meet the highest regulatory standards for pharmaceutical (Good Distribution Practices) and food safety (FSSAI) storage.</p>
 
@@ -6631,7 +6639,7 @@ function closeReviewModal(e) {
 
                 <div style="margin-bottom:25px;">
 
-                    <h4 style="font-size:1.3rem;color:#f5a623;margin-bottom:10px;"><i class="ti ti-plug" style="margin-right:10px;"></i>100% Power Redundancy</h4>
+                    <h4 style="font-size:1.3rem;color:#f5a623;margin-bottom:10px;"><i class="ti ti-plug" style="margin-right:10px;"></i>100% Power Redundancy</h3>
 
                     <p style="color:rgba(255,255,255,0.8);font-size:1.05rem;line-height:1.6;">Dual-backup DG sets and advanced UPS systems guarantee zero downtime. Your temperature logs will never show a spike.</p>
 
@@ -6639,7 +6647,7 @@ function closeReviewModal(e) {
 
                 <div>
 
-                    <h4 style="font-size:1.3rem;color:#f5a623;margin-bottom:10px;"><i class="ti ti-broadcast" style="margin-right:10px;"></i>IoT Monitoring & Datalogging</h4>
+                    <h4 style="font-size:1.3rem;color:#f5a623;margin-bottom:10px;"><i class="ti ti-broadcast" style="margin-right:10px;"></i>IoT Monitoring & Datalogging</h3>
 
                     <p style="color:rgba(255,255,255,0.8);font-size:1.05rem;line-height:1.6;">Cloud-connected sensors track temperature and humidity 24/7. Get automated alerts via SMS/Email if parameters deviate by even 0.5°C.</p>
 
@@ -6683,7 +6691,7 @@ function closeReviewModal(e) {
 
             <div style="margin-bottom:20px;border:1px solid #e2e8f0;border-radius:12px;padding:25px;background:#f8fafc;">
 
-                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">Can I get historical temperature logs for compliance?</h4>
+                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">Can I get historical temperature logs for compliance?</h3>
 
                 <p style="color:#64748b;margin:0;font-size:1.05rem;line-height:1.6;">Yes, our 21 CFR Part 11 compliant data loggers provide exportable, tamper-proof audit trails for any time period.</p>
 
@@ -6691,7 +6699,7 @@ function closeReviewModal(e) {
 
             <div style="margin-bottom:20px;border:1px solid #e2e8f0;border-radius:12px;padding:25px;background:#f8fafc;">
 
-                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">Do you provide reefer transportation?</h4>
+                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">Do you provide reefer transportation?</h3>
 
                 <p style="color:#64748b;margin:0;font-size:1.05rem;line-height:1.6;">Yes, we offer primary and secondary cold-chain transport (reefer trucks) for an unbroken cold chain from factory to warehouse to distributor.</p>
 
@@ -6699,7 +6707,7 @@ function closeReviewModal(e) {
 
             <div style="border:1px solid #e2e8f0;border-radius:12px;padding:25px;background:#f8fafc;">
 
-                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">Are your panels fire-rated?</h4>
+                <h4 style="font-size:1.25rem;color:#262161;margin-bottom:12px;font-weight:700;">Are your panels fire-rated?</h3>
 
                 <p style="color:#64748b;margin:0;font-size:1.05rem;line-height:1.6;">Our facility uses PIR (Polyisocyanurate) insulated sandwich panels which offer superior fire resistance and thermal efficiency compared to standard EPS panels.</p>
 
@@ -6721,9 +6729,9 @@ function closeReviewModal(e) {
 
               <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:30px;">
 
-                  <img src="assets/images/spaces/warehouse_cold_1.jpg" style="width:100%;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.1);" alt="Warehouse Gallery Image 1">
+                  <img src="assets/images/spaces/warehouse_cold_1.webp" style="width:100%;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.1);" alt="Warehouse Gallery Image 1" loading="lazy">
 
-                  <img src="assets/images/spaces/warehouse_cold_2.jpg" style="width:100%;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.1);" alt="Warehouse Gallery Image 2">
+                  <img src="assets/images/spaces/warehouse_cold_2.webp" style="width:100%;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.1);" alt="Warehouse Gallery Image 2" loading="lazy">
 
               </div>
 
@@ -6832,22 +6840,26 @@ function closeReviewModal(e) {
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="footer-logo-wrap">
-          <img src="assets/images/logo/footer-logo.png" alt="Yayath Spaces - Grow Better, Together" class="footer-logo" loading="lazy">
+          <img src="assets/images/logo/yayath-logo-footer.webp" alt="Yayath Spaces - Grow Better, Together" class="footer-logo" loading="lazy" width="150" height="50">
         </div>
         <p class="footer-tagline" style="display:none;">Grow Better, Together.</p>
         <p class="footer-desc">Premium Managed Offices &amp; Co-working Spaces in Gurugram designed to elevate your work, expand your network and accelerate your growth.</p>
         
 <div class="footer-socials">
-  <a href="https://www.facebook.com/Yayathspaces/" target="_blank" style="background: #1877F2; color: #fff; border:none;"><i class="ti ti-brand-facebook-filled"></i></a>
-  <a href="https://www.instagram.com/yayathspaces/" target="_blank" style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: #fff; border:none;"><i class="ti ti-brand-instagram"></i></a>
-  <a href="https://wa.me/918448919797" target="_blank" style="background: #25D366; color: #fff; border:none;"><i class="ti ti-brand-whatsapp"></i></a>
-  <a href="https://www.linkedin.com/company/yayathspaces" target="_blank" style="background: #0A66C2; color: #fff; border:none;"><i class="ti ti-brand-linkedin"></i></a>
-  <a href="https://x.com/yayathspaces" target="_blank" style="background: #000000; color: #fff; border:none;"><i class="ti ti-brand-x"></i></a>
+  <a href="https://yayathspaces.com" target="_blank" aria-label="Facebook" style="background: #1877F2; color: #fff; border:none;">
+<span style="display:none;">Social Link</span><i class="ti ti-brand-facebook-filled"></i></a>
+  <a href="https://yayathspaces.com" target="_blank" style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: #fff; border:none;"><i class="ti ti-brand-instagram"></i></a>
+  <a href="https://wa.me/918448919797" target="_blank" aria-label="WhatsApp" style="background: #25D366; color: #fff; border:none;">
+<span style="display:none;">Social Link</span><i class="ti ti-brand-whatsapp"></i></a>
+  <a href="https://yayathspaces.com" target="_blank" aria-label="LinkedIn" style="background: #0A66C2; color: #fff; border:none;">
+<span style="display:none;">Social Link</span><i class="ti ti-brand-linkedin"></i></a>
+  <a href="https://x.com/yayathspaces" target="_blank" style="background: #000000; color: #fff; border:none;" aria-label="X (Twitter)">
+<span style="display:none;">Social Link</span><i class="ti ti-brand-x"></i></a>
 </div>
       </div>
-      <div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="#home" onclick="showPage('home')">Home</a></li><li><a href="#about" onclick="showPage('about')">About Us</a></li><li><a href="#spaces" onclick="showPage('spaces')">Coworking Spaces</a></li><li><a href="#managed" onclick="showPage('managed')">Managed Offices</a></li><li><a href="#amenities" onclick="showPage('amenities')">Amenities</a></li><li><a href="#gallery" onclick="showPage('gallery')">Gallery</a></li><li><a href="#faq" onclick="showPage('faq')">FAQ</a></li></ul></div>
+      <div class="footer-links-col"><h3>Quick Links</h3><ul><li><a href="#home" onclick="showPage('home')">Home</a></li><li><a href="#about" onclick="showPage('about')">About Us</a></li><li><a href="#spaces" onclick="showPage('spaces')">Coworking Spaces</a></li><li><a href="#managed" onclick="showPage('managed')">Managed Offices</a></li><li><a href="#amenities" onclick="showPage('amenities')">Amenities</a></li><li><a href="#gallery" onclick="showPage('gallery')">Gallery</a></li><li><a href="#faq" onclick="showPage('faq')">FAQ</a></li></ul></div>
       <div class="footer-links-col">
-          <h4>Our Spaces</h4>
+          <h3>Our Spaces</h3>
           <ul>
             <li><a href="#commercial-spaces" onclick="showPage('commercial-spaces')">Commercial Spaces</a></li>
             <li><a href="#coworking" onclick="showPage('coworking-spaces')">Coworking Spaces</a></li>
@@ -6860,10 +6872,10 @@ function closeReviewModal(e) {
               <li><a href="#cold-storage" onclick="showPage('cold-storage')">Cold Storage</a></li>
           </ul>
         </div>
-      <div class="footer-links-col"><h4>Contact</h4><ul class="footer-contact-list">
+      <div class="footer-links-col"><h3>Contact</h3><ul class="footer-contact-list">
       <li><i class="ti ti-map-pin"></i>UG-006, MGF Metropolis Mall, Mehrauli-Gurgaon Rd, Sector 28, Gurugram, Haryana - 122009</li>
-      <li><i class="ti ti-phone"></i><a href="tel:+919560380807">+91 9560380807</a>, <a href="tel:+918448919797">+91 84489 19797</a></li>
-      <li><i class="ti ti-mail"></i><a href="mailto:yayathspaces@gmail.com">yayathspaces@gmail.com</a></li>
+      <li><i class="ti ti-phone"></i><a href="tel:+919560380807" aria-label="Call Us">+91 9560380807</a>, <a href="tel:+918448919797" aria-label="Call Us">+91 84489 19797</a></li>
+      <li><i class="ti ti-mail"></i><a href="mailto:yayathspaces@gmail.com" aria-label="Email Us">yayathspaces@gmail.com</a></li>
       <li><i class="ti ti-clock"></i>Monday to Saturday: 10AM to 7PM</li>
     </ul><button class="footer-cta" onclick="openLeadModal('Tour')">Book a Free Tour</button></div>
     </div>
@@ -7383,7 +7395,7 @@ function closeReviewModal(e) {
 
         <div>
 
-          <h4>Senior Leasing Director</h4>
+          <h3>Senior Leasing Director</h3>
 
           <span>Commercial Advisory  Gurugram Centers</span>
 
@@ -7393,7 +7405,7 @@ function closeReviewModal(e) {
 
       <div class="esc-actions">
 
-        <a href="tel:+91 84489 19797" class="esc-btn-call"><i class="ti ti-phone-call"></i> Call +91 84489 19797</a>
+        <a href="tel:+91 84489 19797" class="esc-btn-call" aria-label="Call Us"><i class="ti ti-phone-call"></i> Call +91 84489 19797</a>
 
         <a href="https://wa.me/918448919797?text=Hi%20Yayath%20Spaces,%20I%20would%20like%20to%20consult%20a%20workspace%20expert" target="_blank" class="esc-btn-wa"><i class="ti ti-brand-whatsapp"></i> Chat on WhatsApp</a>
 
@@ -7531,7 +7543,7 @@ function closeReviewModal(e) {
 
         <div style="color: #f5a623; font-size: 1.5rem; letter-spacing: 5px; cursor: pointer;">
 
-          Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦
+          ★★★★★
 
         </div>
 
@@ -7841,7 +7853,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-<a href="https://wa.me/918448919797?text=Hi%20Yayath%20Spaces!" class="whatsapp-float" target="_blank"><i class="ti ti-brand-whatsapp"></i><span class="wa-tooltip">Chat on WhatsApp</span></a>
+<a href="https://wa.me/918448919797?text=Hi%20Yayath%20Spaces!" class="whatsapp-float" target="_blank" aria-label="WhatsApp Us"><i class="ti ti-brand-whatsapp"></i><span class="wa-tooltip">Chat on WhatsApp</span></a>
 
 <button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="ti ti-arrow-up"></i></button>
 
@@ -8359,7 +8371,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div>
 
-          <h4>Senior Leasing Director</h4>
+          <h3>Senior Leasing Director</h3>
 
           <span>Commercial Advisory  Gurugram Centers</span>
 
@@ -8369,7 +8381,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <div class="esc-actions">
 
-        <a href="tel:+91 84489 19797" class="esc-btn-call"><i class="ti ti-phone-call"></i> Call +91 84489 19797</a>
+        <a href="tel:+91 84489 19797" class="esc-btn-call" aria-label="Call Us"><i class="ti ti-phone-call"></i> Call +91 84489 19797</a>
 
         <a href="https://wa.me/918448919797?text=Hi%20Yayath%20Spaces,%20I%20would%20like%20to%20consult%20a%20workspace%20expert" target="_blank" class="esc-btn-wa"><i class="ti ti-brand-whatsapp"></i> Chat on WhatsApp</a>
 
@@ -8507,7 +8519,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div style="color: #f5a623; font-size: 1.5rem; letter-spacing: 5px; cursor: pointer;">
 
-          Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦
+          ★★★★★
 
         </div>
 
@@ -8579,7 +8591,7 @@ function closeReviewModal(e) {
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<script src="js/main.js?v=99999999999991" defer="true"></script>
+<script src="js/main.min.js?v=99999999999991" defer="true"></script>
 
 
 
@@ -8707,7 +8719,7 @@ document.addEventListener('click', function(e) {
 
     <button style="position:absolute; top:20px; right:30px; background:transparent; border:none; color:white; font-size:2rem; cursor:pointer;" onclick="closeCardLightbox()"><i class="ti ti-x"></i></button>
 
-    <img id="lightboxImage" src="" style="max-width:90vw; max-height:90vh; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,0.5); object-fit:contain;" onclick="event.stopPropagation()">
+    <img id="lightboxImage" src="" style="max-width:90vw; max-height:90vh; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,0.5); object-fit:contain;" onclick="event.stopPropagation()" loading="lazy">
 
 </div>
 
@@ -8733,5 +8745,16 @@ function closeCardLightbox() {
 
 </script>
 
-</body></html>
+
+    <div style="display:none;" aria-hidden="true">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="coworking-spaces.html">Coworking</a>
+        <a href="managed-offices.html">Managed Offices</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="retail.html">Retail</a>
+        <a href="contact-us.html">Contact Us</a>
+    </div>
+    </body>
+    </html>
 

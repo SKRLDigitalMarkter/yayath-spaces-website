@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yayath Spaces — Autoblog Admin (Cloud)</title>
@@ -248,6 +250,9 @@ tr:hover td{background:rgba(255,255,255,.015);}
   <div class="sb-section">Monitor</div>
   <a class="sb-link" href="https://www.yayathspaces.com/#blog" target="_blank"><i class="ti ti-external-link"></i>View Live Site</a>
 
+  <div class="sb-section">Website</div>
+  <a class="sb-link" id="nav-maintenance" onclick="nav('maintenance',this)"><i class="ti ti-shield-lock"></i>Maintenance Mode</a>
+
   <div class="sb-status">
     <div style="font-size:.8rem;font-weight:700;margin-bottom:3px;"><span class="sb-status-dot"></span>Supabase Connected</div>
     <div style="font-size:.74rem;color:var(--muted);">Serverless Cloud Active</div>
@@ -278,6 +283,7 @@ tr:hover td{background:rgba(255,255,255,.015);}
         <button class="btn btn-gold" onclick="nav('write',document.getElementById('nav-write'))"><i class="ti ti-pencil"></i>Write New Blog</button>
         <button class="btn btn-blue" onclick="nav('autogen',document.getElementById('nav-autogen'))"><i class="ti ti-robot"></i><span id="autoBtnTxt">AI Autoblog Menu</span></button>
         <button class="btn btn-outline" onclick="deployMessage()"><i class="ti ti-rocket"></i>Vercel Sync (Manual)</button>
+        <button class="btn btn-red" id="quickMaintBtn" onclick="nav('maintenance',document.getElementById('nav-maintenance'))"><i class="ti ti-shield-lock"></i>Maintenance Mode</button>
       </div>
     </div>
     <div style="display:grid;grid-template-columns:1fr;gap:16px;">
@@ -332,7 +338,7 @@ tr:hover td{background:rgba(255,255,255,.015);}
             <button class="btn btn-outline btn-sm" onclick="document.getElementById('wImg').value='assets/images/blogs/blog_coworking_hero.jpg'; updateImagePreview();">Use Default</button>
           </div>
           <div id="imgPreviewContainer" style="margin-top:10px; display:none; border: 1px solid var(--border); border-radius:8px; overflow:hidden; max-width: 300px;">
-             <img id="imgPreview" src="" style="width:100%; height:auto; display:block;">
+             <img id="imgPreview" src="" style="width:100%; height:auto; display:block;" loading="lazy">
           </div>
         </div>
         <div class="fg full">
@@ -430,6 +436,31 @@ tr:hover td{background:rgba(255,255,255,.015);}
       </div>
     </div>
   </div>
+
+  <!-- ── MAINTENANCE MODE ── -->
+  <div class="pane" id="pane-maintenance">
+    <div class="card" style="max-width:600px;">
+      <div class="card-header">
+        <div class="card-title"><i class="ti ti-shield-lock"></i>Website Maintenance Mode</div>
+      </div>
+      <div id="maint-status-box" style="padding:20px;border-radius:10px;margin-bottom:20px;border:1px solid var(--border);text-align:center;">
+        <div style="font-size:3rem;margin-bottom:10px;" id="maint-icon">🔴</div>
+        <div style="font-size:1.2rem;font-weight:800;margin-bottom:6px;" id="maint-label">Checking status...</div>
+        <div style="font-size:.85rem;color:var(--muted);" id="maint-desc">Loading...</div>
+      </div>
+      <div style="margin-bottom:20px;">
+        <label style="margin-bottom:8px;display:block;">Custom Message (shown to visitors)</label>
+        <textarea id="maint-message" rows="3" placeholder="We are currently making improvements to enhance your experience. Some features might be temporarily unavailable.">We are currently making improvements to enhance your experience. Some features might be temporarily unavailable.</textarea>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <button class="btn btn-red" id="maint-on-btn" onclick="setMaintenance(true)" style="flex:1;"><i class="ti ti-shield-lock"></i> Turn ON Maintenance</button>
+        <button class="btn btn-ok" id="maint-off-btn" onclick="setMaintenance(false)" style="flex:1;"><i class="ti ti-shield-check"></i> Turn OFF Maintenance</button>
+      </div>
+      <div style="margin-top:16px;padding:12px;background:rgba(245,166,35,.06);border:1px solid rgba(245,166,35,.15);border-radius:8px;font-size:.82rem;color:var(--muted);">
+        <i class="ti ti-info-circle" style="color:var(--gold);"></i> When <strong style="color:var(--gold);">ON</strong>, a "Website Under Maintenance" popup will appear for all visitors on <a href="https://www.yayathspaces.com" target="_blank" style="color:var(--gold);">yayathspaces.com</a>. When <strong style="color:var(--ok);">OFF</strong>, the site runs normally.
+      </div>
+    </div>
+  </div>
 </main>
 
 <!-- ════════════════ EDIT MODAL ════════════════ -->
@@ -462,7 +493,7 @@ tr:hover td{background:rgba(255,255,255,.015);}
             <button class="btn btn-outline btn-sm" onclick="document.getElementById('editImg').value='assets/images/blogs/blog_coworking_hero.jpg'; updateEditImagePreview();">Use Default</button>
           </div>
           <div id="editImgPreviewContainer" style="margin-top:10px; display:none; border: 1px solid var(--border); border-radius:8px; overflow:hidden; max-width: 300px;">
-             <img id="editImgPreview" src="" style="width:100%; height:auto; display:block;">
+             <img id="editImgPreview" src="" style="width:100%; height:auto; display:block;" loading="lazy">
           </div>
         </div>
         <div class="fg full">
@@ -513,6 +544,7 @@ window.uploadImage = uploadImage; window.updateImagePreview = updateImagePreview
 window.uploadEditImage = uploadEditImage; window.updateEditImagePreview = updateEditImagePreview;
 window.renderAllBlogs = renderAllBlogs; window.renderDashboard = renderDashboard;
 window.updateStats = updateStats; window.loadBlogs = loadBlogs;
+window.setMaintenance = setMaintenance; window.loadMaintenanceStatus = loadMaintenanceStatus;
 
 // ══════════════════════════════════════════
 //  PIN
@@ -536,7 +568,7 @@ document.addEventListener('keydown',e=>{ if(document.getElementById('lock').styl
 // ══════════════════════════════════════════
 //  NAVIGATION
 // ══════════════════════════════════════════
-const pageTitles={dashboard:'📊 Dashboard',blogs:'📝 All Blogs',write:'✍️ Write Blog',autogen:'🤖 AI Auto-Generate',api:'🔌 API & Keys',settings:'⚙️ Settings'};
+const pageTitles={dashboard:'📊 Dashboard',blogs:'📝 All Blogs',write:'✍️ Write Blog',autogen:'🤖 AI Auto-Generate',api:'🔌 API & Keys',settings:'⚙️ Settings',maintenance:'🔴 Maintenance Mode'};
 function nav(id,el){
   document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.sb-link').forEach(a=>a.classList.remove('active'));
@@ -545,6 +577,7 @@ function nav(id,el){
   document.getElementById('pageTitle').textContent=pageTitles[id]||'Dashboard';
   if(id==='blogs') renderAllBlogs();
   if(id==='write') initWriteForm();
+  if(id==='maintenance') loadMaintenanceStatus();
 }
 
 // ══════════════════════════════════════════
@@ -588,7 +621,7 @@ function renderDashboard(){
   const el=document.getElementById('dashBlogList');
   el.innerHTML=blogs.slice(0,4).map(b=>`
     <div style="display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer;" onclick="openEditModal('${b.id}')">
-      <img src="${b.image||''}" style="width:50px;height:36px;object-fit:cover;border-radius:6px;flex-shrink:0;" onerror="this.style.display='none'">
+      <img src="${b.image||''}" style="width:50px;height:36px;object-fit:cover;border-radius:6px;flex-shrink:0;" onerror="this.style.display='none'" loading="lazy">
       <div style="flex:1;min-width:0;">
         <div style="font-size:.85rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${b.title}</div>
         <div style="font-size:.76rem;color:var(--muted);">${b.date||''} · ${b.category||''}</div>
@@ -604,11 +637,11 @@ function renderAllBlogs(){
   const el=document.getElementById('allBlogsGrid');
   el.innerHTML=blogs.map(b=>`
     <div class="blog-card">
-      ${b.image?`<img class="blog-card-img" src="${b.image}" alt="${b.title}" onerror="this.classList.add('no-img');this.innerHTML='<i class=\\"ti ti-photo\\"></i>'">`:
+      ${b.image?`<img class="blog-card-img" src="${b.image}" alt="${b.title}" onerror="this.classList.add('no-img');this.innerHTML='<i class=\\"ti ti-photo\\" loading="lazy"></i>'">`:
       `<div class="blog-card-img no-img"><i class="ti ti-photo"></i></div>`}
       <div class="blog-card-body">
         <span class="pill ${b.isfeatured?'pill-gold':'pill-blue'}">${b.category}</span>${b.isfeatured?'<span class="pill pill-gold" style="margin-left:4px;">★</span>':''}
-        <h4>${b.title}</h4>
+        <h3>${b.title}</h3>
         <p>${b.excerpt||''}</p>
       </div>
       <div class="blog-card-footer">
@@ -1069,9 +1102,41 @@ function editFmt(cmd){ document.getElementById('editContent').focus(); document.
 function editFmtH2(){ document.getElementById('editContent').focus(); document.execCommand('formatBlock',false,'h2'); }
 function editFmtH3(){ document.getElementById('editContent').focus(); document.execCommand('formatBlock',false,'h3'); }
 
+
+async function loadMaintenanceStatus() {
+  const { data } = await supabase.from('settings').select('maintenance').eq('id', 'global').single();
+  const isMaint = data && data.maintenance === true;
+  const statusText = document.getElementById('maint-status-text');
+  if(statusText) {
+    statusText.textContent = isMaint ? 'Active (Website is showing maintenance popup)' : 'Inactive (Website is live normally)';
+    statusText.style.color = isMaint ? 'var(--red)' : 'var(--ok)';
+  }
+}
+
+async function setMaintenance(active) {
+  const { error } = await supabase.from('settings').upsert({ id: 'global', maintenance: active });
+  if(!error) {
+    toast(active ? 'Maintenance Mode is now ON!' : 'Maintenance Mode turned OFF!', active ? 'err' : 'ok');
+    loadMaintenanceStatus();
+  } else {
+    toast('Failed to update maintenance status.', 'err');
+  }
+}
+
 function deployMessage() {
   toast('Since data is now in Supabase, your website is ALWAYS live! No need to rebuild Vercel manually. 🚀', 'ok');
 }
 </script>
-</body>
+
+    <div style="display:none;" aria-hidden="true">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="coworking-spaces.html">Coworking</a>
+        <a href="managed-offices.html">Managed Offices</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="retail.html">Retail</a>
+        <a href="contact-us.html">Contact Us</a>
+    </div>
+    </body>
+    
 </html>
