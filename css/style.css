@@ -77,10 +77,10 @@ button { cursor: pointer; font-family: var(--font); border: none; }
 .top-right a { color: #ffffff; font-size: 1rem; transition: color 0.2s; }
 .top-right a:hover { color: var(--gold); }
 
-/* Î“Ã¶Ã‡Î“Ã¶Ã‡ NAVBAR Î“Ã¶Ã‡Î“Ã¶Ã‡ */
+/* NAVBAR */
 .navbar {
   position: sticky; top: 0; z-index: 900;
-  background: rgba(255,255,255,0.96);
+  background: #ffffff !important;
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--gray-100);
   transition: box-shadow var(--transition);
@@ -89,6 +89,7 @@ button { cursor: pointer; font-family: var(--font); border: none; }
 .nav-inner {
   max-width: 1320px; margin: 0 auto; padding: 0 32px;
   display: flex; align-items: center; gap: 12px; min-height: 80px;
+  background: #ffffff !important;
 }
 .nav-logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .logo-img {
@@ -799,6 +800,10 @@ button { cursor: pointer; font-family: var(--font); border: none; }
 .myhq-nav.next { right: 8px; }
 
 /* -- AMENITIES -- */
+#page-amenities, .amenities-section, #page-about, .about-section, #page-contact, .contact-section, #page-gallery, .gallery-section {
+  background: #ffffff !important;
+  color: var(--text) !important;
+}
 .amenities-section { padding: 80px 0; }
 .amenities-mega-grid {
   display: grid;
