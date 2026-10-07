@@ -37,9 +37,8 @@ export default async function handler(req, res) {
       console.warn('Error reading blogs for sitemap:', e);
     }
 
-    // Build clean XML string with XSLT stylesheet reference
+    // Build clean XML string
     let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-    xml += '<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n';
     xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
     
     pages.forEach(p => {
@@ -54,10 +53,8 @@ export default async function handler(req, res) {
     xml += '</urlset>';
 
     res.setHeader('Content-Type', 'application/xml; charset=utf-8');
-    res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400');
+    res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
     res.setHeader('X-Content-Type-Options', 'nosniff');
-    res.setHeader('x-vercel-skip-toolbar', '1');
-    res.setHeader('Content-Security-Policy', "default-src 'none'; style-src 'unsafe-inline'; script-src 'none'");
     return res.status(200).send(xml);
   } catch (err) {
     console.error('Sitemap generation error:', err);
