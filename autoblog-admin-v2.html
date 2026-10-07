@@ -360,7 +360,8 @@ tr:hover td{background:rgba(255,255,255,.015);}
             <button onclick="fmtH3()" title="H3">H3</button>
             <button onclick="fmt('insertUnorderedList')" title="List"><i class="ti ti-list"></i></button>
             <button onclick="fmt('insertOrderedList')" title="Ordered List"><i class="ti ti-list-numbers"></i></button>
-            <button onclick="fmtLink()" title="Link"><i class="ti ti-link"></i></button>
+            <button onclick="fmtLink('wContent')" title="Add Hyperlink" style="color:var(--gold);font-weight:600;"><i class="ti ti-link"></i> Link</button>
+            <button onclick="insertImageInContent('wContent')" title="Insert Image in Content" style="color:var(--gold);font-weight:600;"><i class="ti ti-photo-plus"></i> Add Image</button>
             <button onclick="clearEditor()" title="Clear" style="margin-left:auto;color:var(--err)"><i class="ti ti-trash"></i></button>
           </div>
           <div class="editor-body" id="wContent" contenteditable="true" spellcheck="true"></div>
@@ -515,6 +516,8 @@ tr:hover td{background:rgba(255,255,255,.015);}
             <button onclick="editFmtH3()">H3</button>
             <button onclick="editFmt('insertUnorderedList')"><i class="ti ti-list"></i></button>
             <button onclick="editFmt('insertOrderedList')"><i class="ti ti-list-numbers"></i></button>
+            <button onclick="fmtLink('editContent')" title="Add Hyperlink" style="color:var(--gold);font-weight:600;"><i class="ti ti-link"></i> Link</button>
+            <button onclick="insertImageInContent('editContent')" title="Insert Image in Content" style="color:var(--gold);font-weight:600;"><i class="ti ti-photo-plus"></i> Add Image</button>
           </div>
           <div class="editor-body" id="editContent" contenteditable="true"></div>
         </div>
@@ -545,7 +548,7 @@ let blogs=[], settings={}, currentEditId=null, pinBuffer='';
 window.pinPress = pinPress; window.pinClear = pinClear; window.pinBack = pinBack; window.nav = nav;
 window.saveBlog = saveBlog; window.openEditModal = openEditModal; window.closeEditModal = closeEditModal;
 window.updateBlog = updateBlog; window.deleteBlog = deleteBlog; window.confirmDelete = confirmDelete;
-window.fmt = fmt; window.fmtH2 = fmtH2; window.fmtH3 = fmtH3; window.fmtLink = fmtLink; window.clearEditor = clearEditor;
+window.fmt = fmt; window.fmtH2 = fmtH2; window.fmtH3 = fmtH3; window.fmtLink = fmtLink; window.insertImageInContent = insertImageInContent; window.clearEditor = clearEditor;
 window.editFmt = editFmt; window.editFmtH2 = editFmtH2; window.editFmtH3 = editFmtH3;
 window.toggleApiEye = toggleApiEye; window.saveApiKey = saveApiKey; window.saveSettings = saveSettings;
 window.resetWriteForm = resetWriteForm; window.aiWriteContent = aiWriteContent; window.runClientAutoblog = runClientAutoblog;
