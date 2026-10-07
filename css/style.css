@@ -3997,3 +3997,19 @@ button { cursor: pointer; font-family: var(--font); border: none; }
 .biz-card:hover .biz-card-address i {
   transform: scale(1.2);
 }
+
+
+/* Prevent blog content image overflow */
+.editor-body img, #wContent img, #editContent img, .single-blog-content img, .blog-single-section img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 12px;
+  display: block;
+  margin: 16px auto;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+}
+.editor-body figure, #wContent figure, #editContent figure, .single-blog-content figure {
+  max-width: 100% !important;
+  overflow: hidden;
+  margin: 20px 0;
+}
