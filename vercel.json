@@ -3,11 +3,69 @@
     {
       "source": "/sitemap.xml",
       "destination": "/api/sitemap"
+    },
+    {
+      "source": "/sitemap",
+      "destination": "/api/sitemap"
+    },
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/api/sitemap"
     }
   ],
   "headers": [
     {
       "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "x-vercel-skip-toolbar",
+          "value": "1"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'none'; style-src 'unsafe-inline'; script-src 'none'"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "x-vercel-skip-toolbar",
+          "value": "1"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'none'; style-src 'unsafe-inline'; script-src 'none'"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap_index.xml",
       "headers": [
         {
           "key": "Content-Type",
