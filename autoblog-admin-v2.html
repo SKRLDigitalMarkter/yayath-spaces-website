@@ -1164,7 +1164,51 @@ function toast(msg,type='ok'){
 function fmt(cmd){ document.getElementById('wContent').focus(); document.execCommand(cmd,false,null); }
 function fmtH2(){ document.getElementById('wContent').focus(); document.execCommand('formatBlock',false,'h2'); }
 function fmtH3(){ document.getElementById('wContent').focus(); document.execCommand('formatBlock',false,'h3'); }
-function fmtLink(){ const url=prompt('Enter URL:'); if(url){ document.getElementById('wContent').focus(); document.execCommand('createLink',false,url); } }
+function fmtLink(targetId = 'wContent'){
+  const editorId = (typeof targetId === 'string' && targetId) ? targetId : 'wContent';
+  const container = document.getElementById(editorId) || document.getElementById('wContent');
+  if (!container) return;
+  container.focus();
+
+  const sel = window.getSelection();
+  let selectedText = sel ? sel.toString().trim() : '';
+
+  let linkText = selectedText;
+  if (!linkText) {
+    linkText = prompt('Enter link text (Link name to show on website):');
+    if (!linkText) return;
+  }
+
+  let url = prompt('Enter URL (e.g. https://example.com):');
+  if (!url) return;
+
+  url = url.trim();
+  if (!/^https?:\/\//i.test(url) && !url.startsWith('#') && !url.startsWith('/') && !url.startsWith('mailto:') && !url.startsWith('tel:')) {
+    url = 'https://' + url;
+  }
+
+  const safeText = linkText.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const safeUrl = url.replace(/"/g, '&quot;');
+  const aHtml = `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer" style="color:#2a1060;font-weight:700;text-decoration:underline;">${safeText}</a>`;
+
+  if (selectedText && sel && sel.rangeCount > 0) {
+    const range = sel.getRangeAt(0);
+    if (container.contains(range.commonAncestorContainer)) {
+      range.deleteContents();
+      const temp = document.createElement('div');
+      temp.innerHTML = aHtml;
+      const frag = document.createDocumentFragment();
+      let child;
+      while ((child = temp.firstChild)) {
+        frag.appendChild(child);
+      }
+      range.insertNode(frag);
+      return;
+    }
+  }
+
+  document.execCommand('insertHTML', false, aHtml);
+}
 function clearEditor(){ if(confirm('Clear all content?')) document.getElementById('wContent').innerHTML=''; }
 function editFmt(cmd){ document.getElementById('editContent').focus(); document.execCommand(cmd,false,null); }
 function editFmtH2(){ document.getElementById('editContent').focus(); document.execCommand('formatBlock',false,'h2'); }

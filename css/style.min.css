@@ -1220,10 +1220,20 @@ button { cursor: pointer; font-family: var(--font); border: none; }
   color: #474747;
 }
 .single-blog-content img {
-  width: 100%;
+  max-width: 100% !important;
+  height: auto !important;
   border-radius: 12px;
   margin: 2rem 0;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.single-blog-content a {
+  color: var(--purple, #2a1060) !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  transition: color 0.2s ease;
+}
+.single-blog-content a:hover {
+  color: var(--gold, #c9933b) !important;
 }
 
 /* === COMPREHENSIVE SPACE DETAIL PAGE UPGRADES === */
