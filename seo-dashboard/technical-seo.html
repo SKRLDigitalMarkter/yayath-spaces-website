@@ -1,0 +1,553 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com" defer="defer"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#f6f3f2", "on-tertiary-container": "#d8945f", "primary": "#30006d", "on-error-container": "#93000a", "secondary-fixed-dim": "#edc156", "inverse-primary": "#d3bbff", "on-primary-fixed-variant": "#552f98", "outline": "#7b7483", "error": "#ba1a1a", "secondary-container": "#fcce62", "on-tertiary-fixed-variant": "#6c3a0c", "surface-container-high": "#eae7e7", "surface-container": "#f0eded", "outline-variant": "#ccc3d3", "on-secondary-fixed": "#251a00", "tertiary": "#3b1b00", "on-secondary": "#ffffff", "on-primary-fixed": "#260059", "surface-container-highest": "#e5e2e1", "tertiary-fixed-dim": "#ffb780", "surface": "#fcf9f8", "tertiary-container": "#5b2d00", "surface-bright": "#fcf9f8", "on-primary-container": "#b58ffc", "surface-container-lowest": "#ffffff", "on-primary": "#ffffff", "secondary-fixed": "#ffdf9b", "on-background": "#1c1b1b", "on-error": "#ffffff", "inverse-surface": "#313030", "primary-fixed-dim": "#d3bbff", "tertiary-fixed": "#ffdcc4", "surface-dim": "#dcd9d9", "surface-variant": "#e5e2e1", "on-tertiary-fixed": "#2f1400", "primary-container": "#471e89", "surface-tint": "#6e49b1", "secondary": "#785a00", "primary-fixed": "#ebdcff", "on-surface": "#1c1b1b", "on-secondary-container": "#745700", "on-surface-variant": "#4a4452", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "background": "#fcf9f8", "on-secondary-fixed-variant": "#5a4300", "inverse-on-surface": "#f3f0ef" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-2xl": "2rem", "space-sm": "0.5rem", "gutter-dense": "0.5rem", "space-md": "0.75rem", "space-xl": "1.5rem", "space-xxs": "0.125rem", "space-lg": "1rem", "space-xs": "0.25rem", "gutter": "1rem", "margin": "1.5rem", "margin-mobile": "1rem" }, "fontFamily": { "body-sm": ["Inter"], "label-sm": ["Inter"], "metric-stat": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Inter"], "display-lg": ["Inter"], "body-md": ["Inter"], "caption": ["Inter"], "headline-lg": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "metric-stat": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "caption": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest border-r border-outline-variant/50 z-50 flex flex-col justify-between select-none"><div class="flex flex-col flex-1 min-h-0"><div class="h-14 px-margin flex items-center gap-space-sm border-b border-outline-variant/40 shrink-0"><img alt="SEO Analyzer Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XfZOO91DIkydY0r7CUgBXwfXteK8yLJ1X49B2r3wEzJRg575XlDiUOg_DUfzOFYL0A4r0_nfYVbwHulKPJz58R0zk1wLyd7yvNVi20kCTG6YKJNfolcv1bjj9VF36xkQW7jZ45svGwturnB4Z5zwOFaanZoCZeHPO_Ur_CoQEvZbzhWYZ7MVuZKCGSY1ZSO1QmHdvlW0Gx23SvZepofTpTZz1WNPyRjyvf23QTTLNvijhAmr3QA14Hn6Q" fetchpriority="high"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-tight font-bold tracking-tight">ApexSEO</span><span class="font-caption text-caption text-on-surface-variant leading-none uppercase tracking-wider">Intelligence</span></div></div><div class="p-space-sm border-b border-outline-variant/40 bg-surface-container-low/40 shrink-0"><div class="w-full flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest border border-outline-variant/60 cursor-pointer hover:border-outline transition-colors"><div class="flex items-center gap-space-sm min-w-0"><div class="w-7 h-7 rounded bg-primary/10 flex items-center justify-center text-primary shrink-0"><span class="material-symbols-outlined text-[18px]">language</span></div><div class="flex flex-col min-w-0 text-left"><span class="font-label-md text-label-md text-on-surface truncate font-semibold">www.example.com</span><span class="font-caption text-caption text-on-surface-variant flex items-center gap-space-xxs"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span> Health Score: 82/100</span></div></div><span class="material-symbols-outlined text-outline text-[18px] shrink-0">unfold_more</span></div></div><div class="flex-1 overflow-y-auto px-space-sm py-space-sm space-y-space-xxs"><div class="px-space-sm py-space-xs font-caption text-caption text-outline uppercase tracking-wider font-semibold">Analysis &amp; Audits</div><nav class="space-y-space-xxs" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="seo-overview-dashboard" href="#"><span>SEO Overview Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="page-seo-analysis" href="#"><span>Page SEO Analysis</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="pages" href="#"><span>Pages</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="keyword-optimization" href="#"><span>Keyword Optimization</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="content" href="#"><span>Content</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded transition-colors bg-primary-container text-on-primary font-semibold" data-path="technical-seo" href="#"><span>Technical SEO</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="issues" href="#"><span>Issues</span><span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-error-container text-error">14</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reports" href="#"><span>Reports</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span>Settings</span></a></nav></div></div><div class="border-t border-outline-variant/40 p-space-sm bg-surface-container-lowest space-y-space-xxs shrink-0"><div class="pt-space-xs mt-space-xs border-t border-outline-variant/30 flex items-center justify-between px-space-sm py-1"><div class="flex items-center gap-space-sm min-w-0"><div class="relative shrink-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGod2nXXopxwnY6PdyIsUO3eOrWJiR7AEl0ryWt2LA95h1IKVZkIjcgKnVkwsy827cDAaGbU1vvEv5iBq66Qj038AronKLD3I3lc2DVDsxe3G8Kqvhm33nv3AQEKrOP0xaVLpLzOBdqocF1JP0lfgNyeVMj4C2XRVsVkh4EeyATYgS7KmmpTAMSVtaLtIgUmQrCqKSU6JQexjcIxsL3d-rNBM6iFx-QAzYYIr1CXqzDyWrMV2pPTrujw" loading="lazy"><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-500 border border-surface-container-lowest"></span></div><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm text-on-surface truncate font-medium">Alex Mercer</span><span class="font-caption text-caption text-on-surface-variant truncate">SEO Lead</span></div></div><button class="text-outline hover:text-on-surface p-1 rounded transition-colors"><span class="material-symbols-outlined text-[18px]">logout</span></button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest border-b border-outline-variant/50 z-40 px-margin flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md min-w-0"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm"><a class="hover:text-primary transition-colors" href="#">Projects</a><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><a class="hover:text-primary transition-colors truncate max-w-[140px]" href="#">example.com</a><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span class="font-semibold text-on-surface truncate">SEO Audit</span></div></div><div class="flex-1 max-w-lg mx-space-lg"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-space-sm text-outline text-[18px]">search</span><input class="w-full h-9 pl-9 pr-space-sm rounded border border-outline-variant/60 bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:bg-surface-container-lowest transition-all" placeholder="Analyze URL or keyword (e.g. /pricing, 'saas rank')..." type="text"></div></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden xl:flex items-center gap-space-xs px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 font-caption text-caption text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-emerald-600">history</span><span>Last analyzed: Today, 11:42 AM</span><button class="text-on-surface-variant hover:text-primary transition-colors ml-space-xxs flex items-center"><span class="material-symbols-outlined text-[14px]">sync</span></button></div><span class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-secondary-fixed text-on-secondary-fixed border border-secondary/20">PRO</span><button class="relative p-1.5 rounded hover:bg-surface-container-high text-on-surface-variant transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error border border-surface-container-lowest"></span></button><div class="h-5 w-px bg-outline-variant/40"></div><div class="flex items-center gap-space-sm cursor-pointer"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGod2nXXopxwnY6PdyIsUO3eOrWJiR7AEl0ryWt2LA95h1IKVZkIjcgKnVkwsy827cDAaGbU1vvEv5iBq66Qj038AronKLD3I3lc2DVDsxe3G8Kqvhm33nv3AQEKrOP0xaVLpLzOBdqocF1JP0lfgNyeVMj4C2XRVsVkh4EeyATYgS7KmmpTAMSVtaLtIgUmQrCqKSU6JQexjcIxsL3d-rNBM6iFx-QAzYYIr1CXqzDyWrMV2pPTrujw" loading="lazy"><span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-500 border border-surface-container-lowest"></span></div><span class="material-symbols-outlined text-outline text-[18px]">expand_more</span></div></div></header><main class="w-full pt-14 bg-surface-container-low min-h-screen"><div class="flex flex-col w-full">
+<div class="p-margin space-y-space-xl">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="space-y-space-xxs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-caption text-caption">
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+<span class="uppercase tracking-wider font-semibold">Live Crawl Node #04</span>
+<span class="text-outline">/</span>
+<span>HTTP/2 &amp; TLS 1.3 Active</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Technical SEO &amp; Indexability</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Monitor crawl budget, HTTP response codes, Core Web Vitals, canonical architecture, and robots/sitemap directives across all synchronized origins.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="h-9 px-space-md rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md shadow-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">file_download</span>
+<span>Export Server Log Report</span>
+</button>
+<button class="h-9 px-space-md rounded bg-primary-container text-on-primary hover:opacity-95 transition-all font-label-md text-label-md shadow-sm flex items-center gap-space-xs" id="recrawl-btn">
+<span class="material-symbols-outlined text-[18px]" id="recrawl-icon">cached</span>
+<span>Recrawl Tech Directives</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter">
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="space-y-space-xxs">
+<span class="font-caption text-caption text-on-surface-variant uppercase font-semibold">Crawlability &amp; Index</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-stat text-metric-stat text-on-surface">98.6%</span>
+<span class="font-caption text-caption text-emerald-700 font-semibold">+0.4%</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-800 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Healthy
+          </span>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-low/50 -mx-space-lg -mb-space-lg px-space-lg py-2.5 rounded-b-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">140 of 142 URLs indexable</span>
+<span class="material-symbols-outlined text-[16px] text-outline">verified</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="space-y-space-xxs">
+<span class="font-caption text-caption text-on-surface-variant uppercase font-semibold">Core Web Vitals (P75)</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-stat text-metric-stat text-on-surface">Passed 3/3</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-800 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Optimal
+          </span>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-low/50 -mx-space-lg -mb-space-lg px-space-lg py-2.5 rounded-b-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">LCP 1.9s · CLS 0.02 · INP 110ms</span>
+<span class="material-symbols-outlined text-[16px] text-emerald-700">bolt</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="space-y-space-xxs">
+<span class="font-caption text-caption text-on-surface-variant uppercase font-semibold">HTTP Status Codes</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-stat text-metric-stat text-error">2 Errors</span>
+<span class="font-caption text-caption text-error font-medium">Critical</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-error-container text-error flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>Action Needed
+          </span>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-low/50 -mx-space-lg -mb-space-lg px-space-lg py-2.5 rounded-b-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">1x 404 Not Found · 1x 500 Server</span>
+<span class="material-symbols-outlined text-[16px] text-error">warning</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="space-y-space-xxs">
+<span class="font-caption text-caption text-on-surface-variant uppercase font-semibold">Canonical &amp; Directives</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-stat text-metric-stat text-amber-700">3 Discrepancies</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-50 text-amber-800 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Warning
+          </span>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-low/50 -mx-space-lg -mb-space-lg px-space-lg py-2.5 rounded-b-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Conflicting canonical references</span>
+<span class="material-symbols-outlined text-[16px] text-amber-700">alt_route</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<div class="lg:col-span-7 xl:col-span-7 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<div class="p-space-lg pb-space-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Crawl Diagnostics &amp; HTTP Responses</h2>
+<p class="font-caption text-caption text-on-surface-variant">Real-time status of 142 discovered endpoints during crawl cycle #8821</p>
+</div>
+<div class="flex items-center gap-space-xs self-start sm:self-auto">
+<span class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-2 text-outline text-[16px]">filter_list</span>
+<input class="h-8 pl-7 pr-2 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest w-44" id="crawl-filter" placeholder="Filter path or status..." type="text">
+</span>
+</div>
+</div>
+<div class="px-space-lg border-b border-surface-container-high flex gap-space-sm overflow-x-auto">
+<button class="tab-btn active pb-2.5 font-label-md text-label-md text-primary font-semibold border-b-2 border-primary-container shrink-0 flex items-center gap-1.5" data-tab="all">
+<span>HTTP Status</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary/10 text-primary text-[11px] font-bold">142</span>
+</button>
+<button class="tab-btn pb-2.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors shrink-0 flex items-center gap-1.5" data-tab="canonical">
+<span>Canonicalization</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface-variant text-[11px]">142</span>
+</button>
+<button class="tab-btn pb-2.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors shrink-0 flex items-center gap-1.5" data-tab="robots">
+<span>Robots &amp; Directives</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface-variant text-[11px]">142</span>
+</button>
+<button class="tab-btn pb-2.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors shrink-0 flex items-center gap-1.5" data-tab="sitemap">
+<span>Sitemap Coverage</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface-variant text-[11px]">138</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm" id="diagnostics-table">
+<thead class="bg-surface-container-low text-on-surface-variant uppercase font-caption text-caption sticky top-0">
+<tr>
+<th class="py-2.5 px-space-md">Discovered URL</th>
+<th class="py-2.5 px-space-sm">Status</th>
+<th class="py-2.5 px-space-sm">Canonical URL</th>
+<th class="py-2.5 px-space-sm">Robots Meta</th>
+<th class="py-2.5 px-space-sm text-center">Sitemap</th>
+<th class="py-2.5 px-space-sm text-center">Depth</th>
+<th class="py-2.5 px-space-md text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/60">
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-2.5 px-space-md font-medium text-on-surface max-w-[220px]">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+<span class="truncate" title="https://www.example.com/">/</span>
+</div>
+</td>
+<td class="py-2.5 px-space-sm">
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-800">200 OK</span>
+</td>
+<td class="py-2.5 px-space-sm text-on-surface-variant truncate max-w-[130px]" title="Self-referencing (https://www.example.com/)">
+<span class="text-emerald-700">Self-ref</span>
+</td>
+<td class="py-2.5 px-space-sm font-mono text-[11px] text-on-surface-variant">index, follow</td>
+<td class="py-2.5 px-space-sm text-center">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-700">Yes</span>
+</td>
+<td class="py-2.5 px-space-sm text-center font-caption text-caption text-on-surface-variant">L0</td>
+<td class="py-2.5 px-space-md text-right">
+<button class="text-primary hover:underline font-label-sm text-label-sm font-semibold">Inspect</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/40 transition-colors bg-error-container/20">
+<td class="py-2.5 px-space-md font-medium text-on-surface max-w-[220px]">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[16px] text-error">error</span>
+<span class="truncate text-error font-semibold" title="https://www.example.com/api/v1/checkout-session">/api/v1/checkout-session</span>
+</div>
+</td>
+<td class="py-2.5 px-space-sm">
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-error-container text-error">500 Server</span>
+</td>
+<td class="py-2.5 px-space-sm text-on-surface-variant truncate max-w-[130px]">
+<span class="text-outline">None</span>
+</td>
+<td class="py-2.5 px-space-sm font-mono text-[11px] text-error">noindex, nofollow</td>
+<td class="py-2.5 px-space-sm text-center">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-outline">No</span>
+</td>
+<td class="py-2.5 px-space-sm text-center font-caption text-caption text-on-surface-variant">L2</td>
+<td class="py-2.5 px-space-md text-right">
+<button class="px-2 py-0.5 rounded bg-error text-on-error font-label-sm text-label-sm font-semibold shadow-xs hover:opacity-90">View Trace</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/40 transition-colors bg-error-container/10">
+<td class="py-2.5 px-space-md font-medium text-on-surface max-w-[220px]">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[16px] text-error">cancel</span>
+<span class="truncate text-on-surface" title="https://www.example.com/legacy-guide">/legacy-guide</span>
+</div>
+</td>
+<td class="py-2.5 px-space-sm">
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-error-container text-error">404 Missing</span>
+</td>
+<td class="py-2.5 px-space-sm text-on-surface-variant truncate max-w-[130px]">
+<span class="text-outline">None</span>
+</td>
+<td class="py-2.5 px-space-sm font-mono text-[11px] text-on-surface-variant">index, follow</td>
+<td class="py-2.5 px-space-sm text-center">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-error-container text-error">Yes (Dead)</span>
+</td>
+<td class="py-2.5 px-space-sm text-center font-caption text-caption text-on-surface-variant">L2</td>
+<td class="py-2.5 px-space-md text-right">
+<button class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold shadow-xs hover:opacity-90">Fix Redirect</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/40 transition-colors bg-amber-50/40">
+<td class="py-2.5 px-space-md font-medium text-on-surface max-w-[220px]">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[16px] text-amber-600">call_split</span>
+<span class="truncate text-on-surface" title="https://www.example.com/products/seo-suite?src=campaign">/products/seo-suite?src=camp</span>
+</div>
+</td>
+<td class="py-2.5 px-space-sm">
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-amber-50 text-amber-800">301 Redirect</span>
+</td>
+<td class="py-2.5 px-space-sm text-on-surface-variant truncate max-w-[130px]" title="Points to https://www.example.com/products/seo-suite">
+<span class="text-amber-700">/products/seo-suite</span>
+</td>
+<td class="py-2.5 px-space-sm font-mono text-[11px] text-on-surface-variant">noindex, follow</td>
+<td class="py-2.5 px-space-sm text-center">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-amber-100 text-amber-800">Yes (Warn)</span>
+</td>
+<td class="py-2.5 px-space-sm text-center font-caption text-caption text-on-surface-variant">L3</td>
+<td class="py-2.5 px-space-md text-right">
+<button class="text-primary hover:underline font-label-sm text-label-sm font-semibold">Inspect</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-2.5 px-space-md font-medium text-on-surface max-w-[220px]">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+<span class="truncate" title="https://www.example.com/pricing">/pricing</span>
+</div>
+</td>
+<td class="py-2.5 px-space-sm">
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-800">200 OK</span>
+</td>
+<td class="py-2.5 px-space-sm text-on-surface-variant truncate max-w-[130px]">
+<span class="text-emerald-700">Self-ref</span>
+</td>
+<td class="py-2.5 px-space-sm font-mono text-[11px] text-on-surface-variant">index, follow</td>
+<td class="py-2.5 px-space-sm text-center">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-700">Yes</span>
+</td>
+<td class="py-2.5 px-space-sm text-center font-caption text-caption text-on-surface-variant">L1</td>
+<td class="py-2.5 px-space-md text-right">
+<button class="text-primary hover:underline font-label-sm text-label-sm font-semibold">Inspect</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-2.5 px-space-md font-medium text-on-surface max-w-[220px]">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+<span class="truncate" title="https://www.example.com/blog/technical-seo-checklist-2025">/blog/tech-seo-2025</span>
+</div>
+</td>
+<td class="py-2.5 px-space-sm">
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-800">200 OK</span>
+</td>
+<td class="py-2.5 px-space-sm text-on-surface-variant truncate max-w-[130px]">
+<span class="text-emerald-700">Self-ref</span>
+</td>
+<td class="py-2.5 px-space-sm font-mono text-[11px] text-on-surface-variant">index, follow</td>
+<td class="py-2.5 px-space-sm text-center">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-700">Yes</span>
+</td>
+<td class="py-2.5 px-space-sm text-center font-caption text-caption text-on-surface-variant">L2</td>
+<td class="py-2.5 px-space-md text-right">
+<button class="text-primary hover:underline font-label-sm text-label-sm font-semibold">Inspect</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/40 transition-colors bg-amber-50/20">
+<td class="py-2.5 px-space-md font-medium text-on-surface max-w-[220px]">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[16px] text-amber-600">link_off</span>
+<span class="truncate text-on-surface" title="https://www.example.com/category/old-updates">/category/old-updates</span>
+</div>
+</td>
+<td class="py-2.5 px-space-sm">
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-800">200 OK</span>
+</td>
+<td class="py-2.5 px-space-sm text-amber-700 truncate max-w-[130px]" title="Points to /blog instead of self">
+<span>Mismatch /blog</span>
+</td>
+<td class="py-2.5 px-space-sm font-mono text-[11px] text-on-surface-variant">noindex, follow</td>
+<td class="py-2.5 px-space-sm text-center">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-outline">No</span>
+</td>
+<td class="py-2.5 px-space-sm text-center font-caption text-caption text-on-surface-variant">L3</td>
+<td class="py-2.5 px-space-md text-right">
+<button class="text-primary hover:underline font-label-sm text-label-sm font-semibold">Inspect</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-space-sm bg-surface-container-low/60 flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span>Showing 7 of 142 scanned endpoints</span>
+<div class="flex items-center gap-space-xs">
+<button class="px-2 py-1 rounded bg-surface-container-lowest hover:bg-surface-container-high transition-colors disabled:opacity-50" disabled="">Previous</button>
+<button class="px-2 py-1 rounded bg-surface-container-lowest hover:bg-surface-container-high transition-colors">Next</button>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Crawl Depth Architecture</h3>
+<span class="font-caption text-caption text-on-surface-variant">Optimal indexation threshold ≤ 3 clicks</span>
+</div>
+<div class="grid grid-cols-4 gap-space-sm pt-space-xs text-center">
+<div class="bg-surface-container-low p-space-sm rounded">
+<div class="font-caption text-caption text-outline font-semibold">Level 0 (Root)</div>
+<div class="font-metric-stat text-[20px] text-on-surface mt-1">1 URL</div>
+<div class="text-[11px] text-emerald-700 font-medium">100% indexed</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded">
+<div class="font-caption text-caption text-outline font-semibold">Level 1 (Nav)</div>
+<div class="font-metric-stat text-[20px] text-on-surface mt-1">18 URLs</div>
+<div class="text-[11px] text-emerald-700 font-medium">100% indexed</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded">
+<div class="font-caption text-caption text-outline font-semibold">Level 2 (Deep)</div>
+<div class="font-metric-stat text-[20px] text-on-surface mt-1">94 URLs</div>
+<div class="text-[11px] text-emerald-700 font-medium">98.9% indexed</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded">
+<div class="font-caption text-caption text-outline font-semibold">Level 3+ (Leaf)</div>
+<div class="font-metric-stat text-[20px] text-on-surface mt-1">29 URLs</div>
+<div class="text-[11px] text-amber-700 font-medium">93.1% indexed</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 xl:col-span-5 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Core Web Vitals Field Data</h3>
+<p class="font-caption text-caption text-on-surface-variant">Chrome User Experience Report (CrUX) · 75th Percentile</p>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-emerald-50 text-emerald-800">
+              PASSED
+            </span>
+</div>
+<div class="space-y-space-md mt-space-md">
+<div class="bg-surface-container-low/70 p-space-md rounded-lg">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Largest Contentful Paint (LCP)</span>
+<span class="material-symbols-outlined text-[16px] text-outline" title="Render time of largest image or text block">help_outline</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-stat text-[20px] text-emerald-700 font-bold">1.9s</span>
+<span class="font-caption text-caption text-outline">/ 2.5s</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden flex">
+<div class="bg-emerald-500 h-full rounded-full" style="width: 76%"></div>
+</div>
+<div class="flex justify-between text-[11px] text-on-surface-variant mt-1">
+<span class="text-emerald-700 font-medium">Good (≤ 2.5s)</span>
+<span>Needs Imp (≤ 4.0s)</span>
+<span>Poor (&gt; 4.0s)</span>
+</div>
+</div>
+<div class="bg-surface-container-low/70 p-space-md rounded-lg">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Cumulative Layout Shift (CLS)</span>
+<span class="material-symbols-outlined text-[16px] text-outline" title="Visual stability of content">help_outline</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-stat text-[20px] text-emerald-700 font-bold">0.02</span>
+<span class="font-caption text-caption text-outline">/ 0.10</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden flex">
+<div class="bg-emerald-500 h-full rounded-full" style="width: 20%"></div>
+</div>
+<div class="flex justify-between text-[11px] text-on-surface-variant mt-1">
+<span class="text-emerald-700 font-medium">Good (≤ 0.1)</span>
+<span>Needs Imp (≤ 0.25)</span>
+<span>Poor (&gt; 0.25)</span>
+</div>
+</div>
+<div class="bg-surface-container-low/70 p-space-md rounded-lg">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Interaction to Next Paint (INP)</span>
+<span class="material-symbols-outlined text-[16px] text-outline" title="Responsiveness to user interactions">help_outline</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-stat text-[20px] text-emerald-700 font-bold">110ms</span>
+<span class="font-caption text-caption text-outline">/ 200ms</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden flex">
+<div class="bg-emerald-500 h-full rounded-full" style="width: 55%"></div>
+</div>
+<div class="flex justify-between text-[11px] text-on-surface-variant mt-1">
+<span class="text-emerald-700 font-medium">Good (≤ 200ms)</span>
+<span>Needs Imp (≤ 500ms)</span>
+<span>Poor (&gt; 500ms)</span>
+</div>
+</div>
+<div class="bg-surface-container-low/70 p-space-md rounded-lg">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Time to First Byte (TTFB)</span>
+<span class="material-symbols-outlined text-[16px] text-outline" title="Server response latency">help_outline</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-stat text-[20px] text-emerald-700 font-bold">240ms</span>
+<span class="font-caption text-caption text-outline">/ 800ms</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden flex">
+<div class="bg-emerald-500 h-full rounded-full" style="width: 30%"></div>
+</div>
+<div class="flex justify-between text-[11px] text-on-surface-variant mt-1">
+<span class="text-emerald-700 font-medium">Optimal (≤ 800ms)</span>
+<span>Sub-optimal (&gt; 800ms)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Technical SEO Health Checklist</h3>
+<p class="font-caption text-caption text-on-surface-variant">Automated validation of core technical requirements</p>
+</div>
+<span class="font-caption text-caption text-outline font-semibold">5 Checks Run</span>
+</div>
+<div class="space-y-space-sm">
+<div class="p-space-sm rounded bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-emerald-600 mt-0.5 shrink-0">verified_user</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">HTTPS &amp; TLS 1.3</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-700">Passed</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">Strict Transport Security (HSTS) with max-age=31536000 enabled.</p>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-emerald-600 mt-0.5 shrink-0">rule</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Robots.txt Syntax</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-700">Passed</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">Valid Googlebot syntax, 0 parse errors, sitemap directive linked.</p>
+</div>
+</div>
+<div class="p-space-sm rounded bg-amber-50/60 flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-amber-600 mt-0.5 shrink-0">alt_route</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-amber-900">XML Sitemap Integrity</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-amber-100 text-amber-800">Warning</span>
+</div>
+<p class="font-caption text-caption text-amber-800 mt-0.5">2 URLs in sitemap.xml return 301 redirects instead of 200 canonical responses.</p>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-emerald-600 mt-0.5 shrink-0">lock</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Mixed Content (HTTP/HTTPS)</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-700">Passed</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">0 insecure passive or active HTTP assets detected on indexable routes.</p>
+</div>
+</div>
+<div class="p-space-sm rounded bg-amber-50/60 flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-amber-600 mt-0.5 shrink-0">schema</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-amber-900">Structured Data / Schema</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-amber-100 text-amber-800">Review</span>
+</div>
+<p class="font-caption text-caption text-amber-800 mt-0.5">8 Pages missing WebPage Schema markup or BreadcrumbList annotations.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm flex items-center gap-space-md">
+<div class="w-16 h-16 rounded bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[32px] text-primary">dns</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Crawl Budget Efficiency</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Server response overhead average 84ms per roundtrip. Zero bot throttles encountered by search spiders in past 48h.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    const recrawlBtn = document.getElementById('recrawl-btn');
+    const recrawlIcon = document.getElementById('recrawl-icon');
+    if (recrawlBtn && recrawlIcon) {
+      recrawlBtn.addEventListener('click', () => {
+        recrawlIcon.classList.add('animate-spin');
+        const textSpan = recrawlBtn.querySelector('span:last-child');
+        const originalText = textSpan.textContent;
+        textSpan.textContent = 'Crawling origins...';
+        setTimeout(() => {
+          recrawlIcon.classList.remove('animate-spin');
+          textSpan.textContent = 'Directives Updated!';
+          setTimeout(() => {
+            textSpan.textContent = originalText;
+          }, 2000);
+        }, 1600);
+      });
+    }
+
+    const tabs = document.querySelectorAll('.tab-btn');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('text-primary', 'font-semibold', 'border-b-2', 'border-primary-container');
+          t.classList.add('text-on-surface-variant');
+        });
+        tab.classList.remove('text-on-surface-variant');
+        tab.classList.add('text-primary', 'font-semibold', 'border-b-2', 'border-primary-container');
+      });
+    });
+
+    const searchInput = document.getElementById('crawl-filter');
+    const tableRows = document.querySelectorAll('#diagnostics-table tbody tr');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        tableRows.forEach(row => {
+          const text = row.textContent.toLowerCase();
+          row.style.display = text.includes(query) ? '' : 'none';
+        });
+      });
+    }
+  </script>
+</div></main></div>
+
+ISSUE PAGE -</body></html>

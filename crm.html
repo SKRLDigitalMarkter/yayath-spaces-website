@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yayath CRM - Lead Management</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css"/>
-  <style>
+<!DOCTYPE html><html lang="en"><head>
+<!-- Google Tag Manager -->
+
+<!-- End Google Tag Manager -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Yayath CRM - Lead Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<noscript></noscript>
+<style>
     :root {
       --bg: #F8FAFC;
       --surface: #FFFFFF;
@@ -120,122 +123,115 @@
     .c-metric strong { font-size: 1.1rem; color: #1E293B; }
 
   </style>
-</head>
+<meta content="noindex, nofollow" name="robots"><link href="https://www.yayathspaces.com/crm" rel="canonical"><link href="/assets/images/logo/favicon.png" rel="apple-touch-icon"><link href="/assets/images/logo/favicon.png" rel="icon" type="image/png"><meta content="Yayath CRM - Lead Management" property="og:title"><meta content="" property="og:description"><meta content="https://www.yayathspaces.com/crm" property="og:url"><meta content="website" property="og:type"><meta content="https://www.yayathspaces.com/assets/images/logo/favicon.png" property="og:image"></head>
 <body>
-
-  <div class="topbar">
-    <div class="brand">
-      <i class="ti ti-building-skyscraper" style="font-size:1.5rem;color:var(--primary);"></i>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WSK8FGGH" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="topbar">
+<div class="brand">
+<i class="ti ti-building-skyscraper" style="font-size:1.5rem;color:var(--primary);"></i>
       Yayath <span>Spaces CRM</span>
-    </div>
-    <div class="topbar-actions">
-      <div class="search-box">
-        <i class="ti ti-search"></i>
-        <input type="text" id="searchInput" placeholder="Search by name, email or phone...">
-      </div>
-      <button class="btn-icon" title="Export to CSV" id="exportBtn" style="color:var(--success);"><i class="ti ti-download"></i></button>
-      <button class="btn-icon" title="Refresh Data" id="refreshBtn"><i class="ti ti-refresh"></i></button>
-      <a href="/" class="btn-icon" title="View Website"><i class="ti ti-external-link"></i></a>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="page-header">
-      <div class="page-title">
-        <h1>Lead Management Pipeline</h1>
-        <p>Real-time updates directly from your website forms.</p>
-      </div>
-    </div>
-
-    
-    <div class="tabs-container">
-      <button class="tab-btn active" id="tab-leads">Leads Pipeline</button>
-      <button class="tab-btn" id="tab-campaigns">Ads Campaigns <i class="ti ti-chart-bar"></i></button>
-    </div>
-
-    <div id="view-leads" class="view-container active">
-      <div class="metrics-row">
-      <div class="metric-card">
-        <div class="metric-header"><span>Total Leads Captured</span> <i class="ti ti-users" style="color:var(--primary);"></i></div>
-        <div class="metric-val" id="totalLeads">0</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-header"><span>New Today</span> <i class="ti ti-bolt" style="color:var(--warning);"></i></div>
-        <div class="metric-val" id="newLeads">0</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-header"><span>Top Requested Location</span> <i class="ti ti-map-pin" style="color:var(--info);"></i></div>
-        <div class="metric-val" id="topLocation" style="font-size:1.2rem;line-height:1.5;margin-top:auto;">-</div>
-      </div>
-    </div>
-
-    <div class="table-card">
-      <table>
-        <thead>
-          <tr>
-            <th>Stage</th>
-            <th>Client Name & Company</th>
-            <th>Contact & Quick Connect</th>
-            <th>Workspace Solution</th>
-            <th>Location & Source</th>
-            <th>Received On</th>
-            <th>Sales Notes</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="leadsBody">
-          <tr><td colspan="8" style="text-align:center;padding:40px;color:var(--text-muted);"><i class="ti ti-loader ti-spin"></i> Loading leads...</td></tr>
-        </tbody>
-      </table>
-      <div class="table-footer">
-        <div id="showingText">Showing 0 of 0 leads</div>
-        <div><i class="ti ti-info-circle"></i> Click on any status dropdown to update the lead stage locally.</div>
-      </div>
-  </div>
-
-    <div id="view-campaigns" class="view-container">
-      <div class="metrics-row">
-        <div class="metric-card">
-          <div class="metric-header"><span>Total Ad Spend</span> <i class="ti ti-currency-rupee" style="color:var(--danger);"></i></div>
-          <div class="metric-val">₹ 1,45,200</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-header"><span>Total Impressions</span> <i class="ti ti-eye" style="color:var(--info);"></i></div>
-          <div class="metric-val">2.4M</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-header"><span>Total Conversions</span> <i class="ti ti-target" style="color:var(--success);"></i></div>
-          <div class="metric-val">342</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-header"><span>Overall ROI</span> <i class="ti ti-trending-up" style="color:var(--primary);"></i></div>
-          <div class="metric-val">+34%</div>
-        </div>
-      </div>
-
-      <div class="table-card">
-        <table>
-          <thead>
-            <tr>
-              <th>Status</th>
-              <th>Campaign Name & Source</th>
-              <th>Spend</th>
-              <th>Impressions</th>
-              <th>Clicks (CTR)</th>
-              <th>Conversions</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="campaignsBody">
-            <!-- Rendered by crm.js -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-
-  <!-- MODALS -->
-  <style>
+</div>
+<div class="topbar-actions">
+<div class="search-box">
+<i class="ti ti-search"></i>
+<input id="searchInput" placeholder="Search by name, email or phone..." type="text">
+</div>
+<button class="btn-icon" id="exportBtn" style="color:var(--success);" title="Export to CSV"><i class="ti ti-download"></i></button>
+<button class="btn-icon" id="refreshBtn" title="Refresh Data"><i class="ti ti-refresh"></i></button>
+<a class="btn-icon" href="/" title="View Website"><i class="ti ti-external-link"></i></a>
+</div>
+</div>
+<div class="container">
+<div class="page-header">
+<div class="page-title">
+<h1>Lead Management Pipeline</h1>
+<p>Real-time updates directly from your website forms.</p>
+</div>
+</div>
+<div class="tabs-container">
+<button class="tab-btn active" id="tab-leads">Leads Pipeline</button>
+<button class="tab-btn" id="tab-campaigns">Ads Campaigns <i class="ti ti-chart-bar"></i></button>
+</div>
+<div class="view-container active" id="view-leads">
+<div class="metrics-row">
+<div class="metric-card">
+<div class="metric-header"><span>Total Leads Captured</span> <i class="ti ti-users" style="color:var(--primary);"></i></div>
+<div class="metric-val" id="totalLeads">0</div>
+</div>
+<div class="metric-card">
+<div class="metric-header"><span>New Today</span> <i class="ti ti-bolt" style="color:var(--warning);"></i></div>
+<div class="metric-val" id="newLeads">0</div>
+</div>
+<div class="metric-card">
+<div class="metric-header"><span>Top Requested Location</span> <i class="ti ti-map-pin" style="color:var(--info);"></i></div>
+<div class="metric-val" id="topLocation" style="font-size:1.2rem;line-height:1.5;margin-top:auto;">-</div>
+</div>
+</div>
+<div class="table-card">
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Client Name &amp; Company</th>
+<th>Contact &amp; Quick Connect</th>
+<th>Workspace Solution</th>
+<th>Location &amp; Source</th>
+<th>Received On</th>
+<th>Sales Notes</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody id="leadsBody">
+<tr><td colspan="8" style="text-align:center;padding:40px;color:var(--text-muted);"><i class="ti ti-loader ti-spin"></i> Loading leads...</td></tr>
+</tbody>
+</table>
+<div class="table-footer">
+<div id="showingText">Showing 0 of 0 leads</div>
+<div><i class="ti ti-info-circle"></i> Click on any status dropdown to update the lead stage locally.</div>
+</div>
+</div>
+<div class="view-container" id="view-campaigns">
+<div class="metrics-row">
+<div class="metric-card">
+<div class="metric-header"><span>Total Ad Spend</span> <i class="ti ti-currency-rupee" style="color:var(--danger);"></i></div>
+<div class="metric-val">₹ 1,45,200</div>
+</div>
+<div class="metric-card">
+<div class="metric-header"><span>Total Impressions</span> <i class="ti ti-eye" style="color:var(--info);"></i></div>
+<div class="metric-val">2.4M</div>
+</div>
+<div class="metric-card">
+<div class="metric-header"><span>Total Conversions</span> <i class="ti ti-target" style="color:var(--success);"></i></div>
+<div class="metric-val">342</div>
+</div>
+<div class="metric-card">
+<div class="metric-header"><span>Overall ROI</span> <i class="ti ti-trending-up" style="color:var(--primary);"></i></div>
+<div class="metric-val">+34%</div>
+</div>
+</div>
+<div class="table-card">
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Campaign Name &amp; Source</th>
+<th>Spend</th>
+<th>Impressions</th>
+<th>Clicks (CTR)</th>
+<th>Conversions</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody id="campaignsBody">
+<!-- Rendered by crm.js -->
+</tbody>
+</table>
+</div>
+</div>
+<!-- MODALS -->
+<style>
     .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
     .modal-overlay.active { display: flex; }
     .modal-box { background: white; width: 90%; max-width: 600px; border-radius: 12px; padding: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); max-height: 90vh; overflow-y: auto; position: relative; }
@@ -281,77 +277,83 @@
     .c-metric strong { font-size: 1.1rem; color: #1E293B; }
 
   </style>
+<!-- Edit Lead Modal -->
+<div class="modal-overlay" id="editLeadModal">
+<div class="modal-box">
+<div class="modal-header">
+<h2>Edit Lead / Add Notes</h2>
+<button class="modal-close" onclick="closeEditModal()">×</button>
+</div>
+<form id="editLeadForm">
+<input id="edit-id" type="hidden">
+<div class="form-group">
+<label>Full Name</label>
+<input id="edit-name" required="" type="text">
+</div>
+<div class="form-group">
+<label>Email Address</label>
+<input id="edit-email" type="email">
+</div>
+<div class="form-group">
+<label>Phone Number</label>
+<input id="edit-phone" required="" type="text">
+</div>
+<div class="form-group">
+<label>Company (Optional)</label>
+<input id="edit-company" type="text">
+</div>
+<div class="form-group">
+<label>Requirement / Workspace Solution</label>
+<select id="edit-solution">
+<option value="General">General / Not Specified</option>
+<option value="Managed Offices">Managed Offices</option>
+<option value="Coworking Spaces">Coworking Spaces</option>
+<option value="Meeting Rooms">Meeting Rooms</option>
+<option value="Virtual Office">Virtual Office</option>
+<option value="Daypass">Daypass</option>
+<option value="Commercial Spaces">Commercial Spaces</option>
+<option value="3PL Services">3PL Services</option>
+<option value="Dark Store">Dark Store</option>
+<option value="Cold Storage">Cold Storage</option>
+<option value="Retail Spaces">Retail Spaces</option>
+</select>
+</div>
+<div class="form-group">
+<label>Sales Notes / Feedback</label>
+<textarea id="edit-notes" placeholder="Add follow-up notes, special requirements, etc." rows="4"></textarea>
+</div>
+<div class="modal-footer">
+<button class="btn btn-cancel" onclick="closeEditModal()" type="button">Cancel</button>
+<button class="btn btn-save" id="saveLeadBtn" type="submit">Save Changes</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Campaign Preview Modal -->
+<div class="modal-overlay" id="campaignModal">
+<div class="modal-box">
+<div class="modal-header">
+<h2>Campaign / Source Details</h2>
+<button class="modal-close" onclick="closeCampaignModal()">×</button>
+</div>
+<div id="campaignContent">
+<!-- Injected dynamically -->
+</div>
+<div class="modal-footer">
+<button class="btn btn-cancel" onclick="closeCampaignModal()" type="button">Close</button>
+</div>
+</div>
+</div>
+<script src="js/crm.js" defer="defer"></script>
+<div aria-hidden="true" style="display:none;">
+<a href="index.html">Home</a>
+<a href="about-us.html">About Us</a>
+<a href="coworking-spaces.html">Coworking</a>
+<a href="managed-offices.html">Managed Offices</a>
+<a href="gallery.html">Gallery</a>
+<a href="retail.html">Retail</a>
+<a href="contact-us.html">Contact Us</a>
+</div>
+</div></div>
 
-  <!-- Edit Lead Modal -->
-  <div class="modal-overlay" id="editLeadModal">
-    <div class="modal-box">
-      <div class="modal-header">
-        <h2>Edit Lead / Add Notes</h2>
-        <button class="modal-close" onclick="closeEditModal()">&times;</button>
-      </div>
-      <form id="editLeadForm">
-        <input type="hidden" id="edit-id">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" id="edit-name" required>
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" id="edit-email">
-        </div>
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input type="text" id="edit-phone" required>
-        </div>
-        <div class="form-group">
-          <label>Company (Optional)</label>
-          <input type="text" id="edit-company">
-        </div>
-        <div class="form-group">
-          <label>Requirement / Workspace Solution</label>
-          <select id="edit-solution">
-            <option value="General">General / Not Specified</option>
-            <option value="Managed Offices">Managed Offices</option>
-            <option value="Coworking Spaces">Coworking Spaces</option>
-            <option value="Meeting Rooms">Meeting Rooms</option>
-            <option value="Virtual Office">Virtual Office</option>
-            <option value="Daypass">Daypass</option>
-            <option value="Commercial Spaces">Commercial Spaces</option>
-            <option value="3PL Services">3PL Services</option>
-            <option value="Dark Store">Dark Store</option>
-            <option value="Cold Storage">Cold Storage</option>
-            <option value="Retail Spaces">Retail Spaces</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Sales Notes / Feedback</label>
-          <textarea id="edit-notes" rows="4" placeholder="Add follow-up notes, special requirements, etc."></textarea>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-cancel" onclick="closeEditModal()">Cancel</button>
-          <button type="submit" class="btn btn-save" id="saveLeadBtn">Save Changes</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- Campaign Preview Modal -->
-  <div class="modal-overlay" id="campaignModal">
-    <div class="modal-box">
-      <div class="modal-header">
-        <h2>Campaign / Source Details</h2>
-        <button class="modal-close" onclick="closeCampaignModal()">&times;</button>
-      </div>
-      <div id="campaignContent">
-        <!-- Injected dynamically -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-cancel" onclick="closeCampaignModal()">Close</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="js/crm.js"></script>
-</body>
-
-</html>
+</body></html>

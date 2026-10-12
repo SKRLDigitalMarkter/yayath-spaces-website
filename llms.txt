@@ -1,0 +1,13 @@
+# Yayath Spaces
+Yayath Spaces provides premium managed offices, dynamic co-working spaces, warehouse showcase, and retail spaces.
+
+## Sitemap
+- /index.html (Home)
+- /about-us.html
+- /coworking-spaces.html
+- /managed-offices.html
+- /gallery.html
+- /retail.html
+- /contact-us.html
+
+We offer world-class amenities and community.

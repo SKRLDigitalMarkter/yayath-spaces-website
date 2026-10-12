@@ -418,7 +418,7 @@ const locationsDB = {
     title: 'MG Road',
     tag: 'Flagship Centre',
     address: 'MG Road, Sector 28, Gurugram',
-    img: 'assets/images/spaces/loc_mg_road.jpg',
+    img: 'assets/images/spaces/loc_mg_road.webp',
     desc: 'Our flagship workspace on MG Road, positioned right next to MG Road Metro Station. Designed for high-performing teams, enterprises, and executives looking for supreme connectivity, world-class amenities, and an inspiring work environment.',
     sqft: '18,500 Sq. Ft.',
     seats: '400+ Seats',
@@ -478,7 +478,7 @@ const locationsDB = {
     title: 'Sector 44',
     tag: 'Institutional Hub',
     address: 'Sector 44, Institutional Area, Gurugram',
-    img: 'assets/images/spaces/loc_sector_44.jpg',
+    img: 'assets/images/spaces/loc_sector_44.webp',
     desc: 'Situated in Gurugramâ€™s prime institutional zone near Huda City Centre metro. Features lush green surroundings, peaceful corporate ambience, and expansive layouts ideal for tech teams and growing companies.',
     sqft: '14,000 Sq. Ft.',
     seats: '300+ Seats',
@@ -507,7 +507,7 @@ const locationsDB = {
     title: 'Golf Course Extension',
     tag: 'Modern Corridor',
     address: 'Golf Course Extension Road, Sector 65, Gurugram',
-    img: 'assets/images/spaces/loc_golf_course_ext.jpg',
+    img: 'assets/images/spaces/loc_golf_course_ext.webp',
     desc: 'A modern, vibrant workspace located in the rapidly growing Golf Course Extension corridor. Features abundant natural lighting, ergonomic setups, and a bustling corporate community.',
     sqft: '16,000 Sq. Ft.',
     seats: '350+ Seats',
@@ -536,7 +536,7 @@ const locationsDB = {
     title: 'Sector 32',
     tag: 'Highway Connectivity',
     address: 'Sector 32, Exit 8, NH-8, Gurugram',
-    img: 'assets/images/spaces/loc_sector_32.jpg',
+    img: 'assets/images/spaces/loc_sector_32.webp',
     desc: 'Strategically located off the NH-8 expressway near IFFCO Chowk, this centre offers supreme accessibility for commuters across Delhi & Gurugram. Ideal for corporate branches, sales teams, and client-facing consultancies.',
     sqft: '12,000 Sq. Ft.',
     seats: '250+ Seats',
@@ -565,7 +565,7 @@ const locationsDB = {
     title: 'NH-8',
     tag: 'Prime Expressway',
     address: 'NH-8, South City I, Gurugram',
-    img: 'assets/images/spaces/loc_nh8.jpg',
+    img: 'assets/images/spaces/loc_nh8.webp',
     desc: 'Operate directly on the NH-8 highway. Offering scalable Managed Offices and flexible coworking directly on the expressway, providing maximum convenience and connectivity.',
     sqft: '30,000 Sq. Ft.',
     seats: '800+ Seats',
@@ -594,7 +594,7 @@ const locationsDB = {
     title: 'Udyog Vihar',
     tag: 'Tech Corridor',
     address: 'Phase IV, Udyog Vihar, Sector 18, Gurugram',
-    img: 'assets/images/spaces/loc_udyog_vihar.jpg',
+    img: 'assets/images/spaces/loc_udyog_vihar.webp',
     desc: 'A tech-enabled workspace designed specifically for startups, IT, and ITES companies in Gurugram traditional technology corridor, with robust infrastructure and round-the-clock support.',
     sqft: '20,000 Sq. Ft.',
     seats: '500+ Seats',
@@ -623,7 +623,7 @@ const locationsDB = {
     title: 'Golf Course Road',
     tag: 'Ultra Premium',
     address: 'Golf Course Road, Sector 53, Gurugram',
-    img: 'assets/images/spaces/loc_golf_course_road.jpg',
+    img: 'assets/images/spaces/loc_golf_course_road.webp',
     desc: 'An ultra-premium setting catering to high-profile clients, executives, and luxury businesses. Features world-class facilities, bespoke interiors, concierge services, and panoramic views.',
     sqft: '18,000 Sq. Ft.',
     seats: '300+ Seats',
@@ -1298,7 +1298,7 @@ const spaceData = {
     subtitle: 'About Yayath Spaces - Hot Desk',
     desc: 'Perfect for freelancers and remote workers who need a professional workspace without commitment. Come in, find a desk, and get to work immediately. Enjoy high-speed internet, premium coffee, and a vibrant community of professionals.',
     price: '<strong>₹4,999</strong> / seat / seat',
-    bg: 'assets/images/spaces/DSC01092.JPG'
+    bg: 'assets/images/spaces/DSC01092.webp'
   },
   'dedicated': {
     title: 'Dedicated <span class="gradient-text">Desk</span>',
@@ -1307,7 +1307,7 @@ const spaceData = {
     subtitle: 'About Yayath Spaces - Dedicated Desk',
     desc: 'Your permanent desk, your storage, your space. Come every day knowing exactly where you will be. Ideal for individuals who want a consistent work environment within a shared community, complete with secure pedestal storage.',
     price: '<strong>₹6,999</strong> / seat / seat',
-    bg: 'assets/images/spaces/DSC01094.JPG'
+    bg: 'assets/images/spaces/DSC01094.webp'
   },
   'cabin': {
     title: 'Private <span class="gradient-text">Cabin</span>',
@@ -1316,7 +1316,7 @@ const spaceData = {
     subtitle: 'About Yayath Spaces - Private Cabin',
     desc: 'A fully enclosed private office for 1-4 people. Glass walls, branded door and complete privacy. Gives your team the focus they need while still having access to the shared amenities and networking events.',
     price: '<strong>₹14,999</strong> / cabin / seat',
-    bg: 'assets/images/spaces/DSC01094.JPG'
+    bg: 'assets/images/spaces/DSC01094.webp'
   },
 };
 
@@ -1340,7 +1340,7 @@ const _supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 async function loadBlogs() {
   try {
-    const { data, error } = await _supabase.from('blogs').select('*').order('date', { ascending: false });
+    const { data, error } = await _supabase.from('blogs').select('*');
     if (error) throw error;
     allBlogs = data.map(b => ({
       id: b.id,
@@ -1357,6 +1357,14 @@ async function loadBlogs() {
       authorRole: b.authorrole,
       authorImg: b.authorimg && b.authorimg.includes('<img') ? b.authorimg : (b.authorimg && b.authorimg.startsWith('http') ? `<img src="${b.authorimg}" alt="Author" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">` : '<img src="assets/images/logo/favicon.png" alt="Yayath Spaces Team" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">')
     }));
+    
+    // Sort chronologically using JS Date parser
+    allBlogs.sort((a, b) => {
+      const d1 = new Date(a.date || 0);
+      const d2 = new Date(b.date || 0);
+      return d2 - d1;
+    });
+
     renderBlogs();
 
     // Check if there is a blog route to open after loading

@@ -1,24 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
+<!-- Google Tag Manager -->
+
+<!-- End Google Tag Manager -->
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQ6Y3DV0X6"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LQ6Y3DV0X6');
+    (function() {
+        var gtmLoaded = false;
+        function loadGTM() {
+            if (gtmLoaded) return;
+            gtmLoaded = true;
+            // GTM
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-WSK8FGGH');
+            
+            // gtag
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-LQ6Y3DV0X6';
+            script.async = true;
+            document.head.appendChild(script);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LQ6Y3DV0X6');
+        }
+        
+        // Load on interaction
+        ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'].forEach(function(e) {
+            window.addEventListener(e, loadGTM, { once: true, passive: true });
+        });
+        
+        // Fallback after 6 seconds just in case
+        setTimeout(loadGTM, 6000);
+    })();
 </script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Autoblog Admin Dashboard | Yayath Spaces</title>
+<noscript></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+html, body { margin: 0; padding: 0; }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Autoblog Admin Dashboard | Yayath Spaces</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
     :root{--bg:#0f172a;--card:#1e293b;--border:#334155;--text:#f8fafc;--muted:#94a3b8;--gold:#f5a623;--ok:#10b981;--err:#ef4444;--blue:#3b82f6;}
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif;}
     body{background:var(--bg);color:var(--text);min-height:100vh;}
@@ -135,311 +162,300 @@
 
     @media(max-width:900px){.sidebar{display:none;}main{margin-left:0;padding:16px;}.stats{grid-template-columns:1fr 1fr;}.form-grid{grid-template-columns:1fr;}}
   </style>
-</head>
+<meta content="noindex, nofollow" name="robots"><link href="https://www.yayathspaces.com/autoblog-admin" rel="canonical"><link href="/assets/images/logo/favicon.png" rel="apple-touch-icon"><link href="/assets/images/logo/favicon.png" rel="icon" type="image/png"><meta content="Autoblog Admin Dashboard | Yayath Spaces" property="og:title"><meta content="" property="og:description"><meta content="https://www.yayathspaces.com/autoblog-admin" property="og:url"><meta content="website" property="og:type"><meta content="https://www.yayathspaces.com/assets/images/logo/favicon.png" property="og:image"></head>
 <body>
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WSK8FGGH" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- PIN Overlay -->
 <div id="overlay">
-  <div class="lock-box">
-    <i class="ti ti-robot"></i>
-    <h2>Admin Dashboard</h2>
-    <p>Enter your 4-digit PIN to access the autoblogging control panel.</p>
-    <input type="password" id="pinInput" placeholder="• • • •" maxlength="4">
-    <button onclick="checkPin()"><i class="ti ti-login"></i> Access Dashboard</button>
-    <p class="err-msg" id="errMsg"><i class="ti ti-alert-circle"></i> Incorrect PIN.</p>
-  </div>
+<div class="lock-box">
+<i class="ti ti-robot"></i>
+<h2>Admin Dashboard</h2>
+<p>Enter your 4-digit PIN to access the autoblogging control panel.</p>
+<input id="pinInput" maxlength="4" placeholder="• • • •" type="password">
+<button onclick="checkPin()"><i class="ti ti-login"></i> Access Dashboard</button>
+<p class="err-msg" id="errMsg"><i class="ti ti-alert-circle"></i> Incorrect PIN.</p>
 </div>
-
+</div>
 <!-- Sidebar -->
 <div class="sidebar">
-  <div class="logo"><i class="ti ti-robot"></i> Autoblog AI</div>
-  <span class="nav-group">Main</span>
-  <a class="active" onclick="showPane('dashboard', this)"><i class="ti ti-layout-dashboard"></i> Dashboard</a>
-  <a onclick="showPane('blogs', this)"><i class="ti ti-article"></i> Published Blogs</a>
-  <a onclick="showPane('add', this)"><i class="ti ti-plus"></i> Add New Blog</a>
-  <span class="nav-group">Configuration</span>
-  <a onclick="showPane('keywords', this)"><i class="ti ti-tags"></i> Keywords</a>
-  <a onclick="showPane('timing', this)"><i class="ti ti-clock"></i> Schedule & Timing</a>
-  <a onclick="showPane('images', this)"><i class="ti ti-photo"></i> Image Library</a>
-  <a onclick="showPane('api', this)"><i class="ti ti-api"></i> API Settings</a>
-  <span class="nav-group">System</span>
-  <a onclick="showPane('logs', this)"><i class="ti ti-list-check"></i> Automation Logs</a>
-  <a onclick="showPane('settings', this)"><i class="ti ti-settings"></i> Settings</a>
+<div class="logo"><i class="ti ti-robot"></i> Autoblog AI</div>
+<span class="nav-group">Main</span>
+<a class="active" onclick="showPane('dashboard', this)"><i class="ti ti-layout-dashboard"></i> Dashboard</a>
+<a onclick="showPane('blogs', this)"><i class="ti ti-article"></i> Published Blogs</a>
+<a onclick="showPane('add', this)"><i class="ti ti-plus"></i> Add New Blog</a>
+<span class="nav-group">Configuration</span>
+<a onclick="showPane('keywords', this)"><i class="ti ti-tags"></i> Keywords</a>
+<a onclick="showPane('timing', this)"><i class="ti ti-clock"></i> Schedule &amp; Timing</a>
+<a onclick="showPane('images', this)"><i class="ti ti-photo"></i> Image Library</a>
+<a onclick="showPane('api', this)"><i class="ti ti-api"></i> API Settings</a>
+<span class="nav-group">System</span>
+<a onclick="showPane('logs', this)"><i class="ti ti-list-check"></i> Automation Logs</a>
+<a onclick="showPane('settings', this)"><i class="ti ti-settings"></i> Settings</a>
 </div>
-
 <main>
-  <div class="topbar">
-    <h1 id="pageTitle">📊 Dashboard</h1>
-    <div class="badge-ok"><div class="pulse"></div> AUTOMATION ACTIVE</div>
-  </div>
-
-  <!-- Stats Row -->
-  <div class="stats">
-    <div class="stat"><span>Total Blogs</span><h3 id="statTotal">–</h3><small>↑ Growing Daily</small></div>
-    <div class="stat"><span>Last Published</span><h3 id="statLast" style="font-size:1rem;margin-top:6px;">–</h3><small>Auto published</small></div>
-    <div class="stat"><span>Active Keywords</span><h3 id="statKw">–</h3><small>Niche targeted</small></div>
-    <div class="stat"><span>Next Scheduled Run</span><h3 style="font-size:.95rem;margin-top:8px;" id="statNext">Daily @ 9 AM</h3><small id="statNextDate">Tomorrow</small></div>
-  </div>
-
-  <!-- DASHBOARD -->
-  <div class="pane active" id="pane-dashboard">
-    <div class="card">
-      <div class="card-title"><i class="ti ti-tags"></i> Target Keywords</div>
-      <div class="kw-wrap" id="kwDash">Loading…</div>
-    </div>
-    <div class="card">
-      <div class="card-title"><i class="ti ti-article"></i> Recent Blogs</div>
-      <div class="blog-grid" id="blogDash"></div>
-    </div>
-    <div class="card">
-      <div class="card-title"><i class="ti ti-list-check"></i> Latest Automation Runs</div>
-      <table><thead><tr><th>Date</th><th>Status</th><th>Blog Title</th></tr></thead>
-      <tbody id="logsDash"></tbody></table>
-    </div>
-  </div>
-
-  <!-- PUBLISHED BLOGS -->
-  <div class="pane" id="pane-blogs">
-    <div class="card">
-      <div class="card-title"><i class="ti ti-article"></i> All Published Blogs</div>
-      <div class="blog-grid" id="allBlogsGrid"></div>
-    </div>
-  </div>
-
-  <!-- ADD BLOG -->
-  <div class="pane" id="pane-add">
-    <div class="card">
-      <div class="card-title"><i class="ti ti-plus"></i> Add New Blog Post</div>
-      <p style="color:var(--muted);font-size:.88rem;margin-bottom:20px;">Fill in the details. Click "Copy as Chat Instruction" and paste it in the Antigravity chat to instantly publish.</p>
-      <div class="form-grid">
-        <div class="fg full"><label>Blog Title *</label><input type="text" id="newTitle" placeholder="e.g. 5 Reasons Why Managed Offices Are Better for Startups in Gurugram"></div>
-        <div class="fg"><label>Category</label>
-          <select id="newCat"><option>Workspace Trends</option><option>Business Guides</option><option>Workspace Guide</option><option>Managed Offices</option><option>Coworking Tips</option><option>Industry Insights</option></select>
-        </div>
-        <div class="fg"><label>Read Time</label><input type="text" id="newReadTime" placeholder="e.g. 6 min read"></div>
-        <div class="fg full"><label>Short Excerpt *</label><textarea id="newExcerpt" rows="2" placeholder="2-3 sentence summary for the blog card."></textarea></div>
-        <div class="fg full"><label>Target Keywords (comma separated)</label><input type="text" id="newKw" value="Coworking space in Gurugram, Best coworking space in Gurugram, Managed office space in Gurugram, Private office space in Gurugram"></div>
-        <div class="fg full"><label>Special Instructions for AI</label><textarea id="newInstr" rows="3" placeholder="e.g. Write in a practical, listicle format with 7-10 numbered criteria. Include cost comparisons, real Gurugram locations, and a CTA at the end."></textarea></div>
-        <div class="fg full"><label>Select Featured Image</label>
-          <div class="img-picker" id="addImgPicker">Loading images…</div>
-          <input type="hidden" id="newImg">
-        </div>
-      </div>
-      <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
-        <button class="btn btn-gold" onclick="copyAddInstruction()"><i class="ti ti-copy"></i> Copy as Chat Instruction</button>
-        <button class="btn btn-outline" onclick="generateBlogJSON()"><i class="ti ti-code"></i> Generate JSON Preview</button>
-      </div>
-      <div id="addJsonOut" style="display:none;margin-top:16px;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px;">
-        <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><label>JSON Preview:</label><button class="btn btn-outline" style="padding:5px 10px;font-size:.8rem;" onclick="copyAddJson()">Copy JSON</button></div>
-        <pre id="addJsonPre" style="font-size:.78rem;overflow-x:auto;color:var(--muted);white-space:pre-wrap;max-height:300px;overflow-y:auto;"></pre>
-      </div>
-    </div>
-  </div>
-
-  <!-- KEYWORDS -->
-  <div class="pane" id="pane-keywords">
-    <div class="card">
-      <div class="card-title"><i class="ti ti-tags"></i> Active Keywords</div>
-      <div class="kw-wrap" id="kwManage" style="margin-bottom:20px;">Loading…</div>
-    </div>
-    <div class="card">
-      <div class="card-title"><i class="ti ti-plus"></i> Add Keywords</div>
-      <div class="fg" style="max-width:500px;">
-        <label>New Keywords (one per line)</label>
-        <textarea id="kwAddField" rows="5" placeholder="Virtual office in Gurugram&#10;Day pass coworking Gurugram&#10;Flexible office space Gurugram"></textarea>
-      </div>
-      <div style="display:flex;gap:10px;margin-top:14px;">
-        <button class="btn btn-gold" onclick="copyKwInstruction()"><i class="ti ti-copy"></i> Copy Add Instruction</button>
-      </div>
-      <p style="color:var(--muted);font-size:.82rem;margin-top:10px;">This copies a message for the Antigravity chat. Paste it there to instantly add keywords to the system.</p>
-    </div>
-  </div>
-
-  <!-- TIMING / SCHEDULE -->
-  <div class="pane" id="pane-timing">
-    <div class="card">
-      <div class="card-title"><i class="ti ti-clock"></i> Schedule Configuration</div>
-      <div class="timing-row">
-        <div style="flex:1;">
-          <strong>Publish Frequency</strong>
-          <p style="color:var(--muted);font-size:.85rem;">How often the AI publishes a new blog</p>
-        </div>
-        <select id="timingFreq" style="width:180px;">
-          <option value="daily">Daily</option>
-          <option value="twice">Twice Daily</option>
-          <option value="weekly">Weekly</option>
-        </select>
-      </div>
-      <div class="timing-row">
-        <div style="flex:1;">
-          <strong>Publish Time</strong>
-          <p style="color:var(--muted);font-size:.85rem;">What time each day the automation runs</p>
-        </div>
-        <input type="time" id="timingHour" value="09:00" style="width:140px;">
-      </div>
-      <div class="timing-row">
-        <div style="flex:1;">
-          <strong>Blog Length</strong>
-          <p style="color:var(--muted);font-size:.85rem;">Approximate target word count per blog</p>
-        </div>
-        <select id="timingLength" style="width:180px;">
-          <option value="short">Short (~600 words)</option>
-          <option value="medium" selected>Medium (~1200 words)</option>
-          <option value="long">Long (~2000+ words)</option>
-        </select>
-      </div>
-      <div class="timing-row">
-        <div style="flex:1;">
-          <strong>Blog Format</strong>
-          <p style="color:var(--muted);font-size:.85rem;">Content structure template</p>
-        </div>
-        <select id="timingFormat" style="width:180px;">
-          <option value="criteria">Numbered Criteria List</option>
-          <option value="guide">Comprehensive Guide</option>
-          <option value="comparison">Comparison Article</option>
-          <option value="tips">Tips & Tricks</option>
-        </select>
-      </div>
-      <div class="timing-row">
-        <div style="flex:1;">
-          <strong>Auto Image Generation</strong>
-          <p style="color:var(--muted);font-size:.85rem;">Use AI to create images for each post</p>
-        </div>
-        <select id="timingImg" style="width:180px;">
-          <option value="ai">AI Generate (Recommended)</option>
-          <option value="stock">Use Existing Assets</option>
-        </select>
-      </div>
-      <div style="margin-top:20px;display:flex;gap:10px;">
-        <button class="btn btn-gold" onclick="copyTimingInstruction()"><i class="ti ti-copy"></i> Save via Chat Instruction</button>
-        <button class="btn btn-outline"><i class="ti ti-refresh"></i> Trigger Manual Run Now</button>
-      </div>
-      <p style="color:var(--muted);font-size:.82rem;margin-top:10px;">Click "Save via Chat Instruction" and paste in the Antigravity chat to apply changes.</p>
-    </div>
-  </div>
-
-  <!-- IMAGE LIBRARY -->
-  <div class="pane" id="pane-images">
-    <div class="card">
-      <div class="card-title"><i class="ti ti-photo"></i> Blog Image Library</div>
-      <p style="color:var(--muted);font-size:.88rem;margin-bottom:16px;">These are the AI-generated images available for your blogs. To generate a new image, describe it in the Antigravity chat and I will create and add it here.</p>
-      <div class="img-picker" id="imgLibrary">Loading…</div>
-    </div>
-    <div class="card">
-      <div class="card-title"><i class="ti ti-sparkles"></i> Request New AI Image</div>
-      <div class="fg">
-        <label>Image Description for AI</label>
-        <textarea id="imgReqDesc" rows="3" placeholder="e.g. A startup team having a productive meeting in a premium Gurugram coworking space, modern glass walls, natural light, photorealistic"></textarea>
-      </div>
-      <button class="btn btn-gold" style="margin-top:12px;" onclick="copyImgRequest()"><i class="ti ti-copy"></i> Copy Image Request Instruction</button>
-      <p style="color:var(--muted);font-size:.82rem;margin-top:10px;">Paste this in the Antigravity chat and I will generate the image and add it to the library.</p>
-    </div>
-  </div>
-
-  <!-- API SETTINGS -->
-  <div class="pane" id="pane-api">
-    <div class="card">
-      <div class="card-title"><i class="ti ti-api"></i> Connected APIs & Services</div>
-      <div class="api-row">
-        <div style="flex:1;"><strong>Vercel Deployment</strong><p style="color:var(--muted);font-size:.85rem;">Auto-deploy blogs to yayathspaces.com</p></div>
-        <span class="pill pill-ok">✓ Connected</span>
-      </div>
-      <div class="api-row">
-        <div style="flex:1;"><strong>AI Image Generation</strong><p style="color:var(--muted);font-size:.85rem;">Antigravity built-in AI image engine</p></div>
-        <span class="pill pill-ok">✓ Active</span>
-      </div>
-      <div class="api-row">
-        <div style="flex:1;"><strong>AI Content Generation</strong><p style="color:var(--muted);font-size:.85rem;">Antigravity Claude/Gemini AI engine</p></div>
-        <span class="pill pill-ok">✓ Active</span>
-      </div>
-      <div class="api-row">
-        <div style="flex:1;"><strong>Google Analytics</strong><p style="color:var(--muted);font-size:.85rem;">Track blog traffic and SEO performance</p></div>
-        <span class="pill pill-err">✗ Not Connected</span>
-        <button class="btn btn-outline" style="margin-left:10px;" onclick="copyGaInstruction()"><i class="ti ti-copy"></i> Setup</button>
-      </div>
-      <div class="api-row">
-        <div style="flex:1;"><strong>Google Search Console</strong><p style="color:var(--muted);font-size:.85rem;">Monitor indexing and keyword rankings</p></div>
-        <span class="pill pill-err">✗ Not Connected</span>
-        <button class="btn btn-outline" style="margin-left:10px;" onclick="copyGscInstruction()"><i class="ti ti-copy"></i> Setup</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title"><i class="ti ti-key"></i> API Keys Configuration</div>
-      <p style="color:var(--muted);font-size:.88rem;margin-bottom:16px;">To add or update any API key, paste the instruction in the Antigravity chat. Keys are stored securely in the system environment.</p>
-      <div class="api-row">
-        <div style="flex:1;"><strong>Vercel Token</strong><p style="color:var(--muted);font-size:.82rem;">Used for auto-deployment</p></div>
-        <div class="api-key-val">••••••••••••••••••••• (Active)</div>
-        <button class="btn btn-outline" style="margin-left:10px;" onclick="copyApiKeyInstruction('Vercel Token')"><i class="ti ti-edit"></i></button>
-      </div>
-      <div class="api-row">
-        <div style="flex:1;"><strong>Google Analytics ID</strong><p style="color:var(--muted);font-size:.82rem;">e.g. G-XXXXXXXXXX</p></div>
-        <input type="text" id="gaId" placeholder="G-XXXXXXXXXX" style="width:200px;">
-        <button class="btn btn-gold" style="margin-left:10px;" onclick="copyGaId()"><i class="ti ti-copy"></i></button>
-      </div>
-    </div>
-  </div>
-
-  <!-- LOGS -->
-  <div class="pane" id="pane-logs">
-    <div class="card">
-      <div class="card-title"><i class="ti ti-list-check"></i> Automation Run Logs</div>
-      <table>
-        <thead><tr><th>Date & Time</th><th>Status</th><th>Blog Published</th><th>Keyword Used</th></tr></thead>
-        <tbody id="logsBody">Loading…</tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- SETTINGS -->
-  <div class="pane" id="pane-settings">
-    <div class="card">
-      <div class="card-title"><i class="ti ti-settings"></i> General Settings</div>
-      <div class="form-grid">
-        <div class="fg"><label>Site Name</label><input value="Yayath Spaces"></div>
-        <div class="fg"><label>Default Author</label><input value="Yayath Spaces Team"></div>
-        <div class="fg"><label>Author Role</label><input value="Workspace Experts"></div>
-        <div class="fg"><label>Dashboard PIN</label><input type="password" id="newPin" placeholder="Enter new PIN"></div>
-        <div class="fg full"><label>SEO Brand Tagline (included in all AI blogs)</label><input value="Yayath Spaces — Premium Coworking & Managed Office Spaces in Gurugram"></div>
-        <div class="fg full"><label>Default CTA (Call to Action text in each blog)</label><textarea rows="2">Book a free tour at Yayath Spaces today. Call us: +91 95603 80807 | www.yayathspaces.com</textarea></div>
-      </div>
-      <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
-        <button class="btn btn-gold" onclick="copySettingsInstruction()"><i class="ti ti-copy"></i> Apply via Chat</button>
-        <button class="btn btn-blue" onclick="copyPinChange()"><i class="ti ti-lock"></i> Change PIN via Chat</button>
-      </div>
-    </div>
-  </div>
+<div class="topbar">
+<h1 id="pageTitle">📊 Dashboard</h1>
+<div class="badge-ok"><div class="pulse"></div> AUTOMATION ACTIVE</div>
+</div>
+<!-- Stats Row -->
+<div class="stats">
+<div class="stat"><span>Total Blogs</span><h3 id="statTotal">–</h3><small>↑ Growing Daily</small></div>
+<div class="stat"><span>Last Published</span><h3 id="statLast" style="font-size:1rem;margin-top:6px;">–</h3><small>Auto published</small></div>
+<div class="stat"><span>Active Keywords</span><h3 id="statKw">–</h3><small>Niche targeted</small></div>
+<div class="stat"><span>Next Scheduled Run</span><h3 id="statNext" style="font-size:.95rem;margin-top:8px;">Daily @ 9 AM</h3><small id="statNextDate">Tomorrow</small></div>
+</div>
+<!-- DASHBOARD -->
+<div class="pane active" id="pane-dashboard">
+<div class="card">
+<div class="card-title"><i class="ti ti-tags"></i> Target Keywords</div>
+<div class="kw-wrap" id="kwDash">Loading…</div>
+</div>
+<div class="card">
+<div class="card-title"><i class="ti ti-article"></i> Recent Blogs</div>
+<div class="blog-grid" id="blogDash"></div>
+</div>
+<div class="card">
+<div class="card-title"><i class="ti ti-list-check"></i> Latest Automation Runs</div>
+<table><thead><tr><th>Date</th><th>Status</th><th>Blog Title</th></tr></thead>
+<tbody id="logsDash"></tbody></table>
+</div>
+</div>
+<!-- PUBLISHED BLOGS -->
+<div class="pane" id="pane-blogs">
+<div class="card">
+<div class="card-title"><i class="ti ti-article"></i> All Published Blogs</div>
+<div class="blog-grid" id="allBlogsGrid"></div>
+</div>
+</div>
+<!-- ADD BLOG -->
+<div class="pane" id="pane-add">
+<div class="card">
+<div class="card-title"><i class="ti ti-plus"></i> Add New Blog Post</div>
+<p style="color:var(--muted);font-size:.88rem;margin-bottom:20px;">Fill in the details. Click "Copy as Chat Instruction" and paste it in the Antigravity chat to instantly publish.</p>
+<div class="form-grid">
+<div class="fg full"><label>Blog Title *</label><input id="newTitle" placeholder="e.g. 5 Reasons Why Managed Offices Are Better for Startups in Gurugram" type="text"></div>
+<div class="fg"><label>Category</label>
+<select id="newCat"><option>Workspace Trends</option><option>Business Guides</option><option>Workspace Guide</option><option>Managed Offices</option><option>Coworking Tips</option><option>Industry Insights</option></select>
+</div>
+<div class="fg"><label>Read Time</label><input id="newReadTime" placeholder="e.g. 6 min read" type="text"></div>
+<div class="fg full"><label>Short Excerpt *</label><textarea id="newExcerpt" placeholder="2-3 sentence summary for the blog card." rows="2"></textarea></div>
+<div class="fg full"><label>Target Keywords (comma separated)</label><input id="newKw" type="text" value="Coworking space in Gurugram, Best coworking space in Gurugram, Managed office space in Gurugram, Private office space in Gurugram"></div>
+<div class="fg full"><label>Special Instructions for AI</label><textarea id="newInstr" placeholder="e.g. Write in a practical, listicle format with 7-10 numbered criteria. Include cost comparisons, real Gurugram locations, and a CTA at the end." rows="3"></textarea></div>
+<div class="fg full"><label>Select Featured Image</label>
+<div class="img-picker" id="addImgPicker">Loading images…</div>
+<input id="newImg" type="hidden">
+</div>
+</div>
+<div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
+<button class="btn btn-gold" onclick="copyAddInstruction()"><i class="ti ti-copy"></i> Copy as Chat Instruction</button>
+<button class="btn btn-outline" onclick="generateBlogJSON()"><i class="ti ti-code"></i> Generate JSON Preview</button>
+</div>
+<div id="addJsonOut" style="display:none;margin-top:16px;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px;">
+<div style="display:flex;justify-content:space-between;margin-bottom:8px;"><label>JSON Preview:</label><button class="btn btn-outline" onclick="copyAddJson()" style="padding:5px 10px;font-size:.8rem;">Copy JSON</button></div>
+<pre id="addJsonPre" style="font-size:.78rem;overflow-x:auto;color:var(--muted);white-space:pre-wrap;max-height:300px;overflow-y:auto;"></pre>
+</div>
+</div>
+</div>
+<!-- KEYWORDS -->
+<div class="pane" id="pane-keywords">
+<div class="card">
+<div class="card-title"><i class="ti ti-tags"></i> Active Keywords</div>
+<div class="kw-wrap" id="kwManage" style="margin-bottom:20px;">Loading…</div>
+</div>
+<div class="card">
+<div class="card-title"><i class="ti ti-plus"></i> Add Keywords</div>
+<div class="fg" style="max-width:500px;">
+<label>New Keywords (one per line)</label>
+<textarea id="kwAddField" placeholder="Virtual office in Gurugram
+Day pass coworking Gurugram
+Flexible office space Gurugram" rows="5"></textarea>
+</div>
+<div style="display:flex;gap:10px;margin-top:14px;">
+<button class="btn btn-gold" onclick="copyKwInstruction()"><i class="ti ti-copy"></i> Copy Add Instruction</button>
+</div>
+<p style="color:var(--muted);font-size:.82rem;margin-top:10px;">This copies a message for the Antigravity chat. Paste it there to instantly add keywords to the system.</p>
+</div>
+</div>
+<!-- TIMING / SCHEDULE -->
+<div class="pane" id="pane-timing">
+<div class="card">
+<div class="card-title"><i class="ti ti-clock"></i> Schedule Configuration</div>
+<div class="timing-row">
+<div style="flex:1;">
+<strong>Publish Frequency</strong>
+<p style="color:var(--muted);font-size:.85rem;">How often the AI publishes a new blog</p>
+</div>
+<select id="timingFreq" style="width:180px;">
+<option value="daily">Daily</option>
+<option value="twice">Twice Daily</option>
+<option value="weekly">Weekly</option>
+</select>
+</div>
+<div class="timing-row">
+<div style="flex:1;">
+<strong>Publish Time</strong>
+<p style="color:var(--muted);font-size:.85rem;">What time each day the automation runs</p>
+</div>
+<input id="timingHour" style="width:140px;" type="time" value="09:00">
+</div>
+<div class="timing-row">
+<div style="flex:1;">
+<strong>Blog Length</strong>
+<p style="color:var(--muted);font-size:.85rem;">Approximate target word count per blog</p>
+</div>
+<select id="timingLength" style="width:180px;">
+<option value="short">Short (~600 words)</option>
+<option selected="" value="medium">Medium (~1200 words)</option>
+<option value="long">Long (~2000+ words)</option>
+</select>
+</div>
+<div class="timing-row">
+<div style="flex:1;">
+<strong>Blog Format</strong>
+<p style="color:var(--muted);font-size:.85rem;">Content structure template</p>
+</div>
+<select id="timingFormat" style="width:180px;">
+<option value="criteria">Numbered Criteria List</option>
+<option value="guide">Comprehensive Guide</option>
+<option value="comparison">Comparison Article</option>
+<option value="tips">Tips &amp; Tricks</option>
+</select>
+</div>
+<div class="timing-row">
+<div style="flex:1;">
+<strong>Auto Image Generation</strong>
+<p style="color:var(--muted);font-size:.85rem;">Use AI to create images for each post</p>
+</div>
+<select id="timingImg" style="width:180px;">
+<option value="ai">AI Generate (Recommended)</option>
+<option value="stock">Use Existing Assets</option>
+</select>
+</div>
+<div style="margin-top:20px;display:flex;gap:10px;">
+<button class="btn btn-gold" onclick="copyTimingInstruction()"><i class="ti ti-copy"></i> Save via Chat Instruction</button>
+<button class="btn btn-outline"><i class="ti ti-refresh"></i> Trigger Manual Run Now</button>
+</div>
+<p style="color:var(--muted);font-size:.82rem;margin-top:10px;">Click "Save via Chat Instruction" and paste in the Antigravity chat to apply changes.</p>
+</div>
+</div>
+<!-- IMAGE LIBRARY -->
+<div class="pane" id="pane-images">
+<div class="card">
+<div class="card-title"><i class="ti ti-photo"></i> Blog Image Library</div>
+<p style="color:var(--muted);font-size:.88rem;margin-bottom:16px;">These are the AI-generated images available for your blogs. To generate a new image, describe it in the Antigravity chat and I will create and add it here.</p>
+<div class="img-picker" id="imgLibrary">Loading…</div>
+</div>
+<div class="card">
+<div class="card-title"><i class="ti ti-sparkles"></i> Request New AI Image</div>
+<div class="fg">
+<label>Image Description for AI</label>
+<textarea id="imgReqDesc" placeholder="e.g. A startup team having a productive meeting in a premium Gurugram coworking space, modern glass walls, natural light, photorealistic" rows="3"></textarea>
+</div>
+<button class="btn btn-gold" onclick="copyImgRequest()" style="margin-top:12px;"><i class="ti ti-copy"></i> Copy Image Request Instruction</button>
+<p style="color:var(--muted);font-size:.82rem;margin-top:10px;">Paste this in the Antigravity chat and I will generate the image and add it to the library.</p>
+</div>
+</div>
+<!-- API SETTINGS -->
+<div class="pane" id="pane-api">
+<div class="card">
+<div class="card-title"><i class="ti ti-api"></i> Connected APIs &amp; Services</div>
+<div class="api-row">
+<div style="flex:1;"><strong>Vercel Deployment</strong><p style="color:var(--muted);font-size:.85rem;">Auto-deploy blogs to yayathspaces.com</p></div>
+<span class="pill pill-ok">✓ Connected</span>
+</div>
+<div class="api-row">
+<div style="flex:1;"><strong>AI Image Generation</strong><p style="color:var(--muted);font-size:.85rem;">Antigravity built-in AI image engine</p></div>
+<span class="pill pill-ok">✓ Active</span>
+</div>
+<div class="api-row">
+<div style="flex:1;"><strong>AI Content Generation</strong><p style="color:var(--muted);font-size:.85rem;">Antigravity Claude/Gemini AI engine</p></div>
+<span class="pill pill-ok">✓ Active</span>
+</div>
+<div class="api-row">
+<div style="flex:1;"><strong>Google Analytics</strong><p style="color:var(--muted);font-size:.85rem;">Track blog traffic and SEO performance</p></div>
+<span class="pill pill-err">✗ Not Connected</span>
+<button class="btn btn-outline" onclick="copyGaInstruction()" style="margin-left:10px;"><i class="ti ti-copy"></i> Setup</button>
+</div>
+<div class="api-row">
+<div style="flex:1;"><strong>Google Search Console</strong><p style="color:var(--muted);font-size:.85rem;">Monitor indexing and keyword rankings</p></div>
+<span class="pill pill-err">✗ Not Connected</span>
+<button class="btn btn-outline" onclick="copyGscInstruction()" style="margin-left:10px;"><i class="ti ti-copy"></i> Setup</button>
+</div>
+</div>
+<div class="card">
+<div class="card-title"><i class="ti ti-key"></i> API Keys Configuration</div>
+<p style="color:var(--muted);font-size:.88rem;margin-bottom:16px;">To add or update any API key, paste the instruction in the Antigravity chat. Keys are stored securely in the system environment.</p>
+<div class="api-row">
+<div style="flex:1;"><strong>Vercel Token</strong><p style="color:var(--muted);font-size:.82rem;">Used for auto-deployment</p></div>
+<div class="api-key-val">••••••••••••••••••••• (Active)</div>
+<button class="btn btn-outline" onclick="copyApiKeyInstruction('Vercel Token')" style="margin-left:10px;"><i class="ti ti-edit"></i></button>
+</div>
+<div class="api-row">
+<div style="flex:1;"><strong>Google Analytics ID</strong><p style="color:var(--muted);font-size:.82rem;">e.g. G-XXXXXXXXXX</p></div>
+<input id="gaId" placeholder="G-XXXXXXXXXX" style="width:200px;" type="text">
+<button class="btn btn-gold" onclick="copyGaId()" style="margin-left:10px;"><i class="ti ti-copy"></i></button>
+</div>
+</div>
+</div>
+<!-- LOGS -->
+<div class="pane" id="pane-logs">
+<div class="card">
+<div class="card-title"><i class="ti ti-list-check"></i> Automation Run Logs</div>
+Loading…<table>
+<thead><tr><th>Date &amp; Time</th><th>Status</th><th>Blog Published</th><th>Keyword Used</th></tr></thead>
+<tbody id="logsBody"></tbody>
+</table>
+</div>
+</div>
+<!-- SETTINGS -->
+<div class="pane" id="pane-settings">
+<div class="card">
+<div class="card-title"><i class="ti ti-settings"></i> General Settings</div>
+<div class="form-grid">
+<div class="fg"><label>Site Name</label><input value="Yayath Spaces"></div>
+<div class="fg"><label>Default Author</label><input value="Yayath Spaces Team"></div>
+<div class="fg"><label>Author Role</label><input value="Workspace Experts"></div>
+<div class="fg"><label>Dashboard PIN</label><input id="newPin" placeholder="Enter new PIN" type="password"></div>
+<div class="fg full"><label>SEO Brand Tagline (included in all AI blogs)</label><input value="Yayath Spaces — Premium Coworking &amp; Managed Office Spaces in Gurugram"></div>
+<div class="fg full"><label>Default CTA (Call to Action text in each blog)</label><textarea rows="2">Book a free tour at Yayath Spaces today. Call us: +91 95603 80807 | www.yayathspaces.com</textarea></div>
+</div>
+<div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
+<button class="btn btn-gold" onclick="copySettingsInstruction()"><i class="ti ti-copy"></i> Apply via Chat</button>
+<button class="btn btn-blue" onclick="copyPinChange()"><i class="ti ti-lock"></i> Change PIN via Chat</button>
+</div>
+</div>
+</div>
 </main>
-
 <!-- Edit Blog Modal -->
 <div class="modal-bg" id="editModal">
-  <div class="modal">
-    <div class="modal-header">
-      <h3><i class="ti ti-edit"></i> Edit Blog Post</h3>
-      <button class="btn btn-outline" style="padding:6px 12px;" onclick="closeModal()"><i class="ti ti-x"></i></button>
-    </div>
-    <div class="modal-body">
-      <input type="hidden" id="editId">
-      <div class="form-grid">
-        <div class="fg full"><label>Title</label><input id="editTitle"></div>
-        <div class="fg"><label>Category</label><select id="editCat"><option>Workspace Trends</option><option>Business Guides</option><option>Workspace Guide</option><option>Managed Offices</option><option>Coworking Tips</option><option>Industry Insights</option></select></div>
-        <div class="fg"><label>Date</label><input id="editDate" type="date"></div>
-        <div class="fg"><label>Read Time</label><input id="editReadTime" placeholder="e.g. 6 min read"></div>
-        <div class="fg"><label>Featured?</label><select id="editFeatured"><option value="false">No</option><option value="true">Yes – Featured Post</option></select></div>
-        <div class="fg full"><label>Excerpt</label><textarea id="editExcerpt" rows="2"></textarea></div>
-        <div class="fg full"><label>Image Path</label><input id="editImg" placeholder="assets/images/blogs/..."></div>
-        <div class="fg full"><label>Select Image from Library</label><div class="img-picker" id="editImgPicker" style="max-height:220px;overflow-y:auto;"></div></div>
-        <div class="fg full"><label>Full Content (HTML)</label><textarea id="editContent" rows="10"></textarea></div>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-outline" onclick="closeModal()">Cancel</button>
-      <button class="btn btn-gold" onclick="copyEditInstruction()"><i class="ti ti-copy"></i> Copy Edit Instruction</button>
-    </div>
-  </div>
+<div class="modal">
+<div class="modal-header">
+<h3><i class="ti ti-edit"></i> Edit Blog Post</h3>
+<button class="btn btn-outline" onclick="closeModal()" style="padding:6px 12px;"><i class="ti ti-x"></i></button>
 </div>
-
+<div class="modal-body">
+<input id="editId" type="hidden">
+<div class="form-grid">
+<div class="fg full"><label>Title</label><input id="editTitle"></div>
+<div class="fg"><label>Category</label><select id="editCat"><option>Workspace Trends</option><option>Business Guides</option><option>Workspace Guide</option><option>Managed Offices</option><option>Coworking Tips</option><option>Industry Insights</option></select></div>
+<div class="fg"><label>Date</label><input id="editDate" type="date"></div>
+<div class="fg"><label>Read Time</label><input id="editReadTime" placeholder="e.g. 6 min read"></div>
+<div class="fg"><label>Featured?</label><select id="editFeatured"><option value="false">No</option><option value="true">Yes – Featured Post</option></select></div>
+<div class="fg full"><label>Excerpt</label><textarea id="editExcerpt" rows="2"></textarea></div>
+<div class="fg full"><label>Image Path</label><input id="editImg" placeholder="assets/images/blogs/..."></div>
+<div class="fg full"><label>Select Image from Library</label><div class="img-picker" id="editImgPicker" style="max-height:220px;overflow-y:auto;"></div></div>
+<div class="fg full"><label>Full Content (HTML)</label><textarea id="editContent" rows="10"></textarea></div>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn btn-outline" onclick="closeModal()">Cancel</button>
+<button class="btn btn-gold" onclick="copyEditInstruction()"><i class="ti ti-copy"></i> Copy Edit Instruction</button>
+</div>
+</div>
+</div>
 <div class="toast" id="toast"></div>
-
 <script>
   const PIN = localStorage.getItem('adminPin') || '1234';
   const AVAILABLE_IMAGES = [
@@ -694,16 +710,15 @@
     setTimeout(()=>t.style.display='none',3500);
   }
 </script>
+<div aria-hidden="true" style="display:none;">
+<a href="index.html">Home</a>
+<a href="about-us.html">About Us</a>
+<a href="coworking-spaces.html">Coworking</a>
+<a href="managed-offices.html">Managed Offices</a>
+<a href="gallery.html">Gallery</a>
+<a href="retail.html">Retail</a>
+<a href="contact-us.html">Contact Us</a>
+</div>
 
-    <div style="display:none;" aria-hidden="true">
-        <a href="index.html">Home</a>
-        <a href="about-us.html">About Us</a>
-        <a href="coworking-spaces.html">Coworking</a>
-        <a href="managed-offices.html">Managed Offices</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="retail.html">Retail</a>
-        <a href="contact-us.html">Contact Us</a>
-    </div>
-    </body>
-    
-</html>
+
+</body></html>

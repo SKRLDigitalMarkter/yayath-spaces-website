@@ -466,10 +466,10 @@ button { cursor: pointer; font-family: var(--font); border: none; }
 .space-img { height: 100%; width: 100%; background-size: cover; background-position: center; transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
 .space-card:hover .space-img { transform: scale(1.08); }
 .space-img-wrapper::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.25) 0%, transparent 100%); pointer-events: none; z-index: 1; }
-.space-img-1 { background: url('../assets/images/spaces/real_interior_hotdesk.jpg') center/cover no-repeat; }
-.space-img-2 { background: url('../assets/images/spaces/real_interior_dedicated.jpg') center/cover no-repeat; }
-.space-img-3 { background: url('../assets/images/spaces/real_interior_boardroom.jpg') center/cover no-repeat; }
-.space-img-4 { background: url('../assets/images/spaces/real_interior_lounge.jpg') center/cover no-repeat; }
+.space-img-1 { background: url('../assets/images/spaces/real_interior_hotdesk.webp') center/cover no-repeat; }
+.space-img-2 { background: url('../assets/images/spaces/real_interior_dedicated.webp') center/cover no-repeat; }
+.space-img-3 { background: url('../assets/images/spaces/real_interior_boardroom.webp') center/cover no-repeat; }
+.space-img-4 { background: url('../assets/images/spaces/real_interior_lounge.webp') center/cover no-repeat; }
 .space-badge { position: absolute; top: 16px; left: 16px; z-index: 2; padding: 6px 14px; border-radius: 99px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); color: var(--purple-dark); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 .space-body { width: 55%; padding: 24px 24px 24px 28px; display: flex; flex-direction: column; justify-content: space-between; }
 .space-type { font-size: 0.75rem; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
@@ -489,7 +489,7 @@ button { cursor: pointer; font-family: var(--font); border: none; }
 .parallax-cta { background-attachment: fixed; }
 .cta-parallax-bg {
   position: absolute; inset: 0; z-index: 0;
-  background: url('../assets/images/spaces/modern_hero_bg.jpg') center/cover no-repeat;
+  background: url('../assets/images/spaces/modern_hero_bg.webp') center/cover no-repeat;
   background-attachment: fixed;
   opacity: 0.15;
 }
@@ -669,13 +669,13 @@ button { cursor: pointer; font-family: var(--font); border: none; }
 .breadcrumb span { color: var(--gold) !important; font-weight: 700; }
 
 /* Per-page background images */
-.about-hero-bg    { background-image: url('../assets/images/spaces/modern_coworking_interior_1.jpg'); }
-.spaces-hero-bg   { background-image: url('../assets/images/spaces/modern_coworking_interior_2.jpg'); }
-.pricing-hero-bg  { background-image: url('../assets/images/spaces/modern_coworking_interior_3.jpg'); }
-.amenities-hero-bg{ background-image: url('../assets/images/spaces/modern_coworking_interior_4.jpg'); }
-.gallery-hero-bg  { background-image: url('../assets/images/spaces/modern_coworking_gallery_1.jpg'); }
-.blog-hero-bg     { background-image: url('../assets/images/spaces/ai_space_1.jpg'); }
-.contact-hero-bg  { background-image: url('../assets/images/spaces/ai_space_2.jpg'); }
+.about-hero-bg    { background-image: url('../assets/images/spaces/modern_coworking_interior_1.webp'); }
+.spaces-hero-bg   { background-image: url('../assets/images/spaces/modern_coworking_interior_2.webp'); }
+.pricing-hero-bg  { background-image: url('../assets/images/spaces/modern_coworking_interior_3.webp'); }
+.amenities-hero-bg{ background-image: url('../assets/images/spaces/modern_coworking_interior_4.webp'); }
+.gallery-hero-bg  { background-image: url('../assets/images/spaces/modern_coworking_gallery_1.webp'); }
+.blog-hero-bg     { background-image: url('../assets/images/spaces/ai_space_1.webp'); }
+.contact-hero-bg  { background-image: url('../assets/images/spaces/ai_space_2.webp'); }
 
 /* Î“Ã¶Ã‡Î“Ã¶Ã‡ ABOUT Î“Ã¶Ã‡Î“Ã¶Ã‡ */
 .about-section { padding: 48px 0; }
@@ -3555,22 +3555,22 @@ button { cursor: pointer; font-family: var(--font); border: none; }
 }
 
 /* 100% Real Photos Gallery Classes */
-.g-img-1 { background: url('../assets/images/spaces/real_interior_corridor.jpg') center/cover no-repeat; }
-.g-img-2 { background: url('../assets/images/spaces/real_interior_fluted_boardroom.jpg') center/cover no-repeat; }
-.g-img-3 { background: url('../assets/images/spaces/real_interior_openplan.jpg') center/cover no-repeat; }
-.g-img-4 { background: url('../assets/images/spaces/real_interior_tech_pods.jpg') center/cover no-repeat; }
-.g-img-5 { background: url('../assets/images/spaces/real_interior_lounge.jpg') center/cover no-repeat; }
-.g-img-6 { background: url('../assets/images/spaces/real_interior_hotdesk.jpg') center/cover no-repeat; }
-.g-img-7 { background: url('../assets/images/spaces/real_interior_boardroom.jpg') center/cover no-repeat; }
-.g-img-8 { background: url('../assets/images/spaces/real_interior_dedicated.jpg') center/cover no-repeat; }
-.g-img-9 { background: url('../assets/images/spaces/real_interior_hightop.jpg') center/cover no-repeat; }
-.g-img-10 { background: url('../assets/images/spaces/loc_mg_road.jpg') center/cover no-repeat; }
-.g-img-11 { background: url('../assets/images/spaces/loc_golf_course_road.jpg') center/cover no-repeat; }
-.g-img-12 { background: url('../assets/images/spaces/loc_sector_44.jpg') center/cover no-repeat; }
-.g-img-13 { background: url('../assets/images/spaces/loc_golf_course_ext.jpg') center/cover no-repeat; }
-.g-img-14 { background: url('../assets/images/spaces/loc_sector_32.jpg') center/cover no-repeat; }
-.g-img-15 { background: url('../assets/images/spaces/loc_nh8.jpg') center/cover no-repeat; }
-.g-img-16 { background: url('../assets/images/spaces/loc_udyog_vihar.jpg') center/cover no-repeat; }
+.g-img-1 { background: url('../assets/images/spaces/real_interior_corridor.webp') center/cover no-repeat; }
+.g-img-2 { background: url('../assets/images/spaces/real_interior_fluted_boardroom.webp') center/cover no-repeat; }
+.g-img-3 { background: url('../assets/images/spaces/real_interior_openplan.webp') center/cover no-repeat; }
+.g-img-4 { background: url('../assets/images/spaces/real_interior_tech_pods.webp') center/cover no-repeat; }
+.g-img-5 { background: url('../assets/images/spaces/real_interior_lounge.webp') center/cover no-repeat; }
+.g-img-6 { background: url('../assets/images/spaces/real_interior_hotdesk.webp') center/cover no-repeat; }
+.g-img-7 { background: url('../assets/images/spaces/real_interior_boardroom.webp') center/cover no-repeat; }
+.g-img-8 { background: url('../assets/images/spaces/real_interior_dedicated.webp') center/cover no-repeat; }
+.g-img-9 { background: url('../assets/images/spaces/real_interior_hightop.webp') center/cover no-repeat; }
+.g-img-10 { background: url('../assets/images/spaces/loc_mg_road.webp') center/cover no-repeat; }
+.g-img-11 { background: url('../assets/images/spaces/loc_golf_course_road.webp') center/cover no-repeat; }
+.g-img-12 { background: url('../assets/images/spaces/loc_sector_44.webp') center/cover no-repeat; }
+.g-img-13 { background: url('../assets/images/spaces/loc_golf_course_ext.webp') center/cover no-repeat; }
+.g-img-14 { background: url('../assets/images/spaces/loc_sector_32.webp') center/cover no-repeat; }
+.g-img-15 { background: url('../assets/images/spaces/loc_nh8.webp') center/cover no-repeat; }
+.g-img-16 { background: url('../assets/images/spaces/loc_udyog_vihar.webp') center/cover no-repeat; }
 
 
 /* ===================== MOBILE HEADER LOGO FIX ===================== */
@@ -3826,12 +3826,12 @@ button { cursor: pointer; font-family: var(--font); border: none; }
 }
 
 /* NEW HERO BGS */
-.commercial-hero-bg { background-image: url('../assets/images/spaces/ai_space_2.jpg'); }
-.coworking-hero-bg { background-image: url('../assets/images/spaces/modern_coworking_interior_3.jpg'); }
-.managed-hero-bg { background-image: url('../assets/images/spaces/ai_space_1.jpg'); }
-.locations-hero-bg { background-image: url('../assets/images/spaces/modern_coworking_interior_1.jpg'); }
-.privacy-hero-bg { background-image: url('../assets/images/spaces/modern_coworking_interior_2.jpg'); }
-.terms-hero-bg { background-image: url('../assets/images/spaces/modern_coworking_interior_2.jpg'); }
+.commercial-hero-bg { background-image: url('../assets/images/spaces/ai_space_2.webp'); }
+.coworking-hero-bg { background-image: url('../assets/images/spaces/modern_coworking_interior_3.webp'); }
+.managed-hero-bg { background-image: url('../assets/images/spaces/ai_space_1.webp'); }
+.locations-hero-bg { background-image: url('../assets/images/spaces/modern_coworking_interior_1.webp'); }
+.privacy-hero-bg { background-image: url('../assets/images/spaces/modern_coworking_interior_2.webp'); }
+.terms-hero-bg { background-image: url('../assets/images/spaces/modern_coworking_interior_2.webp'); }
 
 
 /* Simple Business Center Cards */
@@ -4013,3 +4013,6 @@ button { cursor: pointer; font-family: var(--font); border: none; }
   overflow: hidden;
   margin: 20px 0;
 }
+
+
+

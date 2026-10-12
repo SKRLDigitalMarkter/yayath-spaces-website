@@ -1,25 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
+<!-- Google Tag Manager -->
+
+<!-- End Google Tag Manager -->
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LQ6Y3DV0X6"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LQ6Y3DV0X6');
+    (function() {
+        var gtmLoaded = false;
+        function loadGTM() {
+            if (gtmLoaded) return;
+            gtmLoaded = true;
+            // GTM
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-WSK8FGGH');
+            
+            // gtag
+            var script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-LQ6Y3DV0X6';
+            script.async = true;
+            document.head.appendChild(script);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LQ6Y3DV0X6');
+        }
+        
+        // Load on interaction
+        ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'].forEach(function(e) {
+            window.addEventListener(e, loadGTM, { once: true, passive: true });
+        });
+        
+        // Fallback after 6 seconds just in case
+        setTimeout(loadGTM, 6000);
+    })();
 </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Yayath Spaces — Autoblog Admin (Cloud)</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<noscript></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tabler Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <!-- Supabase JS & Gemini SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer="defer"></script>
 <script type="importmap">
   {
     "imports": {
@@ -28,6 +55,8 @@
   }
 </script>
 <style>
+html, body { margin: 0; padding: 0; }
+
 :root{
   --bg:#08101e;--card:#0f1d30;--card2:#162338;--border:#1e3451;
   --text:#f0f6ff;--muted:#5d7a9a;--gold:#f5a623;--goldf:rgba(245,166,35,.08);
@@ -207,388 +236,363 @@ tr:hover td{background:rgba(255,255,255,.015);}
 
 @media(max-width:960px){.sidebar{transform:translateX(-100%);transition:.3s;}.sidebar.open{transform:translateX(0);}main{margin-left:0;padding:16px;}.stats{grid-template-columns:1fr 1fr;}.form-grid{grid-template-columns:1fr;}}
 </style>
-</head>
+<meta content="noindex, nofollow" name="robots"><link href="https://www.yayathspaces.com/autoblog-admin-v2" rel="canonical"><link href="/assets/images/logo/favicon.png" rel="apple-touch-icon"><link href="/assets/images/logo/favicon.png" rel="icon" type="image/png"><meta content="Yayath Spaces — Autoblog Admin (Cloud)" property="og:title"><meta content="" property="og:description"><meta content="https://www.yayathspaces.com/autoblog-admin-v2" property="og:url"><meta content="website" property="og:type"><meta content="https://www.yayathspaces.com/assets/images/logo/favicon.png" property="og:image"></head>
 <body>
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WSK8FGGH" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- ════════════════ LOCK SCREEN ════════════════ -->
 <div id="lock">
-  <div class="lock-card">
-    <div class="lock-icon"><i class="ti ti-cloud"></i></div>
-    <h2>Autoblog Admin</h2>
-    <p>Connected to Supabase Cloud</p>
-    <div class="pin-dots" id="pinDots">
-      <div class="pin-dot" id="d0"></div>
-      <div class="pin-dot" id="d1"></div>
-      <div class="pin-dot" id="d2"></div>
-      <div class="pin-dot" id="d3"></div>
-    </div>
-    <div class="numpad">
-      <button class="num-btn" onclick="pinPress('1')">1</button>
-      <button class="num-btn" onclick="pinPress('2')">2</button>
-      <button class="num-btn" onclick="pinPress('3')">3</button>
-      <button class="num-btn" onclick="pinPress('4')">4</button>
-      <button class="num-btn" onclick="pinPress('5')">5</button>
-      <button class="num-btn" onclick="pinPress('6')">6</button>
-      <button class="num-btn" onclick="pinPress('7')">7</button>
-      <button class="num-btn" onclick="pinPress('8')">8</button>
-      <button class="num-btn" onclick="pinPress('9')">9</button>
-      <button class="num-btn del" onclick="pinClear()"><i class="ti ti-refresh"></i></button>
-      <button class="num-btn" onclick="pinPress('0')">0</button>
-      <button class="num-btn del" onclick="pinBack()"><i class="ti ti-backspace"></i></button>
-    </div>
-    <p class="lock-err" id="lockErr"><i class="ti ti-alert-circle"></i> Incorrect PIN. Try again.</p>
-  </div>
+<div class="lock-card">
+<div class="lock-icon"><i class="ti ti-cloud"></i></div>
+<h2>Autoblog Admin</h2>
+<p>Connected to Supabase Cloud</p>
+<div class="pin-dots" id="pinDots">
+<div class="pin-dot" id="d0"></div>
+<div class="pin-dot" id="d1"></div>
+<div class="pin-dot" id="d2"></div>
+<div class="pin-dot" id="d3"></div>
 </div>
-
+<div class="numpad">
+<button class="num-btn" onclick="pinPress('1')">1</button>
+<button class="num-btn" onclick="pinPress('2')">2</button>
+<button class="num-btn" onclick="pinPress('3')">3</button>
+<button class="num-btn" onclick="pinPress('4')">4</button>
+<button class="num-btn" onclick="pinPress('5')">5</button>
+<button class="num-btn" onclick="pinPress('6')">6</button>
+<button class="num-btn" onclick="pinPress('7')">7</button>
+<button class="num-btn" onclick="pinPress('8')">8</button>
+<button class="num-btn" onclick="pinPress('9')">9</button>
+<button class="num-btn del" onclick="pinClear()"><i class="ti ti-refresh"></i></button>
+<button class="num-btn" onclick="pinPress('0')">0</button>
+<button class="num-btn del" onclick="pinBack()"><i class="ti ti-backspace"></i></button>
+</div>
+<p class="lock-err" id="lockErr"><i class="ti ti-alert-circle"></i> Incorrect PIN. Try again.</p>
+</div>
+</div>
 <!-- ════════════════ SIDEBAR ════════════════ -->
 <div class="sidebar" id="sidebar">
-  <div class="sb-logo">
-    <div class="sb-logo-icon"><i class="ti ti-robot"></i></div>
-    <div><span>Autoblog AI</span><small>Yayath Spaces</small></div>
-  </div>
-
-  <div class="sb-section">Main</div>
-  <a class="sb-link active" id="nav-dashboard" onclick="nav('dashboard',this)"><i class="ti ti-layout-dashboard"></i>Dashboard</a>
-  <a class="sb-link" id="nav-blogs" onclick="nav('blogs',this)"><i class="ti ti-article"></i>All Blogs</a>
-
-  <div class="sb-section">Create</div>
-  <a class="sb-link" id="nav-write" onclick="nav('write',this)"><i class="ti ti-pencil"></i>Write Blog</a>
-  <a class="sb-link" id="nav-autogen" onclick="nav('autogen',this)"><i class="ti ti-sparkles"></i>AI Auto-Generate</a>
-
-  <div class="sb-section">Config</div>
-  <a class="sb-link" id="nav-api" onclick="nav('api',this)"><i class="ti ti-api"></i>API & Keys</a>
-  <a class="sb-link" id="nav-settings" onclick="nav('settings',this)"><i class="ti ti-settings"></i>Settings</a>
-
-  <div class="sb-section">Monitor</div>
-  <a class="sb-link" href="https://www.yayathspaces.com/#blog" target="_blank"><i class="ti ti-external-link"></i>View Live Site</a>
-
-  <div class="sb-section">Website</div>
-  <a class="sb-link" id="nav-maintenance" onclick="nav('maintenance',this)"><i class="ti ti-shield-lock"></i>Maintenance Mode</a>
-
-  <div class="sb-status">
-    <div style="font-size:.8rem;font-weight:700;margin-bottom:3px;"><span class="sb-status-dot"></span>Supabase Connected</div>
-    <div style="font-size:.74rem;color:var(--muted);">Serverless Cloud Active</div>
-  </div>
+<div class="sb-logo">
+<div class="sb-logo-icon"><i class="ti ti-robot"></i></div>
+<div><span>Autoblog AI</span><small>Yayath Spaces</small></div>
 </div>
-
+<div class="sb-section">Main</div>
+<a class="sb-link active" id="nav-dashboard" onclick="nav('dashboard',this)"><i class="ti ti-layout-dashboard"></i>Dashboard</a>
+<a class="sb-link" id="nav-blogs" onclick="nav('blogs',this)"><i class="ti ti-article"></i>All Blogs</a>
+<div class="sb-section">Create</div>
+<a class="sb-link" id="nav-write" onclick="nav('write',this)"><i class="ti ti-pencil"></i>Write Blog</a>
+<a class="sb-link" id="nav-autogen" onclick="nav('autogen',this)"><i class="ti ti-sparkles"></i>AI Auto-Generate</a>
+<div class="sb-section">Config</div>
+<a class="sb-link" id="nav-api" onclick="nav('api',this)"><i class="ti ti-api"></i>API &amp; Keys</a>
+<a class="sb-link" id="nav-settings" onclick="nav('settings',this)"><i class="ti ti-settings"></i>Settings</a>
+<div class="sb-section">Monitor</div>
+<a class="sb-link" href="https://www.yayathspaces.com/#blog" target="_blank"><i class="ti ti-external-link"></i>View Live Site</a>
+<div class="sb-section">Website</div>
+<a class="sb-link" id="nav-maintenance" onclick="nav('maintenance',this)"><i class="ti ti-shield-lock"></i>Maintenance Mode</a>
+<div class="sb-status">
+<div style="font-size:.8rem;font-weight:700;margin-bottom:3px;"><span class="sb-status-dot"></span>Supabase Connected</div>
+<div style="font-size:.74rem;color:var(--muted);">Serverless Cloud Active</div>
+</div>
+</div>
 <!-- ════════════════ MAIN CONTENT ════════════════ -->
 <main>
-  <div class="topbar">
-    <h1 id="pageTitle">📊 Dashboard</h1>
-    <div class="topbar-right">
-      <span class="badge badge-ok"><span class="sb-status-dot"></span>LIVE</span>
-      <button class="btn btn-gold btn-sm" onclick="deployMessage()"><i class="ti ti-rocket"></i>Deploy Live</button>
-    </div>
-  </div>
-
-  <!-- ── DASHBOARD ── -->
-  <div class="pane active" id="pane-dashboard">
-    <div class="stats" id="statsRow">
-      <div class="stat-card"><div class="stat-label">Total Blogs</div><div class="stat-val" id="st-blogs">–</div><div class="stat-sub">↑ Growing</div></div>
-      <div class="stat-card"><div class="stat-label">Latest Blog</div><div class="stat-val" style="font-size:1rem;margin-top:4px;" id="st-latest">–</div><div class="stat-sub">Cloud synced</div></div>
-      <div class="stat-card"><div class="stat-label">AI Status</div><div class="stat-val" style="font-size:1.3rem;margin-top:4px;color:var(--ok);">Active</div><div class="stat-sub">Ready to write</div></div>
-      <div class="stat-card"><div class="stat-label">Platform</div><div class="stat-val" style="font-size:1.3rem;margin-top:4px;">Supabase</div><div class="stat-sub">Serverless DB</div></div>
-    </div>
-    <div class="card">
-      <div class="card-header"><div class="card-title"><i class="ti ti-sparkles"></i>Quick Actions</div></div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <button class="btn btn-gold" onclick="nav('write',document.getElementById('nav-write'))"><i class="ti ti-pencil"></i>Write New Blog</button>
-        <button class="btn btn-blue" onclick="nav('autogen',document.getElementById('nav-autogen'))"><i class="ti ti-robot"></i><span id="autoBtnTxt">AI Autoblog Menu</span></button>
-        <button class="btn btn-outline" onclick="deployMessage()"><i class="ti ti-rocket"></i>Vercel Sync (Manual)</button>
-        <button class="btn btn-red" id="quickMaintBtn" onclick="nav('maintenance',document.getElementById('nav-maintenance'))"><i class="ti ti-shield-lock"></i>Maintenance Mode</button>
+<div class="topbar">
+<h1 id="pageTitle">📊 Dashboard</h1>
+<div class="topbar-right">
+<span class="badge badge-ok"><span class="sb-status-dot"></span>LIVE</span>
+<button class="btn btn-gold btn-sm" onclick="deployMessage()"><i class="ti ti-rocket"></i>Deploy Live</button>
+</div>
+</div>
+<!-- ── DASHBOARD ── -->
+<div class="pane active" id="pane-dashboard">
+<div class="stats" id="statsRow">
+<div class="stat-card"><div class="stat-label">Total Blogs</div><div class="stat-val" id="st-blogs">–</div><div class="stat-sub">↑ Growing</div></div>
+<div class="stat-card"><div class="stat-label">Latest Blog</div><div class="stat-val" id="st-latest" style="font-size:1rem;margin-top:4px;">–</div><div class="stat-sub">Cloud synced</div></div>
+<div class="stat-card"><div class="stat-label">AI Status</div><div class="stat-val" style="font-size:1.3rem;margin-top:4px;color:var(--ok);">Active</div><div class="stat-sub">Ready to write</div></div>
+<div class="stat-card"><div class="stat-label">Platform</div><div class="stat-val" style="font-size:1.3rem;margin-top:4px;">Supabase</div><div class="stat-sub">Serverless DB</div></div>
+</div>
+<div class="card">
+<div class="card-header"><div class="card-title"><i class="ti ti-sparkles"></i>Quick Actions</div></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;">
+<button class="btn btn-gold" onclick="nav('write',document.getElementById('nav-write'))"><i class="ti ti-pencil"></i>Write New Blog</button>
+<button class="btn btn-blue" onclick="nav('autogen',document.getElementById('nav-autogen'))"><i class="ti ti-robot"></i><span id="autoBtnTxt">AI Autoblog Menu</span></button>
+<button class="btn btn-outline" onclick="deployMessage()"><i class="ti ti-rocket"></i>Vercel Sync (Manual)</button>
+<button class="btn btn-red" id="quickMaintBtn" onclick="nav('maintenance',document.getElementById('nav-maintenance'))"><i class="ti ti-shield-lock"></i>Maintenance Mode</button>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr;gap:16px;">
+<div class="card" style="margin-bottom:0;">
+<div class="card-header"><div class="card-title"><i class="ti ti-article"></i>Recent Blogs</div></div>
+<div id="dashBlogList"></div>
+</div>
+</div>
+</div>
+<!-- ── ALL BLOGS ── -->
+<div class="pane" id="pane-blogs">
+<div class="card">
+<div class="card-header">
+<div class="card-title"><i class="ti ti-article"></i>All Published Blogs</div>
+<button class="btn btn-gold btn-sm" onclick="nav('write',document.getElementById('nav-write'))"><i class="ti ti-plus"></i>New Blog</button>
+</div>
+<div class="blog-grid" id="allBlogsGrid"></div>
+</div>
+</div>
+<!-- ── WRITE BLOG ── -->
+<div class="pane" id="pane-write">
+<div class="card">
+<div class="card-header">
+<div class="card-title"><i class="ti ti-pencil"></i>Write Blog Post</div>
+<div style="display:flex;gap:8px;">
+<button class="btn btn-outline btn-sm" onclick="aiWriteContent()"><i class="ti ti-sparkles"></i><span id="aiWriteBtnTxt">AI Write Content</span></button>
+<button class="btn btn-gold" onclick="saveBlog()"><i class="ti ti-device-floppy"></i><span id="saveBlogTxt">Publish Live</span></button>
+</div>
+</div>
+<div class="form-grid">
+<div class="fg full"><label>Blog Title *</label><input id="wTitle" placeholder="e.g. 7 Practical Criteria to Choose the Best Coworking Space in Gurugram"></div>
+<div class="fg"><label>Category</label>
+<select id="wCat"><option>Workspace Guide</option><option>Workspace Trends</option><option>Business Guides</option><option>Managed Offices</option><option>Coworking Tips</option><option>Industry Insights</option></select>
+</div>
+<div class="fg"><label>Publish Date</label><input id="wDate" type="date"></div>
+<div class="fg"><label>Read Time</label><input id="wReadTime" placeholder="7 min read"></div>
+<div class="fg"><label>Featured Post?</label><select id="wFeatured"><option value="false">No</option><option value="true">Yes – Feature this post</option></select></div>
+<div class="fg full"><label>Short Excerpt (for blog card)</label><textarea id="wExcerpt" placeholder="2-3 sentence summary..." rows="2"></textarea></div>
+<div class="fg full"><label>SEO Keywords (for AI content gen)</label><input id="wKw" value="Coworking space in Gurugram, Best coworking space in Gurugram"></div>
+<div class="fg full"><label>AI Instructions (optional)</label><textarea id="wInstr" placeholder="e.g. Write 7 numbered criteria format, include Gurugram locations, end with strong CTA" rows="2"></textarea></div>
+<div class="fg full">
+<label>Cover Image URL or Upload</label>
+<div class="input-wrap" style="display:flex;gap:10px;align-items:center;margin-bottom:10px;">
+<input id="wImgAlt" placeholder="Alt Text (SEO e.g. Modern Coworking Space in Gurgaon)" style="flex:1;" type="text">
+</div>
+<div class="input-wrap" style="display:flex;gap:10px;align-items:center;">
+<input id="wImg" oninput="updateImagePreview()" placeholder="e.g. assets/images/blogs/blog_coworking_hero.jpg" style="flex:1;" type="text">
+<input accept="image/*" id="wImgUpload" onchange="uploadImage(this)" style="display:none;" type="file">
+<button class="btn btn-outline btn-sm" id="uploadBtnTxt" onclick="document.getElementById('wImgUpload').click()"><i class="ti ti-upload"></i> Upload</button>
+<button class="btn btn-outline btn-sm" onclick="document.getElementById('wImg').value='assets/images/blogs/blog_coworking_hero.jpg'; updateImagePreview();">Use Default</button>
+</div>
+<div id="imgPreviewContainer" style="margin-top:10px; display:none; border: 1px solid var(--border); border-radius:8px; overflow:hidden; max-width: 300px;">
+<img id="imgPreview" loading="lazy" src="" style="width:100%; height:auto; display:block;">
+</div>
+</div>
+<div class="fg full">
+<label>Content *</label>
+<div class="editor-toolbar">
+<button onclick="fmt('bold')" title="Bold"><i class="ti ti-bold"></i></button>
+<button onclick="fmt('italic')" title="Italic"><i class="ti ti-italic"></i></button>
+<button onclick="fmtH2()" title="H2">H2</button>
+<button onclick="fmtH3()" title="H3">H3</button>
+<button onclick="fmt('insertUnorderedList')" title="List"><i class="ti ti-list"></i></button>
+<button onclick="fmt('insertOrderedList')" title="Ordered List"><i class="ti ti-list-numbers"></i></button>
+<button onclick="fmtLink('wContent')" style="color:var(--gold);font-weight:600;" title="Add Hyperlink"><i class="ti ti-link"></i> Link</button>
+<button onclick="openInsertImgModal('wContent')" style="color:var(--gold);font-weight:600;" title="Insert Image in Content"><i class="ti ti-photo-plus"></i> Add Image</button>
+<button onclick="clearEditor()" style="margin-left:auto;color:var(--err)" title="Clear"><i class="ti ti-trash"></i></button>
+</div>
+<div class="editor-body" contenteditable="true" id="wContent" spellcheck="true"></div>
+<div id="wWordCount" style="text-align:right;margin-top:4px;font-size:.75rem;color:var(--muted);">0 words</div>
+</div>
+</div>
+<div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:16px;">
+<button class="btn btn-gold" onclick="saveBlog()"><i class="ti ti-rocket"></i><span id="saveBlogTxt2">Publish Directly to Live Site</span></button>
+<button class="btn btn-outline" onclick="resetWriteForm()"><i class="ti ti-refresh"></i>Reset</button>
+</div>
+</div>
+</div>
+<!-- ── AI AUTO-GENERATE ── -->
+<div class="pane" id="pane-autogen">
+<div class="card">
+<div class="card-header"><div class="card-title"><i class="ti ti-sparkles"></i>AI Auto-Generate Blog</div></div>
+<p style="color:var(--muted);font-size:.88rem;margin-bottom:20px;">Use the Gemini AI engine to write a complete, SEO-friendly blog in seconds and publish it instantly to your live site.</p>
+<div class="form-grid" style="margin-bottom: 20px;">
+<div class="fg full"><label>Topic / Keywords</label><input id="agTopic" placeholder="e.g. Advantages of Coworking in Gurugram"></div>
+<div class="fg"><label>Blog Length</label><select id="agLength"><option value="short">Short</option><option selected="" value="medium">Medium</option><option value="long">Long</option></select></div>
+<div class="fg"><label>Format</label><select id="agFormat"><option value="criteria">List / Criteria</option><option value="guide">Guide</option></select></div>
+</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;">
+<button class="btn btn-gold" onclick="runClientAutoblog()"><i class="ti ti-robot"></i><span id="autoGenBtnTxt">Generate &amp; Publish Instantly</span></button>
+</div>
+<div class="card" id="autogenResult" style="margin:0;">
+<div class="card-title"><i class="ti ti-check"></i>Successfully Generated!</div>
+<div id="autogenResultContent"></div>
+</div>
+</div>
+<div class="card">
+<div class="card-header"><div class="card-title"><i class="ti ti-clock"></i>Scheduled Autoblogging (Cron)</div></div>
+<p style="color:var(--muted);font-size:.85rem;margin-bottom:10px;">Since the dashboard is now serverless (hosted on Vercel), continuous background schedules require setting up a free <strong>GitHub Action</strong> or <strong>cron-job.org</strong> to ping your site daily.</p>
+<p style="color:var(--muted);font-size:.85rem;">Currently, you can use the manual "Generate &amp; Publish" button above anytime you need fresh content without needing Antigravity or a local server.</p>
+</div>
+</div>
+<!-- ── API & KEYS ── -->
+<div class="pane" id="pane-api">
+<div class="card">
+<div class="card-header"><div class="card-title"><i class="ti ti-key"></i>Gemini API Configuration</div></div>
+<div style="background:rgba(245,166,35,.06);border:1px solid rgba(245,166,35,.2);border-radius:10px;padding:16px;margin-bottom:20px;">
+<strong style="color:var(--gold);"><i class="ti ti-info-circle"></i> This key is ONLY used when you click "AI Write Content".</strong>
+<p style="font-size:.85rem;color:var(--muted);margin-top:6px;">You can edit, save, and delete blogs manually without an API key.</p>
+</div>
+<div class="fg" style="max-width:600px;">
+<label>Gemini or ChatGPT API Key</label>
+<div class="input-wrap">
+<input id="apiGeminiKey" placeholder="sk-OpenAI or AIza-Gemini..." type="password">
+<i class="ti ti-eye input-eye" id="apiEye" onclick="toggleApiEye()"></i>
+</div>
+</div>
+<div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
+<button class="btn btn-gold" onclick="saveApiKey()"><i class="ti ti-device-floppy"></i><span id="saveApiTxt">Save API Key</span></button>
+</div>
+</div>
+</div>
+<!-- ── SETTINGS ── -->
+<div class="pane" id="pane-settings">
+<div class="card">
+<div class="card-header">
+<div class="card-title"><i class="ti ti-settings"></i>General Settings</div>
+<button class="btn btn-gold btn-sm" onclick="saveSettings()"><i class="ti ti-device-floppy"></i><span id="saveSetTxt">Save Settings</span></button>
+</div>
+<div class="form-grid">
+<div class="fg"><label>Default Author Name</label><input id="setAuthor" placeholder="Yayath Spaces Team"></div>
+<div class="fg"><label>Author Role</label><input id="setRole" placeholder="Workspace Experts"></div>
+<div class="fg full">
+<label>Author Image URL</label>
+<div style="display:flex;gap:10px;">
+<input id="setAuthorImg" placeholder="Leave blank for default Yayath logo" style="flex:1;">
+<input accept="image/*" id="setAuthorImgUpload" onchange="uploadAuthorImage(this)" style="display:none;" type="file">
+<button class="btn btn-outline btn-sm" id="uploadAuthorBtnTxt" onclick="document.getElementById('setAuthorImgUpload').click()"><i class="ti ti-upload"></i> Upload</button>
+</div>
+</div>
+<div class="fg full"><label>Brand Tagline (used in AI content)</label><input id="setTagline" placeholder="Yayath Spaces — Premium Coworking..."></div>
+<div class="fg full"><label>Default CTA (Call to Action, included in every blog)</label><textarea id="setCta" placeholder="Book a free tour at Yayath Spaces..." rows="2"></textarea></div>
+<div class="fg"><label>Change Admin PIN</label><input id="setPin" maxlength="4" placeholder="Enter new 4-digit PIN" type="password"></div>
+</div>
+</div>
+</div>
+<!-- ── MAINTENANCE MODE ── -->
+<div class="pane" id="pane-maintenance">
+<div class="card" style="max-width:600px;">
+<div class="card-header">
+<div class="card-title"><i class="ti ti-shield-lock"></i>Website Maintenance Mode</div>
+</div>
+<div id="maint-status-box" style="padding:20px;border-radius:10px;margin-bottom:20px;border:1px solid var(--border);text-align:center;">
+<div id="maint-icon" style="font-size:3rem;margin-bottom:10px;">🔴</div>
+<div id="maint-label" style="font-size:1.2rem;font-weight:800;margin-bottom:6px;">Checking status...</div>
+<div id="maint-desc" style="font-size:.85rem;color:var(--muted);">Loading...</div>
+</div>
+<div style="margin-bottom:20px;">
+<label style="margin-bottom:8px;display:block;">Custom Message (shown to visitors)</label>
+<textarea id="maint-message" placeholder="We are currently making improvements to enhance your experience. Some features might be temporarily unavailable." rows="3">We are currently making improvements to enhance your experience. Some features might be temporarily unavailable.</textarea>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;">
+<button class="btn btn-red" id="maint-on-btn" onclick="setMaintenance(true)" style="flex:1;"><i class="ti ti-shield-lock"></i> Turn ON Maintenance</button>
+<button class="btn btn-ok" id="maint-off-btn" onclick="setMaintenance(false)" style="flex:1;"><i class="ti ti-shield-check"></i> Turn OFF Maintenance</button>
+</div>
+<div style="margin-top:16px;padding:12px;background:rgba(245,166,35,.06);border:1px solid rgba(245,166,35,.15);border-radius:8px;font-size:.82rem;color:var(--muted);">
+<i class="ti ti-info-circle" style="color:var(--gold);"></i> When <strong style="color:var(--gold);">ON</strong>, a "Website Under Maintenance" popup will appear for all visitors on <a href="https://www.yayathspaces.com" style="color:var(--gold);" target="_blank">yayathspaces.com</a>. When <strong style="color:var(--ok);">OFF</strong>, the site runs normally.
       </div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr;gap:16px;">
-      <div class="card" style="margin-bottom:0;">
-        <div class="card-header"><div class="card-title"><i class="ti ti-article"></i>Recent Blogs</div></div>
-        <div id="dashBlogList"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── ALL BLOGS ── -->
-  <div class="pane" id="pane-blogs">
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title"><i class="ti ti-article"></i>All Published Blogs</div>
-        <button class="btn btn-gold btn-sm" onclick="nav('write',document.getElementById('nav-write'))"><i class="ti ti-plus"></i>New Blog</button>
-      </div>
-      <div class="blog-grid" id="allBlogsGrid"></div>
-    </div>
-  </div>
-
-  <!-- ── WRITE BLOG ── -->
-  <div class="pane" id="pane-write">
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title"><i class="ti ti-pencil"></i>Write Blog Post</div>
-        <div style="display:flex;gap:8px;">
-          <button class="btn btn-outline btn-sm" onclick="aiWriteContent()"><i class="ti ti-sparkles"></i><span id="aiWriteBtnTxt">AI Write Content</span></button>
-          <button class="btn btn-gold" onclick="saveBlog()"><i class="ti ti-device-floppy"></i><span id="saveBlogTxt">Publish Live</span></button>
-        </div>
-      </div>
-      <div class="form-grid">
-        <div class="fg full"><label>Blog Title *</label><input id="wTitle" placeholder="e.g. 7 Practical Criteria to Choose the Best Coworking Space in Gurugram"></div>
-        <div class="fg"><label>Category</label>
-          <select id="wCat"><option>Workspace Guide</option><option>Workspace Trends</option><option>Business Guides</option><option>Managed Offices</option><option>Coworking Tips</option><option>Industry Insights</option></select>
-        </div>
-        <div class="fg"><label>Publish Date</label><input type="date" id="wDate"></div>
-        <div class="fg"><label>Read Time</label><input id="wReadTime" placeholder="7 min read"></div>
-        <div class="fg"><label>Featured Post?</label><select id="wFeatured"><option value="false">No</option><option value="true">Yes – Feature this post</option></select></div>
-        <div class="fg full"><label>Short Excerpt (for blog card)</label><textarea id="wExcerpt" rows="2" placeholder="2-3 sentence summary..."></textarea></div>
-        <div class="fg full"><label>SEO Keywords (for AI content gen)</label><input id="wKw" value="Coworking space in Gurugram, Best coworking space in Gurugram"></div>
-        <div class="fg full"><label>AI Instructions (optional)</label><textarea id="wInstr" rows="2" placeholder="e.g. Write 7 numbered criteria format, include Gurugram locations, end with strong CTA"></textarea></div>
-        <div class="fg full">
-          <label>Cover Image URL or Upload</label>
-          <div class="input-wrap" style="display:flex;gap:10px;align-items:center;margin-bottom:10px;">
-            <input type="text" id="wImgAlt" placeholder="Alt Text (SEO e.g. Modern Coworking Space in Gurgaon)" style="flex:1;">
-          </div>
-          <div class="input-wrap" style="display:flex;gap:10px;align-items:center;">
-            <input type="text" id="wImg" placeholder="e.g. assets/images/blogs/blog_coworking_hero.jpg" style="flex:1;" oninput="updateImagePreview()">
-            <input type="file" id="wImgUpload" accept="image/*" style="display:none;" onchange="uploadImage(this)">
-            <button class="btn btn-outline btn-sm" onclick="document.getElementById('wImgUpload').click()" id="uploadBtnTxt"><i class="ti ti-upload"></i> Upload</button>
-            <button class="btn btn-outline btn-sm" onclick="document.getElementById('wImg').value='assets/images/blogs/blog_coworking_hero.jpg'; updateImagePreview();">Use Default</button>
-          </div>
-          <div id="imgPreviewContainer" style="margin-top:10px; display:none; border: 1px solid var(--border); border-radius:8px; overflow:hidden; max-width: 300px;">
-             <img id="imgPreview" src="" style="width:100%; height:auto; display:block;" loading="lazy">
-          </div>
-        </div>
-        <div class="fg full">
-          <label>Content *</label>
-          <div class="editor-toolbar">
-            <button onclick="fmt('bold')" title="Bold"><i class="ti ti-bold"></i></button>
-            <button onclick="fmt('italic')" title="Italic"><i class="ti ti-italic"></i></button>
-            <button onclick="fmtH2()" title="H2">H2</button>
-            <button onclick="fmtH3()" title="H3">H3</button>
-            <button onclick="fmt('insertUnorderedList')" title="List"><i class="ti ti-list"></i></button>
-            <button onclick="fmt('insertOrderedList')" title="Ordered List"><i class="ti ti-list-numbers"></i></button>
-            <button onclick="fmtLink('wContent')" title="Add Hyperlink" style="color:var(--gold);font-weight:600;"><i class="ti ti-link"></i> Link</button>
-            <button onclick="openInsertImgModal('wContent')" title="Insert Image in Content" style="color:var(--gold);font-weight:600;"><i class="ti ti-photo-plus"></i> Add Image</button>
-            <button onclick="clearEditor()" title="Clear" style="margin-left:auto;color:var(--err)"><i class="ti ti-trash"></i></button>
-          </div>
-          <div class="editor-body" id="wContent" contenteditable="true" spellcheck="true"></div>
-          <div style="text-align:right;margin-top:4px;font-size:.75rem;color:var(--muted);" id="wWordCount">0 words</div>
-        </div>
-      </div>
-      <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:16px;">
-        <button class="btn btn-gold" onclick="saveBlog()"><i class="ti ti-rocket"></i><span id="saveBlogTxt2">Publish Directly to Live Site</span></button>
-        <button class="btn btn-outline" onclick="resetWriteForm()"><i class="ti ti-refresh"></i>Reset</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── AI AUTO-GENERATE ── -->
-  <div class="pane" id="pane-autogen">
-    <div class="card">
-      <div class="card-header"><div class="card-title"><i class="ti ti-sparkles"></i>AI Auto-Generate Blog</div></div>
-      <p style="color:var(--muted);font-size:.88rem;margin-bottom:20px;">Use the Gemini AI engine to write a complete, SEO-friendly blog in seconds and publish it instantly to your live site.</p>
-      
-      <div class="form-grid" style="margin-bottom: 20px;">
-        <div class="fg full"><label>Topic / Keywords</label><input id="agTopic" placeholder="e.g. Advantages of Coworking in Gurugram"></div>
-        <div class="fg"><label>Blog Length</label><select id="agLength"><option value="short">Short</option><option value="medium" selected>Medium</option><option value="long">Long</option></select></div>
-        <div class="fg"><label>Format</label><select id="agFormat"><option value="criteria">List / Criteria</option><option value="guide">Guide</option></select></div>
-      </div>
-
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;">
-        <button class="btn btn-gold" onclick="runClientAutoblog()"><i class="ti ti-robot"></i><span id="autoGenBtnTxt">Generate & Publish Instantly</span></button>
-      </div>
-      <div id="autogenResult" style="display:none;" class="card" style="margin:0;">
-        <div class="card-title"><i class="ti ti-check"></i>Successfully Generated!</div>
-        <div id="autogenResultContent"></div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header"><div class="card-title"><i class="ti ti-clock"></i>Scheduled Autoblogging (Cron)</div></div>
-      <p style="color:var(--muted);font-size:.85rem;margin-bottom:10px;">Since the dashboard is now serverless (hosted on Vercel), continuous background schedules require setting up a free <strong>GitHub Action</strong> or <strong>cron-job.org</strong> to ping your site daily.</p>
-      <p style="color:var(--muted);font-size:.85rem;">Currently, you can use the manual "Generate & Publish" button above anytime you need fresh content without needing Antigravity or a local server.</p>
-    </div>
-  </div>
-
-  <!-- ── API & KEYS ── -->
-  <div class="pane" id="pane-api">
-    <div class="card">
-      <div class="card-header"><div class="card-title"><i class="ti ti-key"></i>Gemini API Configuration</div></div>
-      <div style="background:rgba(245,166,35,.06);border:1px solid rgba(245,166,35,.2);border-radius:10px;padding:16px;margin-bottom:20px;">
-        <strong style="color:var(--gold);"><i class="ti ti-info-circle"></i> This key is ONLY used when you click "AI Write Content".</strong>
-        <p style="font-size:.85rem;color:var(--muted);margin-top:6px;">You can edit, save, and delete blogs manually without an API key.</p>
-      </div>
-      <div class="fg" style="max-width:600px;">
-        <label>Gemini or ChatGPT API Key</label>
-        <div class="input-wrap">
-          <input type="password" id="apiGeminiKey" placeholder="sk-OpenAI or AIza-Gemini...">
-          <i class="ti ti-eye input-eye" id="apiEye" onclick="toggleApiEye()"></i>
-        </div>
-      </div>
-      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
-        <button class="btn btn-gold" onclick="saveApiKey()"><i class="ti ti-device-floppy"></i><span id="saveApiTxt">Save API Key</span></button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── SETTINGS ── -->
-  <div class="pane" id="pane-settings">
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title"><i class="ti ti-settings"></i>General Settings</div>
-        <button class="btn btn-gold btn-sm" onclick="saveSettings()"><i class="ti ti-device-floppy"></i><span id="saveSetTxt">Save Settings</span></button>
-      </div>
-      <div class="form-grid">
-        <div class="fg"><label>Default Author Name</label><input id="setAuthor" placeholder="Yayath Spaces Team"></div>
-        <div class="fg"><label>Author Role</label><input id="setRole" placeholder="Workspace Experts"></div>
-        <div class="fg full">
-          <label>Author Image URL</label>
-          <div style="display:flex;gap:10px;">
-            <input id="setAuthorImg" placeholder="Leave blank for default Yayath logo" style="flex:1;">
-            <input type="file" id="setAuthorImgUpload" accept="image/*" style="display:none;" onchange="uploadAuthorImage(this)">
-            <button class="btn btn-outline btn-sm" onclick="document.getElementById('setAuthorImgUpload').click()" id="uploadAuthorBtnTxt"><i class="ti ti-upload"></i> Upload</button>
-          </div>
-        </div>
-        <div class="fg full"><label>Brand Tagline (used in AI content)</label><input id="setTagline" placeholder="Yayath Spaces — Premium Coworking..."></div>
-        <div class="fg full"><label>Default CTA (Call to Action, included in every blog)</label><textarea id="setCta" rows="2" placeholder="Book a free tour at Yayath Spaces..."></textarea></div>
-        <div class="fg"><label>Change Admin PIN</label><input type="password" id="setPin" placeholder="Enter new 4-digit PIN" maxlength="4"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── MAINTENANCE MODE ── -->
-  <div class="pane" id="pane-maintenance">
-    <div class="card" style="max-width:600px;">
-      <div class="card-header">
-        <div class="card-title"><i class="ti ti-shield-lock"></i>Website Maintenance Mode</div>
-      </div>
-      <div id="maint-status-box" style="padding:20px;border-radius:10px;margin-bottom:20px;border:1px solid var(--border);text-align:center;">
-        <div style="font-size:3rem;margin-bottom:10px;" id="maint-icon">🔴</div>
-        <div style="font-size:1.2rem;font-weight:800;margin-bottom:6px;" id="maint-label">Checking status...</div>
-        <div style="font-size:.85rem;color:var(--muted);" id="maint-desc">Loading...</div>
-      </div>
-      <div style="margin-bottom:20px;">
-        <label style="margin-bottom:8px;display:block;">Custom Message (shown to visitors)</label>
-        <textarea id="maint-message" rows="3" placeholder="We are currently making improvements to enhance your experience. Some features might be temporarily unavailable.">We are currently making improvements to enhance your experience. Some features might be temporarily unavailable.</textarea>
-      </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;">
-        <button class="btn btn-red" id="maint-on-btn" onclick="setMaintenance(true)" style="flex:1;"><i class="ti ti-shield-lock"></i> Turn ON Maintenance</button>
-        <button class="btn btn-ok" id="maint-off-btn" onclick="setMaintenance(false)" style="flex:1;"><i class="ti ti-shield-check"></i> Turn OFF Maintenance</button>
-      </div>
-      <div style="margin-top:16px;padding:12px;background:rgba(245,166,35,.06);border:1px solid rgba(245,166,35,.15);border-radius:8px;font-size:.82rem;color:var(--muted);">
-        <i class="ti ti-info-circle" style="color:var(--gold);"></i> When <strong style="color:var(--gold);">ON</strong>, a "Website Under Maintenance" popup will appear for all visitors on <a href="https://www.yayathspaces.com" target="_blank" style="color:var(--gold);">yayathspaces.com</a>. When <strong style="color:var(--ok);">OFF</strong>, the site runs normally.
-      </div>
-    </div>
-  </div>
+</div>
+</div>
 </main>
-
 <!-- ════════════════ EDIT MODAL ════════════════ -->
 <div class="modal-bg" id="editModal">
-  <div class="modal">
-    <div class="modal-head">
-      <h3><i class="ti ti-edit"></i> Edit Blog Post</h3>
-      <button class="btn btn-outline btn-sm" onclick="closeEditModal()"><i class="ti ti-x"></i></button>
-    </div>
-    <div class="modal-body">
-      <input type="hidden" id="editId">
-      <div class="form-grid">
-        <div class="fg full"><label>Title</label><input id="editTitle"></div>
-        <div class="fg"><label>Category</label>
-          <select id="editCat"><option>Workspace Guide</option><option>Workspace Trends</option><option>Business Guides</option><option>Managed Offices</option><option>Coworking Tips</option><option>Industry Insights</option></select>
-        </div>
-        <div class="fg"><label>Date</label><input type="date" id="editDate"></div>
-        <div class="fg"><label>Read Time</label><input id="editReadTime" placeholder="7 min read"></div>
-        <div class="fg"><label>Featured?</label><select id="editFeatured"><option value="false">No</option><option value="true">Yes – Featured</option></select></div>
-        <div class="fg full"><label>Excerpt</label><textarea id="editExcerpt" rows="2"></textarea></div>
-        <div class="fg full">
-          <label>Cover Image URL or Upload</label>
-          <div class="input-wrap" style="display:flex;gap:10px;align-items:center;margin-bottom:10px;">
-            <input type="text" id="editImgAlt" placeholder="Alt Text (SEO e.g. Modern Coworking Space in Gurgaon)" style="flex:1;">
-          </div>
-          <div class="input-wrap" style="display:flex;gap:10px;align-items:center;">
-            <input type="text" id="editImg" placeholder="e.g. assets/images/blogs/blog_coworking_hero.jpg" style="flex:1;" oninput="updateEditImagePreview()">
-            <input type="file" id="editImgUpload" accept="image/*" style="display:none;" onchange="uploadEditImage(this)">
-            <button class="btn btn-outline btn-sm" onclick="document.getElementById('editImgUpload').click()" id="uploadEditBtnTxt"><i class="ti ti-upload"></i> Upload</button>
-            <button class="btn btn-outline btn-sm" onclick="document.getElementById('editImg').value='assets/images/blogs/blog_coworking_hero.jpg'; updateEditImagePreview();">Use Default</button>
-          </div>
-          <div id="editImgPreviewContainer" style="margin-top:10px; display:none; border: 1px solid var(--border); border-radius:8px; overflow:hidden; max-width: 300px;">
-             <img id="editImgPreview" src="" style="width:100%; height:auto; display:block;" loading="lazy">
-          </div>
-        </div>
-        <div class="fg full">
-          <label>Content (HTML)</label>
-          <div class="editor-toolbar">
-            <button onclick="editFmt('bold')"><i class="ti ti-bold"></i></button>
-            <button onclick="editFmt('italic')"><i class="ti ti-italic"></i></button>
-            <button onclick="editFmtH2()">H2</button>
-            <button onclick="editFmtH3()">H3</button>
-            <button onclick="editFmt('insertUnorderedList')"><i class="ti ti-list"></i></button>
-            <button onclick="editFmt('insertOrderedList')"><i class="ti ti-list-numbers"></i></button>
-            <button onclick="fmtLink('editContent')" title="Add Hyperlink" style="color:var(--gold);font-weight:600;"><i class="ti ti-link"></i> Link</button>
-            <button onclick="openInsertImgModal('editContent')" title="Insert Image in Content" style="color:var(--gold);font-weight:600;"><i class="ti ti-photo-plus"></i> Add Image</button>
-          </div>
-          <div class="editor-body" id="editContent" contenteditable="true"></div>
-        </div>
-      </div>
-    </div>
-    <div class="modal-foot">
-      <button class="btn btn-red btn-sm" onclick="deleteBlog()"><i class="ti ti-trash"></i>Delete Blog</button>
-      <button class="btn btn-outline" onclick="closeEditModal()">Cancel</button>
-      <button class="btn btn-gold" onclick="updateBlog()"><i class="ti ti-rocket"></i><span id="updateBlogTxt">Save Live</span></button>
-    </div>
-  </div>
+<div class="modal">
+<div class="modal-head">
+<h3><i class="ti ti-edit"></i> Edit Blog Post</h3>
+<button class="btn btn-outline btn-sm" onclick="closeEditModal()"><i class="ti ti-x"></i></button>
 </div>
-
-
+<div class="modal-body">
+<input id="editId" type="hidden">
+<div class="form-grid">
+<div class="fg full"><label>Title</label><input id="editTitle"></div>
+<div class="fg"><label>Category</label>
+<select id="editCat"><option>Workspace Guide</option><option>Workspace Trends</option><option>Business Guides</option><option>Managed Offices</option><option>Coworking Tips</option><option>Industry Insights</option></select>
+</div>
+<div class="fg"><label>Date</label><input id="editDate" type="date"></div>
+<div class="fg"><label>Read Time</label><input id="editReadTime" placeholder="7 min read"></div>
+<div class="fg"><label>Featured?</label><select id="editFeatured"><option value="false">No</option><option value="true">Yes – Featured</option></select></div>
+<div class="fg full"><label>Excerpt</label><textarea id="editExcerpt" rows="2"></textarea></div>
+<div class="fg full">
+<label>Cover Image URL or Upload</label>
+<div class="input-wrap" style="display:flex;gap:10px;align-items:center;margin-bottom:10px;">
+<input id="editImgAlt" placeholder="Alt Text (SEO e.g. Modern Coworking Space in Gurgaon)" style="flex:1;" type="text">
+</div>
+<div class="input-wrap" style="display:flex;gap:10px;align-items:center;">
+<input id="editImg" oninput="updateEditImagePreview()" placeholder="e.g. assets/images/blogs/blog_coworking_hero.jpg" style="flex:1;" type="text">
+<input accept="image/*" id="editImgUpload" onchange="uploadEditImage(this)" style="display:none;" type="file">
+<button class="btn btn-outline btn-sm" id="uploadEditBtnTxt" onclick="document.getElementById('editImgUpload').click()"><i class="ti ti-upload"></i> Upload</button>
+<button class="btn btn-outline btn-sm" onclick="document.getElementById('editImg').value='assets/images/blogs/blog_coworking_hero.jpg'; updateEditImagePreview();">Use Default</button>
+</div>
+<div id="editImgPreviewContainer" style="margin-top:10px; display:none; border: 1px solid var(--border); border-radius:8px; overflow:hidden; max-width: 300px;">
+<img id="editImgPreview" loading="lazy" src="" style="width:100%; height:auto; display:block;">
+</div>
+</div>
+<div class="fg full">
+<label>Content (HTML)</label>
+<div class="editor-toolbar">
+<button onclick="editFmt('bold')"><i class="ti ti-bold"></i></button>
+<button onclick="editFmt('italic')"><i class="ti ti-italic"></i></button>
+<button onclick="editFmtH2()">H2</button>
+<button onclick="editFmtH3()">H3</button>
+<button onclick="editFmt('insertUnorderedList')"><i class="ti ti-list"></i></button>
+<button onclick="editFmt('insertOrderedList')"><i class="ti ti-list-numbers"></i></button>
+<button onclick="fmtLink('editContent')" style="color:var(--gold);font-weight:600;" title="Add Hyperlink"><i class="ti ti-link"></i> Link</button>
+<button onclick="openInsertImgModal('editContent')" style="color:var(--gold);font-weight:600;" title="Insert Image in Content"><i class="ti ti-photo-plus"></i> Add Image</button>
+</div>
+<div class="editor-body" contenteditable="true" id="editContent"></div>
+</div>
+</div>
+</div>
+<div class="modal-foot">
+<button class="btn btn-red btn-sm" onclick="deleteBlog()"><i class="ti ti-trash"></i>Delete Blog</button>
+<button class="btn btn-outline" onclick="closeEditModal()">Cancel</button>
+<button class="btn btn-gold" onclick="updateBlog()"><i class="ti ti-rocket"></i><span id="updateBlogTxt">Save Live</span></button>
+</div>
+</div>
+</div>
 <!-- ════════════════ ADD IMAGE MODAL ════════════════ -->
 <div class="modal-bg" id="insertImgModal">
-  <div class="modal" style="max-width:560px;">
-    <div class="modal-head">
-      <h3><i class="ti ti-photo-plus" style="color:var(--gold);"></i> Insert Image into Blog Content</h3>
-      <button class="btn btn-outline btn-sm" onclick="closeInsertImgModal()"><i class="ti ti-x"></i></button>
-    </div>
-    <div class="modal-body">
-      <input type="hidden" id="insertImgTarget">
-      
-      <!-- Source Toggle Tabs -->
-      <div style="display:flex;gap:10px;margin-bottom:20px;">
-        <button class="btn btn-gold btn-sm" id="imgTabUploadBtn" onclick="switchImgSourceTab('upload')" style="flex:1;"><i class="ti ti-upload"></i> Upload Image File</button>
-        <button class="btn btn-outline btn-sm" id="imgTabUrlBtn" onclick="switchImgSourceTab('url')" style="flex:1;"><i class="ti ti-link"></i> Paste Image URL</button>
-      </div>
-
-      <!-- Tab 1: Upload File -->
-      <div id="imgSourceUploadPane" style="display:block;">
-        <div style="border:2px dashed var(--border);border-radius:12px;padding:30px 20px;text-align:center;background:var(--bg);cursor:pointer;transition:border-color .2s;" onclick="document.getElementById('contentImgFile').click()">
-          <i class="ti ti-cloud-upload" style="font-size:2.5rem;color:var(--gold);display:block;margin-bottom:8px;"></i>
-          <span style="font-weight:700;display:block;margin-bottom:4px;">Click to Choose Image File</span>
-          <span style="font-size:.78rem;color:var(--muted);">PNG, JPG, WEBP, GIF up to 10MB</span>
-          <input type="file" id="contentImgFile" accept="image/*" style="display:none;" onchange="handleContentImgFile(this)">
-        </div>
-      </div>
-
-      <!-- Tab 2: URL Input -->
-      <div id="imgSourceUrlPane" style="display:none;">
-        <div class="fg full">
-          <label>Image Web URL</label>
-          <input id="contentImgUrl" placeholder="https://... or assets/images/spaces/..." oninput="previewModalImg(this.value)">
-        </div>
-      </div>
-
-      <!-- Preview Box -->
-      <div id="modalImgPreviewWrap" style="display:none;margin-top:18px;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);text-align:center;padding:10px;">
-        <img id="modalImgPreview" src="" style="max-width:100%;max-height:220px;object-fit:contain;border-radius:8px;display:block;margin:0 auto;" loading="lazy">
-      </div>
-
-      <!-- Alt Text / Caption -->
-      <div class="fg full" style="margin-top:16px;">
-        <label>Image Caption / Alt Text (SEO)</label>
-        <input id="contentImgAlt" placeholder="e.g. Modern Coworking Desk in Gurugram Office">
-      </div>
-    </div>
-    <div class="modal-foot">
-      <button class="btn btn-outline" onclick="closeInsertImgModal()">Cancel</button>
-      <button class="btn btn-gold" onclick="confirmInsertImg()"><i class="ti ti-circle-check"></i> Insert into Blog</button>
-    </div>
-  </div>
+<div class="modal" style="max-width:560px;">
+<div class="modal-head">
+<h3><i class="ti ti-photo-plus" style="color:var(--gold);"></i> Insert Image into Blog Content</h3>
+<button class="btn btn-outline btn-sm" onclick="closeInsertImgModal()"><i class="ti ti-x"></i></button>
 </div>
-
+<div class="modal-body">
+<input id="insertImgTarget" type="hidden">
+<!-- Source Toggle Tabs -->
+<div style="display:flex;gap:10px;margin-bottom:20px;">
+<button class="btn btn-gold btn-sm" id="imgTabUploadBtn" onclick="switchImgSourceTab('upload')" style="flex:1;"><i class="ti ti-upload"></i> Upload Image File</button>
+<button class="btn btn-outline btn-sm" id="imgTabUrlBtn" onclick="switchImgSourceTab('url')" style="flex:1;"><i class="ti ti-link"></i> Paste Image URL</button>
+</div>
+<!-- Tab 1: Upload File -->
+<div id="imgSourceUploadPane" style="display:block;">
+<div onclick="document.getElementById('contentImgFile').click()" style="border:2px dashed var(--border);border-radius:12px;padding:30px 20px;text-align:center;background:var(--bg);cursor:pointer;transition:border-color .2s;">
+<i class="ti ti-cloud-upload" style="font-size:2.5rem;color:var(--gold);display:block;margin-bottom:8px;"></i>
+<span style="font-weight:700;display:block;margin-bottom:4px;">Click to Choose Image File</span>
+<span style="font-size:.78rem;color:var(--muted);">PNG, JPG, WEBP, GIF up to 10MB</span>
+<input accept="image/*" id="contentImgFile" onchange="handleContentImgFile(this)" style="display:none;" type="file">
+</div>
+</div>
+<!-- Tab 2: URL Input -->
+<div id="imgSourceUrlPane" style="display:none;">
+<div class="fg full">
+<label>Image Web URL</label>
+<input id="contentImgUrl" oninput="previewModalImg(this.value)" placeholder="https://... or assets/images/spaces/...">
+</div>
+</div>
+<!-- Preview Box -->
+<div id="modalImgPreviewWrap" style="display:none;margin-top:18px;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg);text-align:center;padding:10px;">
+<img id="modalImgPreview" loading="lazy" src="" style="max-width:100%;max-height:220px;object-fit:contain;border-radius:8px;display:block;margin:0 auto;">
+</div>
+<!-- Alt Text / Caption -->
+<div class="fg full" style="margin-top:16px;">
+<label>Image Caption / Alt Text (SEO)</label>
+<input id="contentImgAlt" placeholder="e.g. Modern Coworking Desk in Gurugram Office">
+</div>
+</div>
+<div class="modal-foot">
+<button class="btn btn-outline" onclick="closeInsertImgModal()">Cancel</button>
+<button class="btn btn-gold" onclick="confirmInsertImg()"><i class="ti ti-circle-check"></i> Insert into Blog</button>
+</div>
+</div>
+</div>
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
-
 <!-- SUPABASE SETUP -->
 <script type="module">
 import { GoogleGenerativeAI } from '@google/generative-ai';
@@ -603,7 +607,7 @@ let blogs=[], settings={}, currentEditId=null, pinBuffer='';
 window.pinPress = pinPress; window.pinClear = pinClear; window.pinBack = pinBack; window.nav = nav;
 window.saveBlog = saveBlog; window.openEditModal = openEditModal; window.closeEditModal = closeEditModal;
 window.updateBlog = updateBlog; window.deleteBlog = deleteBlog; window.confirmDelete = confirmDelete;
-window.fmt = fmt; window.fmtH2 = fmtH2; window.fmtH3 = fmtH3; window.fmtLink = fmtLink; window.openInsertImgModal = openInsertImgModal; window.closeInsertImgModal = closeInsertImgModal; window.switchImgSourceTab = switchImgSourceTab; window.handleContentImgFile = handleContentImgFile; window.previewModalImg = previewModalImg; window.confirmInsertImg = confirmInsertImg; window.insertImageInContent = insertImageInContent; window.clearEditor = clearEditor;
+window.fmt = fmt; window.fmtH2 = fmtH2; window.fmtH3 = fmtH3; window.fmtLink = fmtLink; window.openInsertImgModal = openInsertImgModal; window.closeInsertImgModal = closeInsertImgModal; window.switchImgSourceTab = switchImgSourceTab; window.handleContentImgFile = handleContentImgFile; window.previewModalImg = previewModalImg; window.confirmInsertImg = confirmInsertImg; window.clearEditor = clearEditor;
 window.editFmt = editFmt; window.editFmtH2 = editFmtH2; window.editFmtH3 = editFmtH3;
 window.toggleApiEye = toggleApiEye; window.saveApiKey = saveApiKey; window.saveSettings = saveSettings;
 window.resetWriteForm = resetWriteForm; window.aiWriteContent = aiWriteContent; window.runClientAutoblog = runClientAutoblog;
@@ -739,6 +743,7 @@ function resetWriteForm(){
   document.getElementById('wReadTime').value='';
   document.getElementById('wImg').value='';
   document.getElementById('wImgAlt').value='';
+  updateImagePreview();
   document.getElementById('wWordCount').textContent='0 words';
   document.getElementById('wDate').value=new Date().toISOString().split('T')[0];
 }
@@ -1376,16 +1381,15 @@ function deployMessage() {
   toast('Since data is now in Supabase, your website is ALWAYS live! No need to rebuild Vercel manually. 🚀', 'ok');
 }
 </script>
+<div aria-hidden="true" style="display:none;">
+<a href="index.html">Home</a>
+<a href="about-us.html">About Us</a>
+<a href="coworking-spaces.html">Coworking</a>
+<a href="managed-offices.html">Managed Offices</a>
+<a href="gallery.html">Gallery</a>
+<a href="retail.html">Retail</a>
+<a href="contact-us.html">Contact Us</a>
+</div>
 
-    <div style="display:none;" aria-hidden="true">
-        <a href="index.html">Home</a>
-        <a href="about-us.html">About Us</a>
-        <a href="coworking-spaces.html">Coworking</a>
-        <a href="managed-offices.html">Managed Offices</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="retail.html">Retail</a>
-        <a href="contact-us.html">Contact Us</a>
-    </div>
-    </body>
-    
-</html>
+
+</body></html>

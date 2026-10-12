@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /crm.html
+Disallow: /autoblog-admin.html
+Disallow: /autoblog-admin-v2.html
+Disallow: /3pl_original.html
+Disallow: /cold_original.html
+Disallow: /dark_original.html
+Disallow: /warehouse_original.html
+Disallow: /original_index.html
 
 Sitemap: https://www.yayathspaces.com/sitemap.xml

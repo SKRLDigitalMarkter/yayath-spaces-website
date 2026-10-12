@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com" defer="defer"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#f6f3f2", "on-tertiary-container": "#d8945f", "primary": "#30006d", "on-error-container": "#93000a", "secondary-fixed-dim": "#edc156", "inverse-primary": "#d3bbff", "on-primary-fixed-variant": "#552f98", "outline": "#7b7483", "error": "#ba1a1a", "secondary-container": "#fcce62", "on-tertiary-fixed-variant": "#6c3a0c", "surface-container-high": "#eae7e7", "surface-container": "#f0eded", "outline-variant": "#ccc3d3", "on-secondary-fixed": "#251a00", "tertiary": "#3b1b00", "on-secondary": "#ffffff", "on-primary-fixed": "#260059", "surface-container-highest": "#e5e2e1", "tertiary-fixed-dim": "#ffb780", "surface": "#fcf9f8", "tertiary-container": "#5b2d00", "surface-bright": "#fcf9f8", "on-primary-container": "#b58ffc", "surface-container-lowest": "#ffffff", "on-primary": "#ffffff", "secondary-fixed": "#ffdf9b", "on-background": "#1c1b1b", "on-error": "#ffffff", "inverse-surface": "#313030", "primary-fixed-dim": "#d3bbff", "tertiary-fixed": "#ffdcc4", "surface-dim": "#dcd9d9", "surface-variant": "#e5e2e1", "on-tertiary-fixed": "#2f1400", "primary-container": "#471e89", "surface-tint": "#6e49b1", "secondary": "#785a00", "primary-fixed": "#ebdcff", "on-surface": "#1c1b1b", "on-secondary-container": "#745700", "on-surface-variant": "#4a4452", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "background": "#fcf9f8", "on-secondary-fixed-variant": "#5a4300", "inverse-on-surface": "#f3f0ef" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-2xl": "2rem", "space-sm": "0.5rem", "gutter-dense": "0.5rem", "space-md": "0.75rem", "space-xl": "1.5rem", "space-xxs": "0.125rem", "space-lg": "1rem", "space-xs": "0.25rem", "gutter": "1rem", "margin": "1.5rem", "margin-mobile": "1rem" }, "fontFamily": { "body-sm": ["Inter"], "label-sm": ["Inter"], "metric-stat": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Inter"], "display-lg": ["Inter"], "body-md": ["Inter"], "caption": ["Inter"], "headline-lg": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "metric-stat": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "caption": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><div class="flex flex-col w-full">
+<div class="p-space-xl space-y-space-xl">
+<!-- Page Header & Global Search -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-sm mb-space-xxs">
+<span class="font-caption text-caption uppercase tracking-wider text-outline">Index Coverage</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span class="font-caption text-caption text-on-surface-variant">142 Active Pages</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold">All Crawled Pages</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Manage on-page SEO signals, canonicals, and indexability at the URL level.</p>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-auto w-full md:w-auto">
+<div class="relative flex-1 md:w-64">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full h-9 pl-9 pr-space-sm rounded border border-outline-variant/60 bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container transition-all shadow-sm" placeholder="Search by URL path or Title..." type="text">
+</div>
+<button class="h-9 px-space-md bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md rounded border border-outline-variant/60 flex items-center justify-center gap-space-xs shadow-sm transition-colors cursor-pointer shrink-0">
+<span class="material-symbols-outlined text-[18px] text-outline">tune</span>
+<span>Filters</span>
+</button>
+</div>
+</div>
+<!-- URL List Data Table Container -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden flex flex-col">
+<!-- Secondary Toolbar (Batch Actions / Quick Filters) -->
+<div class="p-space-sm border-b border-outline-variant/30 flex items-center justify-between bg-surface-container-low/40">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary-container" type="checkbox">
+<span class="font-caption text-caption text-on-surface-variant ml-1">0 selected</span>
+</div>
+<div class="h-4 w-px bg-outline-variant/40"></div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest text-on-surface font-caption text-caption shadow-sm border border-outline-variant/40 hover:bg-surface-container transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1" disabled="">
+<span class="material-symbols-outlined text-[14px]">edit</span> Bulk Edit
+              </button>
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest text-on-surface font-caption text-caption shadow-sm border border-outline-variant/40 hover:bg-surface-container transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1" disabled="">
+<span class="material-symbols-outlined text-[14px]">refresh</span> Re-crawl
+              </button>
+</div>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-caption text-caption">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> 118 Indexed</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-amber-500"></span> 14 Excluded</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-error"></span> 10 Errors</span>
+</div>
+</div>
+<!-- Full Width Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse whitespace-nowrap min-w-[1000px]">
+<thead>
+<tr class="bg-surface-container-low text-outline font-caption text-caption uppercase tracking-wider h-9 select-none">
+<th class="w-8 px-space-md py-2">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary-container" type="checkbox">
+</th>
+<th class="py-2 px-space-md font-semibold">URL Path &amp; Title Tag</th>
+<th class="py-2 px-space-md font-semibold text-center">Score</th>
+<th class="py-2 px-space-md font-semibold">Index Status</th>
+<th class="py-2 px-space-md font-semibold">Meta Desc</th>
+<th class="py-2 px-space-md font-semibold">H1</th>
+<th class="py-2 px-space-md font-semibold">Target KW</th>
+<th class="py-2 px-space-md font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container text-on-surface font-body-sm text-body-sm">
+<!-- Row 1: Healthy Page -->
+<tr class="hover:bg-surface-container-low/60 transition-colors h-14">
+<td class="px-space-md py-3 text-center">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary-container" type="checkbox">
+</td>
+<td class="py-3 px-space-md max-w-[300px] truncate">
+<div class="flex flex-col">
+<span class="text-primary-container font-semibold truncate hover:underline cursor-pointer">/pricing</span>
+<span class="text-on-surface-variant font-caption text-caption truncate mt-0.5" title="SaaS Pricing Plans | ExampleCorp">SaaS Pricing Plans | ExampleCorp</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-center">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-50 text-emerald-700 font-bold text-[12px] border border-emerald-200">
+                  92
+                </span>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-800 flex items-center w-fit gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Indexed
+                </span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col gap-0.5">
+<span class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden flex" title="Length: 145/160 chars">
+<span class="bg-emerald-500 h-full rounded-full w-[90%]"></span>
+</span>
+<span class="text-[10px] text-outline">145 chars</span>
+</div>
+</td>
+<td class="py-3 px-space-md font-medium text-on-surface">1 H1 tag</td>
+<td class="py-3 px-space-md">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-caption text-caption border border-outline-variant/40">saas pricing</span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" title="Edit Meta Tags">
+<span class="material-symbols-outlined text-[18px]">edit_document</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" title="View Full Analysis">
+<span class="material-symbols-outlined text-[18px]">analytics</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Issues Found -->
+<tr class="hover:bg-surface-container-low/60 transition-colors h-14 bg-error-container/10">
+<td class="px-space-md py-3 text-center">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary-container" type="checkbox">
+</td>
+<td class="py-3 px-space-md max-w-[300px] truncate">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="text-primary-container font-semibold truncate hover:underline cursor-pointer">/blog/top-seo-strategies-2024</span>
+<span class="material-symbols-outlined text-error text-[14px]" title="Critical issues found">error</span>
+</div>
+<span class="text-on-surface-variant font-caption text-caption truncate mt-0.5" title="Top SEO Strategies for 2024 | ExampleCorp Blog - The Ultimate Guide to Search Engine Optimization">Top SEO Strategies for 2024 | Example...</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-center">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-error-container text-error font-bold text-[12px] border border-error/20">
+                  45
+                </span>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-800 flex items-center w-fit gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Indexed
+                </span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col gap-0.5">
+<span class="text-[11px] font-semibold text-error flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">warning</span> Missing
+                  </span>
+</div>
+</td>
+<td class="py-3 px-space-md font-medium text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span> 0 H1 tags
+              </td>
+<td class="py-3 px-space-md">
+<span class="text-outline text-[11px] italic">Not set</span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" title="Edit Meta Tags">
+<span class="material-symbols-outlined text-[18px]">edit_document</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" title="View Full Analysis">
+<span class="material-symbols-outlined text-[18px]">analytics</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Warning/Canonical -->
+<tr class="hover:bg-surface-container-low/60 transition-colors h-14">
+<td class="px-space-md py-3 text-center">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary-container" type="checkbox">
+</td>
+<td class="py-3 px-space-md max-w-[300px] truncate">
+<div class="flex flex-col">
+<span class="text-primary-container font-semibold truncate hover:underline cursor-pointer">/features?sort=new</span>
+<span class="text-on-surface-variant font-caption text-caption truncate mt-0.5" title="Product Features | ExampleCorp">Product Features | ExampleCorp</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-center">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant font-bold text-[12px]">
+                  --
+                </span>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-on-surface-variant flex items-center w-fit gap-1" title="Canonicalized to /features">
+<span class="material-symbols-outlined text-[14px]">merge_type</span>
+                  Canonical
+                </span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col gap-0.5">
+<span class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden flex">
+<span class="bg-amber-500 h-full rounded-full w-[30%]"></span>
+</span>
+<span class="text-[10px] text-amber-700 font-semibold">Too short (45 chars)</span>
+</div>
+</td>
+<td class="py-3 px-space-md font-medium text-on-surface">1 H1 tag</td>
+<td class="py-3 px-space-md">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-caption text-caption border border-outline-variant/40">features</span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" title="Edit Meta Tags">
+<span class="material-symbols-outlined text-[18px]">edit_document</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" title="View Full Analysis">
+<span class="material-symbols-outlined text-[18px]">analytics</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Noindex -->
+<tr class="hover:bg-surface-container-low/60 transition-colors h-14 bg-surface-container-lowest/50 opacity-75">
+<td class="px-space-md py-3 text-center">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary-container" type="checkbox">
+</td>
+<td class="py-3 px-space-md max-w-[300px] truncate">
+<div class="flex flex-col">
+<span class="text-primary-container font-semibold truncate hover:underline cursor-pointer">/internal/admin-dashboard</span>
+<span class="text-on-surface-variant font-caption text-caption truncate mt-0.5" title="Admin Login">Admin Login</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-center">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant font-bold text-[12px]">
+                  N/A
+                </span>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container-high text-on-surface-variant flex items-center w-fit gap-1">
+<span class="material-symbols-outlined text-[14px]">block</span>
+                  NoIndex
+                </span>
+</td>
+<td class="py-3 px-space-md">
+<span class="text-outline text-[11px] italic">Ignored</span>
+</td>
+<td class="py-3 px-space-md font-medium text-on-surface-variant">1 H1 tag</td>
+<td class="py-3 px-space-md">
+<span class="text-outline text-[11px] italic">Not set</span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" title="View Full Analysis">
+<span class="material-symbols-outlined text-[18px]">analytics</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="p-space-md border-t border-outline-variant/30 flex items-center justify-between font-caption text-caption text-on-surface-variant bg-surface-container-lowest">
+<span>Showing 1 to 20 of 142 pages</span>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span>Rows per page:</span>
+<select class="bg-surface-container-low border border-outline-variant/40 rounded px-1 py-0.5 focus:outline-none focus:border-primary-container">
+<option>20</option>
+<option>50</option>
+<option>100</option>
+</select>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="w-7 h-7 flex items-center justify-center rounded bg-surface-container-low text-outline cursor-not-allowed">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="w-7 h-7 flex items-center justify-center rounded bg-primary-container text-on-primary font-bold">1</button>
+<button class="w-7 h-7 flex items-center justify-center rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-medium transition-colors">2</button>
+<button class="w-7 h-7 flex items-center justify-center rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-medium transition-colors">3</button>
+<span>...</span>
+<button class="w-7 h-7 flex items-center justify-center rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-medium transition-colors">8</button>
+<button class="w-7 h-7 flex items-center justify-center rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-medium transition-colors">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const res = await fetch('http://localhost:3005/api/pages');
+        const data = await res.json();
+        
+        const tbody = document.querySelector('tbody');
+        if (tbody && data.pages) {
+            tbody.innerHTML = ''; // clear static rows
+            data.pages.forEach(page => {
+                const tr = document.createElement('tr');
+                tr.className = 'border-b border-outline-variant hover:bg-surface-container-lowest transition-colors';
+                tr.innerHTML = `
+                    <td class="p-space-sm">
+                        <div class="flex items-start gap-space-sm">
+                            <div class="w-8 h-8 rounded bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 mt-0.5">
+                                <span class="material-symbols-outlined text-[18px]">description</span>
+                            </div>
+                            <div>
+                                <span class="font-label-lg text-label-lg text-on-surface font-semibold block group-hover:text-primary transition-colors cursor-pointer">/${page.filename.replace('index.html', '')}</span>
+                                <span class="text-on-surface-variant font-caption text-caption truncate mt-0.5" title="${page.title}">${page.title || 'Missing Title'}</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-space-sm">
+                        <span class="font-caption text-caption text-on-surface-variant line-clamp-2" title="${page.description}">${page.description || 'Missing Description'}</span>
+                    </td>
+                    <td class="p-space-sm text-center">
+                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full ${page.h1 ? 'bg-success/10 text-success' : 'bg-error/10 text-error'}">
+                            <span class="font-label-md text-label-md font-semibold">${page.h1 ? '1' : '0'}</span>
+                        </span>
+                    </td>
+                    <td class="p-space-sm text-right">
+                        <button class="h-8 px-space-sm bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm rounded transition-colors" onclick="editMeta('${page.filename}', '${page.title}', '${page.description}')">Edit Meta</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+    } catch(err) {
+        console.error('Failed to load real pages', err);
+    }
+});
+
+window.editMeta = (filename, currentTitle, currentDesc) => {
+    const newTitle = prompt('Enter new title for ' + filename, currentTitle);
+    if (newTitle === null) return;
+    const newDesc = prompt('Enter new description for ' + filename, currentDesc);
+    if (newDesc === null) return;
+    
+    fetch('http://localhost:3005/api/update-seo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename, title: newTitle, description: newDesc })
+    }).then(res => res.json()).then(() => window.location.reload());
+};
+</script>
+
+
+</body></html>
